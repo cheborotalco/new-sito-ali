@@ -201,3 +201,7 @@
 .case-stat-label{font-family:var(--font-body);font-size:.86rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#8b8ba3;line-height:1.25}
 @media (width<=900px){.cases-stats{grid-template-columns:repeat(2,1fr);gap:1.6rem}.case-stat-value{font-size:44px}}
 @media (width<=576px){.cases-stats{grid-template-columns:1fr;margin-bottom:2rem;padding:1.8rem 0}.case-stat-value{font-size:40px}.case-stat-label{font-size:.78rem}}
+/* Center cases stats and keep mobile two-up */
+.case-stat{align-items:center;text-align:center}
+.cases-stats{justify-items:center}
+@media (width<=576px){.cases-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.25rem}.case-stat{align-items:flex-start;text-align:left;justify-self:start}.case-stat-value{font-size:48px}}
