@@ -240,3 +240,9 @@
 .service-tab-copy strong{font-size:29px}
 @media (width<=900px){.service-tab-copy strong{font-size:24px}}
 @media (width<=576px){.services-subtitle{font-size:.9rem;margin-top:.8rem}.services-tabs-label{margin:.2rem 0 .1rem}.service-tab-copy strong{font-size:22px}}
+/* Section title and about watermark refinements */
+@media (min-width:769px){.about-watermark{left:50%!important;transform:translate(-50%,-50%)!important;text-align:center;width:100%;}.about-main-title,.skills-main-title,.projects .section-title,.contact-header-side .text-huge{font-size:51px!important;letter-spacing:0!important;}}
+@media (width<=768px){.about-watermark{display:none!important;}}
+/* Final desktop section title sizing */
+@media (min-width:769px){.about-main-title,#skills .skills-main-title,#projects .section-title,.contact-header-side .text-huge{font-size:51px!important;letter-spacing:0!important;}}
+
