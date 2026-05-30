@@ -250,4 +250,6 @@
 @media (width<=768px){.case-stat-value,.case-stat-label{color:#000!important;}.case-stat{gap:.12rem!important;}.cases-stats{gap:1.15rem .9rem!important;}}
 /* Full-bleed desktop about watermark */
 @media (min-width:769px){.about-watermark{left:-1.5vw!important;width:103vw!important;right:auto!important;transform:translateY(-50%)!important;text-align:left!important;font-size:44vw!important;letter-spacing:.015em!important;white-space:nowrap!important;}}
+/* Responsive contained desktop about watermark */
+@media (min-width:769px){.about-watermark{left:50%!important;right:auto!important;width:auto!important;max-width:none!important;transform:translate(-50%,-50%)!important;text-align:center!important;font-size:min(35vw,620px)!important;letter-spacing:.01em!important;white-space:nowrap!important;}}
 
