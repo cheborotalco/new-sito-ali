@@ -248,4 +248,6 @@
 /* Services title and case stats refinements */
 @media (min-width:769px){.services-title{font-size:51px!important;letter-spacing:0!important;}.cases-stats{gap:1rem!important;column-gap:1.25rem!important;}.case-stat{gap:.12rem!important;}.case-stat-value,.case-stat-label{color:#000!important;}}
 @media (width<=768px){.case-stat-value,.case-stat-label{color:#000!important;}.case-stat{gap:.12rem!important;}.cases-stats{gap:1.15rem .9rem!important;}}
+/* Full-bleed desktop about watermark */
+@media (min-width:769px){.about-watermark{left:-1.5vw!important;width:103vw!important;right:auto!important;transform:translateY(-50%)!important;text-align:left!important;font-size:44vw!important;letter-spacing:.015em!important;white-space:nowrap!important;}}
 
