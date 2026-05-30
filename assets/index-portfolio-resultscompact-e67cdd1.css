@@ -180,3 +180,7 @@
 /* Reduce only the unnecessary bottom padding in result cards */
 #skills .brutalist-card{padding-bottom:1rem}
 @media (width<=768px){#skills .brutalist-card{padding-bottom:1rem}}
+/* Keep all result cards equal height */
+#skills .skills-brutalist-grid{align-items:stretch}
+#skills .brutalist-card{height:100%;min-height:267px}
+@media (width<=768px){#skills .brutalist-card{height:auto;min-height:0}}
