@@ -351,3 +351,6 @@
 @keyframes mindsetPillGlow{0%,38%,100%{background-color:transparent;border-color:#ffffff4d;color:#fff;box-shadow:none;transform:rotate(0deg) translateY(0)}12%,28%{background-color:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 16px 34px #b665ff70;transform:rotate(var(--tilt,-2deg)) translateY(-5px)}}
 /* Skill card supporting text size */
 #skills .card-skill-description{font-size:17px!important;line-height:1.45!important;}
+/* Current achievements closing note */
+.projects-more-note{box-sizing:border-box;max-width:1200px;margin:1.35rem auto 0;padding:0 calc(1.5rem + 2rem);font-family:var(--font-heading);font-size:29px;line-height:1.1;text-transform:uppercase;color:#111;}
+@media (width<=768px){.projects-more-note{width:100%;max-width:100%;padding:0 1.5rem;font-size:29px;}}
