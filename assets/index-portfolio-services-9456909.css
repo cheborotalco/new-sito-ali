@@ -315,3 +315,5 @@
 @media (width<=768px){.mindset-statement{max-width:100%!important}.mindset-pulse-row{align-items:flex-start!important}.mindset-pulse-row .kinetic-pills{margin-left:0!important;min-width:0!important;width:100%!important;justify-content:flex-start!important;gap:.8rem!important}}
 /* Orange mindset label */
 #philosophy .kinetic-label{color:#f97316!important;}
+/* Keep mindset phrase and pills on one desktop row */
+@media (min-width:769px){.mindset-pulse-row{flex-wrap:nowrap!important;align-items:center!important;}.mindset-pulse-row .aligning-text{white-space:nowrap!important;flex:0 0 auto!important;font-size:clamp(2.7rem,4.4vw,4.8rem)!important;}.mindset-pulse-row .kinetic-pills{flex:1 1 auto!important;min-width:0!important;margin-left:2rem!important;gap:1.4rem!important;justify-content:flex-end!important;}.mindset-pulse-row .kinetic-pill{font-size:clamp(2rem,3.6vw,4.1rem)!important;padding:.42rem clamp(1rem,2.1vw,2rem)!important;white-space:nowrap!important;}}
