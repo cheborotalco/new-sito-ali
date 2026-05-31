@@ -331,3 +331,6 @@
 @media (width<=768px){.mindset-pulse-row .kinetic-pill{width:min(17rem,78vw)!important;}}
 /* Center mindset phrase as one unit on desktop */
 @media (min-width:769px){.mindset-pulse-row{justify-content:center!important;gap:.9rem!important;}.mindset-pulse-row .aligning-text{flex:0 0 auto!important;}.mindset-pulse-row .kinetic-pills{flex:0 0 auto!important;min-width:0!important;margin-left:0!important;justify-content:center!important;gap:.75rem!important;}.mindset-pulse-row .kinetic-pill{font-size:clamp(1.65rem,2.55vw,3.05rem)!important;padding:.34rem clamp(.72rem,1.25vw,1.25rem)!important;}}
+/* Mobile vertical mindset watermark */
+@media (width<=768px){#philosophy .philosophy-watermark{display:block!important;left:50%!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%) rotate(90deg)!important;font-size:clamp(8rem,37vw,15rem)!important;line-height:.8!important;letter-spacing:.02em!important;width:max-content!important;max-width:none!important;white-space:nowrap!important;-webkit-text-stroke:2px rgba(255,255,255,.08)!important;color:transparent!important;opacity:1!important;}}
+@media (width<=768px){#philosophy .philosophy-watermark{font-size:clamp(10rem,50vw,18rem)!important;}}
