@@ -305,3 +305,11 @@
 /* Mindset alignment and centered watermark */
 @media (min-width:769px){#philosophy .kinetic-label{max-width:1120px!important;width:100%!important;margin-left:auto!important;margin-right:auto!important;}#philosophy .philosophy-watermark{left:50%!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;font-size:clamp(8rem,18vw,18rem)!important;line-height:.85!important;white-space:nowrap!important;width:max-content!important;max-width:92vw!important;}}
 @media (width<=768px){#philosophy .kinetic-label{max-width:100%!important;margin-left:0!important;margin-right:0!important;}#philosophy .philosophy-watermark{left:50%!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;max-width:92vw!important;white-space:nowrap!important;}}
+/* Mindset full-width copy and slower pill sequence */
+.mindset-statement{max-width:100%!important;width:100%!important;}
+.mindset-pulse-row{width:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:2rem!important;}
+.mindset-pulse-row .kinetic-pills{margin-left:auto!important;display:flex!important;justify-content:space-between!important;gap:2rem!important;min-width:min(720px,62%)!important;}
+.kinetic-pill{animation-duration:6.6s!important;}
+.kinetic-pill.pulse-one{animation-delay:0s!important}.kinetic-pill.pulse-two{animation-delay:2.2s!important}.kinetic-pill.pulse-three{animation-delay:4.4s!important}
+@keyframes mindsetPillGlow{0%,38%,100%{background-color:transparent;border-color:#ffffff4d;color:#fff;box-shadow:none;transform:rotate(0deg) translateY(0) scale(1)}12%,28%{background-color:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 16px 34px #b665ff70;transform:rotate(var(--tilt,-2deg)) translateY(-5px) scale(1.06)}}
+@media (width<=768px){.mindset-statement{max-width:100%!important}.mindset-pulse-row{align-items:flex-start!important}.mindset-pulse-row .kinetic-pills{margin-left:0!important;min-width:0!important;width:100%!important;justify-content:flex-start!important;gap:.8rem!important}}
