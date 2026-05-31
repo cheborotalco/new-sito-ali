@@ -284,3 +284,15 @@
 @keyframes dividerSweepIn{0%{opacity:0;transform:scaleX(.08) translateY(18px)}100%{opacity:1;transform:scaleX(1) translateY(0)}}
 @supports (animation-timeline:view()){.section-divider svg path{animation-timeline:view();animation-range:entry 0% cover 42%;}}
 @media (prefers-reduced-motion:reduce){.section-divider svg path{animation:none!important;opacity:1!important;transform:none!important}}
+/* Simplified mindset section */
+.mindset-simple{max-width:1120px;margin:0 auto;text-align:left;}
+.mindset-statement{font-family:var(--font-heading);text-transform:uppercase;color:#fff;font-size:clamp(3rem,6.5vw,7rem);line-height:.95;max-width:1100px;margin:0 0 3rem;}
+.mindset-pulse-row{margin-bottom:0!important;}
+.mindset-pulse-row .aligning-text{color:#fff;}
+.kinetic-pill{animation:mindsetPillGlow 3.6s ease-in-out infinite;}
+.kinetic-pill.pulse-one{animation-delay:0s;}
+.kinetic-pill.pulse-two{animation-delay:1.2s;}
+.kinetic-pill.pulse-three{animation-delay:2.4s;}
+@keyframes mindsetPillGlow{0%,26%,100%{background-color:transparent;border-color:#ffffff4d;color:#fff;box-shadow:none;transform:none}10%,18%{background-color:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 0 30px #b665ff80;transform:translateY(-3px)}}
+@media (width<=768px){.mindset-statement{font-size:clamp(2.3rem,11vw,4.2rem);margin-bottom:2.2rem}.mindset-pulse-row{gap:1rem!important}.mindset-pulse-row .aligning-text{font-size:clamp(2rem,9vw,3rem)}}
+@media (prefers-reduced-motion:reduce){.kinetic-pill{animation:none!important}}
