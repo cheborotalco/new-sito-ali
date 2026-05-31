@@ -277,4 +277,5 @@
 @media (min-width:1025px){.contact-split{position:relative!important}.info-text-group{position:static!important;padding-top:0!important}.contact-label{position:absolute!important;left:calc(100% - 560px)!important;top:0!important;width:560px!important}.contact-form-card{margin-top:2.35rem!important;padding-top:1.35rem!important}}
 /* Align contact label with form left edge */
 @media (min-width:1025px){.contact-label{left:calc(50% + 8px)!important}}
-
+/* Desktop case stats label spacing */
+@media (min-width:769px){.case-stat{gap:.9rem!important}.case-stat-label{margin-top:.1rem!important}}
