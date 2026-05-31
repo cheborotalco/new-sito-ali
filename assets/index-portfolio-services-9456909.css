@@ -356,3 +356,5 @@
 @media (width<=768px){.projects-more-note{width:100%;max-width:100%;padding:0 1.5rem;font-size:29px;}}
 /* Desktop contact typography */
 @media (min-width:769px){#contact .contact-label{font-family:var(--font-heading)!important;font-size:19px!important;line-height:1.1!important;}#contact .contact-email-link{font-size:29px!important;line-height:1.15!important;}}
+/* Desktop label sizing and mindset rhythm */
+@media (min-width:769px){.about-info-card .col-title,#philosophy .kinetic-label,#contact .contact-label{font-family:var(--font-heading)!important;font-size:22px!important;line-height:1.1!important;}#philosophy .kinetic-label{margin-bottom:2rem!important;}#philosophy .mindset-statement{margin-bottom:2rem!important;}}
