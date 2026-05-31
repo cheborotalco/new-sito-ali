@@ -360,3 +360,5 @@
 @media (min-width:769px){.about-info-card .col-title,#philosophy .kinetic-label,#contact .contact-label{font-family:var(--font-heading)!important;font-size:22px!important;line-height:1.1!important;}#philosophy .kinetic-label{margin-bottom:2rem!important;}#philosophy .mindset-statement{margin-bottom:2rem!important;}}
 /* Mobile mindset equal vertical rhythm */
 @media (width<=768px){#philosophy .kinetic-label{margin-bottom:35px!important;}#philosophy .mindset-statement{margin-bottom:35px!important;}}
+/* Larger desktop mindset watermark */
+@media (min-width:769px){#philosophy .philosophy-watermark{left:50%!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;font-size:clamp(15rem,34vw,36rem)!important;line-height:.75!important;width:max-content!important;max-width:none!important;white-space:nowrap!important;}}
