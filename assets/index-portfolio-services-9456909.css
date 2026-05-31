@@ -362,3 +362,5 @@
 @media (width<=768px){#philosophy .kinetic-label{margin-bottom:35px!important;}#philosophy .mindset-statement{margin-bottom:35px!important;}}
 /* Larger desktop mindset watermark */
 @media (min-width:769px){#philosophy .philosophy-watermark{left:50%!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;font-size:clamp(15rem,34vw,36rem)!important;line-height:.75!important;width:max-content!important;max-width:none!important;white-space:nowrap!important;}}
+/* Mobile current achievements more note matches card titles */
+@media (width<=768px){.projects-more-note{padding:0 1.5rem!important;margin:1.5rem 0 1.5rem!important;font-family:var(--font-heading)!important;font-size:20px!important;font-weight:600!important;line-height:20px!important;text-transform:uppercase!important;color:var(--color-text)!important;}}
