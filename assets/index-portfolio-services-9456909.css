@@ -296,3 +296,9 @@
 @keyframes mindsetPillGlow{0%,26%,100%{background-color:transparent;border-color:#ffffff4d;color:#fff;box-shadow:none;transform:none}10%,18%{background-color:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 0 30px #b665ff80;transform:translateY(-3px)}}
 @media (width<=768px){.mindset-statement{font-size:clamp(2.3rem,11vw,4.2rem);margin-bottom:2.2rem}.mindset-pulse-row{gap:1rem!important}.mindset-pulse-row .aligning-text{font-size:clamp(2rem,9vw,3rem)}}
 @media (prefers-reduced-motion:reduce){.kinetic-pill{animation:none!important}}
+/* Refined mindset scale and pill motion */
+.mindset-statement{font-family:var(--font-body)!important;text-transform:none!important;font-size:clamp(1.15rem,2vw,1.65rem)!important;line-height:1.55!important;font-weight:500!important;letter-spacing:0!important;max-width:760px!important;margin:0 0 3.2rem!important;color:#f4f1ff!important;}
+.mindset-simple{max-width:1120px!important;}
+@keyframes mindsetPillGlow{0%,26%,100%{background-color:transparent;border-color:#ffffff4d;color:#fff;box-shadow:none;transform:rotate(0deg) translateY(0) scale(1)}10%,18%{background-color:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 16px 34px #b665ff70;transform:rotate(var(--tilt,-2deg)) translateY(-5px) scale(1.06)}}
+.kinetic-pill.pulse-one{--tilt:-2deg}.kinetic-pill.pulse-two{--tilt:2deg}.kinetic-pill.pulse-three{--tilt:-1.5deg}
+@media (width<=768px){.mindset-statement{font-size:1.05rem!important;line-height:1.6!important;max-width:32rem!important;margin-bottom:2.2rem!important}.mindset-simple{text-align:left!important}}
