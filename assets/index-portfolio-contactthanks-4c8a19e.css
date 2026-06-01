@@ -729,6 +729,28 @@
   background:linear-gradient(135deg,#2dc100,#169b00)!important;
   color:#fff!important;
 }
+#contact .wechat-icon svg{
+  width:1.9rem!important;
+  height:1.9rem!important;
+}
+#contact .wechat-copy-label{
+  position:absolute;
+  left:50%;
+  top:calc(100% + .45rem);
+  transform:translate(-50%,.25rem);
+  opacity:0;
+  pointer-events:none;
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  transition:opacity .2s ease,transform .2s ease;
+}
+#contact .wechat-icon.copied .wechat-copy-label{
+  opacity:1;
+  transform:translate(-50%,0);
+}
 #contact .circle-btn-elegant.social-icon:hover{
   filter:saturate(1.08) brightness(1.05);
   transform:translateY(-3px)!important;
