@@ -65,72 +65,10 @@
           footer.innerHTML = '<div class="container footer-redesign"><div class="footer-brand-block"><a class="footer-logo" href="#top" aria-label="Back to top">ALISA<span>.</span>C<span class="footer-caret">_</span></a><div class="footer-brand-rule" aria-hidden="true"></div></div><nav class="footer-nav-block" aria-label="Footer navigation"><span class="footer-section-label">NAVIGATION</span><div class="footer-nav-grid"><a href="#about">About</a><a href="#skills">Focus Areas</a><a href="#projects">Achievements</a><a href="#philosophy">Mindset</a><a href="#services">Expertise</a><a href="#contact">Contact</a></div></nav><div class="footer-legal-block"><p>© ' + new Date().getFullYear() + ' Alisa Chebotarenko</p><p>P.IVA 01820290086</p><div class="footer-legal-items" aria-label="Legal links"><span>Privacy Policy</span><span>Cookie Policy</span></div></div></div>';
         });
       };
-      const startupOffers = [
-        {
-          title: 'Startup Operations Setup',
-          price: 'from €2,500',
-          description: '<p>Building the operational foundation for sustainable growth. I help founders establish clear processes, communication flows, team responsibilities, and decision-making structures that reduce chaos and improve execution.</p><p><strong>What&#39;s included:</strong></p><ul><li>Discovery Session</li><li>Founder and key stakeholder interviews</li><li>Operational process review</li><li>Team structure assessment</li><li>Role and responsibility mapping</li><li>Communication workflow recommendations</li><li>Startup Operations Report</li><li>Growth Roadmap</li><li>Online presentation of findings</li></ul><p><strong>Duration:</strong> up to 10 business days</p><p class="not-included"><strong>Not included:</strong> implementation, software setup, recruitment, project management, employee training, or ongoing operational support.</p>'
-        },
-        {
-          title: 'Delivery & Execution Leadership',
-          price: 'from €2,000/month',
-          description: '<p>Helping startups turn plans into results. I work alongside founders and teams to align priorities, improve accountability, coordinate execution, and maintain momentum across critical initiatives.</p><p><strong>What&#39;s included:</strong></p><ul><li>Initial assessment of priorities and workflows</li><li>Weekly coordination sessions</li><li>Execution and delivery tracking</li><li>Team alignment support</li><li>Risk and blocker identification</li><li>Stakeholder communication support</li><li>Monthly progress review</li></ul><p><strong>Duration:</strong> monthly engagement (minimum 1 month)</p><p class="not-included"><strong>Not included:</strong> full-time operational management, hiring decisions, direct team supervision, software development management, or executive authority within the company.</p>'
-        },
-        {
-          title: 'Founder & Team Execution Review',
-          price: 'from €1,500',
-          description: '<p>An independent assessment of a team&#39;s ability to execute its vision. I evaluate leadership, communication, role alignment, accountability, and operational readiness to identify strengths, risks, and barriers to growth.</p><p><strong>What&#39;s included:</strong></p><ul><li>Discovery Session</li><li>Founder interviews</li><li>Team structure review</li><li>Role and responsibility analysis</li><li>Communication and decision-making assessment</li><li>Identification of execution risks</li><li>Executive Summary with recommendations</li><li>Online discussion of findings</li></ul><p><strong>Duration:</strong> up to 7 business days</p><p class="not-included"><strong>Not included:</strong> psychological evaluation, recruitment services, performance reviews, legal due diligence, or ongoing coaching and mentoring.</p>'
-        }
-      ];
-      const enhanceStartupExpertise = () => {
-        const services = document.querySelector('#services');
-        if (!services) return;
-        const activeTitle = services.querySelector('.services-book-tab.active .services-book-title');
-        const grid = services.querySelector('.services-offers-grid');
-        if (!activeTitle || !grid || activeTitle.textContent.trim().toUpperCase() !== 'STARTUP') return;
-        if (grid.dataset.startupEnhanced === 'true') return;
-        grid.dataset.startupEnhanced = 'true';
-        grid.innerHTML = startupOffers.map((offer, index) => '<article class="service-offer-card"><div class="service-offer-head"><span class="service-offer-index">0' + (index + 1) + ' // STARTUP</span><h3>' + offer.title + '</h3></div><div class="service-offer-description">' + offer.description + '</div><p class="service-offer-price">' + offer.price + '</p><a href="#contact" class="service-offer-book">Book -></a></article>').join('');
-      };
-      const enhanceInvestorPrices = () => {
-        const services = document.querySelector('#services');
-        if (!services) return;
-        const activeTitle = services.querySelector('.services-book-tab.active .services-book-title');
-        if (!activeTitle || activeTitle.textContent.trim().toUpperCase() !== 'INVESTOR') return;
-        services.querySelectorAll('.service-offer-price').forEach(price => {
-          const text = price.textContent.trim();
-          if (text && !text.toLowerCase().startsWith('from ')) {
-            price.textContent = 'from ' + text;
-          }
-        });
-      };
-      const watchStartupExpertise = () => {
-        const services = document.querySelector('#services');
-        enhanceStartupExpertise();
-        enhanceInvestorPrices();
-        document.querySelectorAll('#services .services-book-tab').forEach(tab => {
-          if (tab.dataset.startupWatch === 'true') return;
-          tab.dataset.startupWatch = 'true';
-          tab.addEventListener('click', () => setTimeout(() => {
-            enhanceStartupExpertise();
-            enhanceInvestorPrices();
-          }, 0));
-        });
-        if (services && services.dataset.startupObserver !== 'true') {
-          services.dataset.startupObserver = 'true';
-          new MutationObserver(() => {
-            enhanceStartupExpertise();
-            enhanceInvestorPrices();
-          }).observe(services, { childList: true, subtree: true });
-        }
-      };
       window.addEventListener('load', updateContactLinks);
       window.addEventListener('load', enhanceFooter);
-      window.addEventListener('load', watchStartupExpertise);
       setTimeout(updateContactLinks, 500);
       setTimeout(enhanceFooter, 500);
-      setTimeout(watchStartupExpertise, 500);
-      setTimeout(watchStartupExpertise, 1200);
     </script>
     <link rel="stylesheet" crossorigin href="/assets/index-portfolio-contactthanks-4c8a19e.css">
   </head>
