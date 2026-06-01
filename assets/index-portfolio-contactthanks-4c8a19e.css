@@ -818,11 +818,14 @@
   }
   #contact .contact-email-link{
     font-family:var(--font-heading)!important;
-    font-size:clamp(1.45rem,1.8vw,2rem)!important;
+    font-size:clamp(1.12rem,1.45vw,1.62rem)!important;
     line-height:1.05!important;
     text-transform:none!important;
     letter-spacing:0!important;
     color:#fff!important;
+    white-space:nowrap!important;
+    max-width:100%!important;
+    overflow:visible!important;
   }
   #contact .copy-icon{
     width:1rem!important;
