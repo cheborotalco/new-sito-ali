@@ -730,31 +730,100 @@
   color:#fff!important;
 }
 #contact .wechat-icon svg{
-  width:1.9rem!important;
-  height:1.9rem!important;
-}
-#contact .wechat-copy-label{
-  position:absolute;
-  left:50%;
-  top:calc(100% + .45rem);
-  transform:translate(-50%,.25rem);
-  opacity:0;
-  pointer-events:none;
-  color:#fff;
-  font-family:var(--font-body);
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.02em;
-  transition:opacity .2s ease,transform .2s ease;
-}
-#contact .wechat-icon.copied .wechat-copy-label{
-  opacity:1;
-  transform:translate(-50%,0);
+  width:2.05rem!important;
+  height:2.05rem!important;
 }
 #contact .circle-btn-elegant.social-icon:hover{
   filter:saturate(1.08) brightness(1.05);
   transform:translateY(-3px)!important;
   box-shadow:0 18px 34px rgba(0,0,0,.24)!important;
+}
+
+.wechat-modal-open{
+  overflow:hidden;
+}
+.wechat-qr-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  padding:1.25rem;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+.wechat-qr-modal.is-open{
+  opacity:1;
+  pointer-events:auto;
+}
+.wechat-qr-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(10,7,36,.76);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.wechat-qr-card{
+  position:relative;
+  width:min(92vw,28rem);
+  max-height:92vh;
+  overflow:auto;
+  padding:1.35rem;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,.18);
+  background:
+    radial-gradient(circle at 100% 0%,rgba(45,193,0,.18),transparent 42%),
+    linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.9));
+  box-shadow:0 34px 90px rgba(0,0,0,.38);
+  color:#171142;
+  transform:translateY(12px) scale(.98);
+  transition:transform .22s ease;
+}
+.wechat-qr-modal.is-open .wechat-qr-card{
+  transform:translateY(0) scale(1);
+}
+.wechat-qr-close{
+  position:absolute;
+  top:.85rem;
+  right:.85rem;
+  width:2.3rem;
+  height:2.3rem;
+  border:0;
+  border-radius:999px;
+  background:#171142;
+  color:#fff;
+  font-size:1.45rem;
+  line-height:1;
+  cursor:pointer;
+}
+.wechat-qr-kicker{
+  display:block;
+  color:#f97316;
+  font-family:var(--font-heading);
+  font-size:1.05rem;
+  font-weight:700;
+  letter-spacing:.12em;
+}
+.wechat-qr-card h3{
+  margin:.35rem 2.5rem 1rem 0;
+  color:#171142;
+  font-family:var(--font-heading);
+  font-size:clamp(2.35rem,8vw,3.5rem);
+  line-height:.9;
+  text-transform:uppercase;
+}
+.wechat-qr-card img{
+  display:block;
+  width:100%;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 18px 45px rgba(23,17,66,.15);
+}
+.wechat-qr-card p{
+  margin:1rem 0 0;
+  color:rgba(23,17,66,.78);
+  font-size:1rem;
 }
 
 /* Desktop contact redesign */
