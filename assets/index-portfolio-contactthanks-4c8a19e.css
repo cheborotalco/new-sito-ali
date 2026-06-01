@@ -280,10 +280,11 @@
 /* Desktop case stats label spacing */
 @media (min-width:769px){.case-stat{gap:.9rem!important}.case-stat-label{margin-top:.1rem!important}}
 /* Animated purple divider before achievements */
-.section-divider svg path{transform-box:fill-box;transform-origin:left center;animation:dividerSweepIn .95s cubic-bezier(.16,1,.3,1) both;}
-@keyframes dividerSweepIn{0%{opacity:0;transform:scaleX(.08) translateY(18px)}100%{opacity:1;transform:scaleX(1) translateY(0)}}
-@supports (animation-timeline:view()){.section-divider svg path{animation-timeline:view();animation-range:entry 0% cover 42%;}}
-@media (prefers-reduced-motion:reduce){.section-divider svg path{animation:none!important;opacity:1!important;transform:none!important}}
+.section-divider{overflow:hidden!important}
+.section-divider svg{transform-origin:left center;will-change:clip-path,transform,opacity;animation:dividerRevealIn 1.1s cubic-bezier(.16,1,.3,1) both}
+@keyframes dividerRevealIn{0%{opacity:0;clip-path:inset(0 100% 0 0);transform:translateY(22px) scaleX(.96)}100%{opacity:1;clip-path:inset(0 0 0 0);transform:translateY(0) scaleX(1)}}
+@supports (animation-timeline:view()){.section-divider svg{animation-timeline:view();animation-range:entry 0% cover 45%}}
+@media (prefers-reduced-motion:reduce){.section-divider svg{animation:none!important;opacity:1!important;clip-path:none!important;transform:none!important}}
 /* Simplified mindset section */
 .mindset-simple{max-width:1120px;margin:0 auto;text-align:left;}
 .mindset-statement{font-family:var(--font-heading);text-transform:uppercase;color:#fff;font-size:clamp(3rem,6.5vw,7rem);line-height:.95;max-width:1100px;margin:0 0 3rem;}
