@@ -59,8 +59,16 @@
         updateTelegramLink();
         addWeChatLink();
       };
+      const enhanceFooter = () => {
+        document.querySelectorAll('.footer-elegant').forEach(footer => {
+          if (footer.querySelector('.footer-redesign')) return;
+          footer.innerHTML = '<div class="container footer-redesign"><div class="footer-brand-block"><a class="footer-logo" href="#top" aria-label="Back to top">ALISA<span>.</span>C<span class="footer-caret">_</span></a><p>IT Project Manager for digital products, operations, and execution-focused teams.</p></div><div class="footer-contact-block"><span class="footer-kicker">CONTACT</span><a href="mailto:alisa.1chebotarenko@gmail.com">alisa.1chebotarenko@gmail.com</a><p>P.IVA: 01820290086</p></div><nav class="footer-nav-block" aria-label="Footer navigation"><a href="#about">About</a><a href="#skills">Focus Areas</a><a href="#projects">Achievements</a><a href="#philosophy">Mindset</a><a href="#services">Expertise</a><a href="#contact">Contact</a></nav><div class="footer-legal-block"><p>© ' + new Date().getFullYear() + ' Alisa Chebotarenko. All rights reserved.</p><div class="footer-legal-items" aria-label="Legal links"><span>Privacy Policy</span><span>Cookie Policy</span></div></div></div>';
+        });
+      };
       window.addEventListener('load', updateContactLinks);
+      window.addEventListener('load', enhanceFooter);
       setTimeout(updateContactLinks, 500);
+      setTimeout(enhanceFooter, 500);
     </script>
     <link rel="stylesheet" crossorigin href="/assets/index-portfolio-contactthanks-4c8a19e.css">
   </head>
