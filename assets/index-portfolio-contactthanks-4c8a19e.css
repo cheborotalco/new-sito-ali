@@ -975,9 +975,11 @@
 /* Footer redesign */
 .footer-elegant{
   position:relative;
-  padding:3.6rem 0 2.1rem!important;
-  border-top:1px solid rgba(255,255,255,.1)!important;
-  background:#171142!important;
+  padding:4.2rem 0 2rem!important;
+  border-top:1px solid rgba(255,255,255,.12)!important;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0) 32%),
+    #171142!important;
   overflow:hidden;
 }
 .footer-elegant:before{
@@ -987,22 +989,23 @@
   position:relative;
   z-index:1;
   display:grid;
-  grid-template-columns:minmax(220px,.85fr) minmax(180px,.5fr);
+  grid-template-columns:minmax(18rem,1fr) minmax(24rem,.9fr);
   grid-template-areas:
     "brand nav"
-    "legal nav";
-  gap:2.8rem 4rem;
+    "legal legal";
+  gap:3.2rem clamp(3rem,8vw,8rem);
   align-items:start;
 }
 .footer-brand-block{
   grid-area:brand;
+  align-self:end;
 }
 .footer-logo{
   display:inline-flex;
   align-items:baseline;
   color:#fff;
   font-family:var(--font-heading);
-  font-size:clamp(2.8rem,5vw,4.8rem);
+  font-size:clamp(3.4rem,7vw,6.6rem);
   font-weight:800;
   letter-spacing:.02em;
   line-height:.85;
@@ -1014,18 +1017,44 @@
   margin-left:.04em;
   animation:1s step-end infinite blink;
 }
+.footer-brand-rule{
+  width:min(9.5rem,38vw);
+  height:4px;
+  margin-top:1.15rem;
+  background:linear-gradient(90deg,#b665ff,#f97316);
+  box-shadow:0 0 22px rgba(182,101,255,.38);
+}
 .footer-nav-block{
   grid-area:nav;
   display:flex;
   flex-direction:column;
-  align-items:flex-end;
-  gap:.55rem;
+  align-items:stretch;
+  gap:1rem;
+  justify-self:end;
+  width:min(100%,29rem);
+  padding:1.35rem 0 0;
+}
+.footer-section-label{
+  display:block;
+  color:#f97316;
+  font-family:var(--font-heading);
+  font-size:1.05rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-align:right;
+}
+.footer-nav-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.65rem 2.5rem;
+  padding-top:1rem;
+  border-top:1px solid rgba(255,255,255,.12);
   text-align:right;
 }
 .footer-nav-block a{
   color:rgba(255,255,255,.72);
   font-family:var(--font-heading);
-  font-size:1.05rem;
+  font-size:clamp(1.08rem,1.4vw,1.35rem);
   letter-spacing:.08em;
   line-height:1.2;
   text-transform:uppercase;
@@ -1039,21 +1068,21 @@
   grid-area:legal;
   display:flex;
   align-items:center;
-  justify-content:flex-start;
+  justify-content:space-between;
   flex-wrap:wrap;
   gap:.75rem 1.6rem;
-  padding-top:1.5rem;
+  padding-top:1.35rem;
   border-top:1px solid rgba(255,255,255,.1);
 }
 .footer-legal-block p{
   margin:0;
-  color:rgba(255,255,255,.44);
+  color:rgba(255,255,255,.46);
   font-size:.88rem;
 }
 .footer-legal-items{
   display:flex;
-  gap:1.4rem;
-  color:rgba(255,255,255,.52);
+  gap:.65rem;
+  color:rgba(255,255,255,.62);
   font-family:var(--font-body);
   font-size:.82rem;
   letter-spacing:.08em;
@@ -1061,10 +1090,14 @@
 }
 .footer-legal-items span{
   cursor:default;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;
+  padding:.45rem .8rem;
+  background:rgba(255,255,255,.035);
 }
 @media (max-width:900px){
   .footer-elegant{
-    padding:3.6rem 0 2rem!important;
+    padding:3.4rem 0 2rem!important;
   }
   .footer-redesign{
     grid-template-columns:1fr;
@@ -1072,11 +1105,19 @@
       "brand"
       "nav"
       "legal";
-    gap:2.4rem;
+    gap:2.2rem;
   }
   .footer-nav-block{
-    align-items:flex-start;
+    justify-self:stretch;
+    width:100%;
+    padding-top:0;
+  }
+  .footer-section-label,
+  .footer-nav-grid{
     text-align:left;
+  }
+  .footer-nav-grid{
+    grid-template-columns:1fr;
     gap:.7rem;
   }
   .footer-legal-block{
