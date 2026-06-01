@@ -725,6 +725,10 @@
   background:linear-gradient(135deg,#0a66c2,#004182)!important;
   color:#fff!important;
 }
+#contact .wechat-icon{
+  background:linear-gradient(135deg,#2dc100,#169b00)!important;
+  color:#fff!important;
+}
 #contact .circle-btn-elegant.social-icon:hover{
   filter:saturate(1.08) brightness(1.05);
   transform:translateY(-3px)!important;
