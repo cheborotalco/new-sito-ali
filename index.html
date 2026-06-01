@@ -59,6 +59,26 @@
         updateTelegramLink();
         addWeChatLink();
       };
+      const revealAchievementDivider = () => {
+        document.querySelectorAll('.section-divider').forEach(divider => {
+          if (divider.dataset.revealReady) return;
+          divider.dataset.revealReady = 'true';
+          const showDivider = () => divider.classList.add('divider-visible');
+          if (!('IntersectionObserver' in window)) {
+            showDivider();
+            return;
+          }
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                showDivider();
+                observer.unobserve(divider);
+              }
+            });
+          }, { threshold: 0.2, rootMargin: '0px 0px -12% 0px' });
+          observer.observe(divider);
+        });
+      };
       const enhanceFooter = () => {
         document.querySelectorAll('.footer-elegant').forEach(footer => {
           if (footer.querySelector('.footer-redesign')) return;
@@ -66,8 +86,10 @@
         });
       };
       window.addEventListener('load', updateContactLinks);
+      window.addEventListener('load', revealAchievementDivider);
       window.addEventListener('load', enhanceFooter);
       setTimeout(updateContactLinks, 500);
+      setTimeout(revealAchievementDivider, 500);
       setTimeout(enhanceFooter, 500);
     </script>
     <link rel="stylesheet" crossorigin href="/assets/index-portfolio-contactthanks-4c8a19e.css">
