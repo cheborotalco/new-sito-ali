@@ -597,3 +597,30 @@
 .contact-thank-you h3{font-size:clamp(3.4rem,6vw,6.2rem)!important;line-height:.92!important;max-width:11ch!important;letter-spacing:0!important}
 .contact-thank-you p{font-size:clamp(1rem,1.35vw,1.35rem)!important;max-width:42rem!important;margin-top:.5rem!important}
 @media (width<=768px){.contact-thank-you{min-height:18rem!important;padding:2rem!important;border-radius:24px!important}.contact-thank-you h3{font-size:3.2rem!important;max-width:9ch!important}.contact-thank-you p{font-size:1rem!important}}
+
+/* Keep the post-submit message in the same visual scale as the contact heading */
+@media (width>768px){
+  #contact .contact-info-side:has(.contact-thank-you){
+    display:flex!important;
+    justify-content:flex-start!important;
+  }
+  #contact .contact-thank-you{
+    min-height:auto!important;
+    max-width:560px!important;
+    margin-left:0!important;
+    padding:3rem 3.25rem!important;
+    border-radius:32px!important;
+  }
+  #contact .contact-thank-you h3{
+    font-size:clamp(3.35rem,4.4vw,5.1rem)!important;
+    line-height:.95!important;
+    max-width:9.5ch!important;
+    white-space:normal!important;
+  }
+  #contact .contact-thank-you p{
+    font-size:1.15rem!important;
+    line-height:1.5!important;
+    max-width:27rem!important;
+    margin-top:.75rem!important;
+  }
+}
