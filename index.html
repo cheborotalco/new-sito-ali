@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script type="module" crossorigin src="/assets/index-portfolio-priceorder-6b8f1d4.js"></script>
     <script type="module">
+      const enhanceMobileReferenceHero = () => {
+        const textBlock = document.querySelector('.hero .text-block');
+        if (!textBlock || textBlock.querySelector('.mobile-ai-headline')) return;
+        const headline = document.createElement('div');
+        headline.className = 'mobile-ai-headline';
+        headline.setAttribute('aria-label', 'I implement AI in traditional businesses');
+        headline.innerHTML = '<span>I IMPLEMENT AI IN</span><span class="accent">TRADITIONAL</span><span>BUSINESSES</span>';
+        textBlock.appendChild(headline);
+      };
       const updateTelegramLink = () => {
         document.querySelectorAll('a[href="https://t.me/alisachebotarenko"]').forEach(link => {
           link.href = 'https://t.me/alichebo';
@@ -96,14 +105,17 @@
           footer.innerHTML = '<div class="container footer-redesign"><div class="footer-brand-block" style="display:block;visibility:visible;opacity:1"><a class="footer-logo" style="display:inline-flex;visibility:visible;opacity:1;color:#fff" href="#top" aria-label="Back to top">ALISA<span>.</span>C<span class="footer-caret">_</span></a><div class="footer-brand-rule" aria-hidden="true"></div></div><nav class="footer-nav-block" aria-label="Footer navigation"><span class="footer-section-label">NAVIGATION</span><div class="footer-nav-grid"><a href="#about">About</a><a href="#skills">Focus Areas</a><a href="#projects">Achievements</a><a href="#philosophy">Mindset</a><a href="#services">Expertise</a><a href="#contact">Contact</a></div></nav><div class="footer-legal-block"><p>© ' + new Date().getFullYear() + ' Alisa Chebotarenko</p><p>P.IVA 01820290086</p><div class="footer-legal-items" aria-label="Legal links"><span>Privacy Policy</span><span>Cookie Policy</span></div></div></div>';
         });
       };
+      window.addEventListener('load', enhanceMobileReferenceHero);
       window.addEventListener('load', updateContactLinks);
       window.addEventListener('load', revealAchievementDivider);
       window.addEventListener('load', enhanceFooter);
+      setTimeout(enhanceMobileReferenceHero, 100);
+      setTimeout(enhanceMobileReferenceHero, 500);
       setTimeout(updateContactLinks, 500);
       setTimeout(revealAchievementDivider, 500);
       setTimeout(enhanceFooter, 500);
     </script>
-    <link rel="stylesheet" crossorigin href="/assets/index-portfolio-mobilefine-2d7000c.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-portfolio-mobileheroref5-51be96d.css">
   </head>
   <body>
     <div id="root"></div>
