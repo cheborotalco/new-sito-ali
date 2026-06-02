@@ -1242,3 +1242,10 @@
   content:none!important;
   display:none!important;
 }
+
+/* Hide contact CTA inside mobile menu */
+@media (width<=1100px){
+  .nav-links-tech.mobile-open .mobile-contact-link{
+    display:none!important;
+  }
+}
