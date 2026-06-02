@@ -1173,3 +1173,74 @@
 } 
 /* Keep expertise CTA casing as written */
 .service-offer-book{text-transform:none!important;}
+
+/* Refined primary CTAs: brutalist, cleaner, coherent with site palette */
+.hero-cta-primary,
+.btn-tech{
+  position:relative!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.72rem!important;
+  overflow:hidden!important;
+  color:#fff!important;
+  background:#171142!important;
+  border:2px solid #171142!important;
+  border-top-color:#f97316!important;
+  border-radius:999px!important;
+  box-shadow:0 16px 34px rgba(23,17,66,.18)!important;
+  font-family:var(--font-body)!important;
+  font-weight:800!important;
+  letter-spacing:.035em!important;
+  text-transform:none!important;
+  isolation:isolate!important;
+}
+.hero-cta-primary::before,
+.btn-tech::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(135deg,rgba(182,101,255,.34),rgba(249,115,22,.16));
+  opacity:.68;
+  transform:translateX(-58%);
+  transition:transform .38s ease, opacity .38s ease;
+}
+.hero-cta-primary::after,
+.btn-tech::after{
+  content:"->";
+  color:#f97316;
+  font-weight:900;
+  line-height:1;
+  transform:translateY(-1px);
+  transition:transform .28s ease,color .28s ease;
+}
+.hero-cta-primary:hover,
+.btn-tech:hover,
+.navbar-tech.scrolled .btn-tech:hover{
+  color:#fff!important;
+  background:#171142!important;
+  border-color:#171142!important;
+  border-top-color:#f97316!important;
+  transform:translateY(-3px)!important;
+  box-shadow:0 22px 42px rgba(23,17,66,.24),0 12px 28px rgba(249,115,22,.16)!important;
+}
+.hero-cta-primary:hover::before,
+.btn-tech:hover::before{
+  transform:translateX(0);
+  opacity:1;
+}
+.hero-cta-primary:hover::after,
+.btn-tech:hover::after{
+  color:#fff;
+  transform:translate(3px,-1px);
+}
+.navbar-tech.scrolled .btn-tech{
+  color:#fff!important;
+  background:#171142!important;
+  border-color:#171142!important;
+  border-top-color:#f97316!important;
+}
+@media (width<=768px){
+  .hero-cta-primary::after{font-size:.95em!important;}
+}
