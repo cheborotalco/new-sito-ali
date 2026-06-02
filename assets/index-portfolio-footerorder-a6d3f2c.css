@@ -1131,3 +1131,28 @@
     gap:.5rem;
   }
 }
+@media (min-width:901px){
+  .footer-brand-block{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    grid-area:brand!important;
+  }
+  .footer-logo{
+    display:inline-flex!important;
+    visibility:visible!important;
+    opacity:1!important;
+    color:#fff!important;
+  }
+  .footer-redesign{
+    grid-template-columns:minmax(18rem,1fr) minmax(24rem,.9fr)!important;
+    grid-template-areas:
+      "brand nav"
+      "legal legal"!important;
+  }
+  .footer-nav-grid{
+    grid-template-columns:1fr!important;
+    gap:.58rem!important;
+  }
+  .footer-nav-grid a{grid-column:auto!important;grid-row:auto!important}
+}
