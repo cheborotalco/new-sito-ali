@@ -1170,4 +1170,6 @@
   .footer-nav-grid a:nth-child(4){grid-column:2!important;grid-row:1!important}
   .footer-nav-grid a:nth-child(5){grid-column:2!important;grid-row:2!important}
   .footer-nav-grid a:nth-child(6){grid-column:2!important;grid-row:3!important}
-}
+} 
+/* Keep expertise CTA casing as written */
+.service-offer-book{text-transform:none!important;}
