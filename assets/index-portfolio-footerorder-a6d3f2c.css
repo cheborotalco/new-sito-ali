@@ -1235,3 +1235,10 @@
 @media (width<=768px){
   .hero-cta-primary::after{font-size:.95em!important;}
 }
+
+/* Remove arrows from primary CTAs */
+.hero-cta-primary::after,
+.btn-tech::after{
+  content:none!important;
+  display:none!important;
+}
