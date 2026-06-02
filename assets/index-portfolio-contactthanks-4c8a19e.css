@@ -1360,3 +1360,10 @@
 @media (width<=480px){
   .hero-cta-row{margin-top:2.25rem!important;gap:2.25rem!important}
 }
+/* mobile project manager optical width */
+@media (width<=768px){
+  .hero .line-3>h1{font-size:clamp(2.35rem,11.25vw,3.28rem)!important;line-height:.84!important}
+}
+@media (width<=480px){
+  .hero .line-3>h1{font-size:clamp(2.32rem,11.27vw,3.05rem)!important;line-height:.84!important}
+}
