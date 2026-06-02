@@ -55,7 +55,18 @@
           row.appendChild(button);
         });
       };
-      const updateContactLinks = () => {
+  
+    const removeMobileNavbarCta = () => {
+      if (!window.matchMedia("(max-width: 1100px)").matches) return;
+      document.querySelectorAll(".navbar-tech .btn-tech").forEach((link) => link.remove());
+    };
+    window.addEventListener("load", removeMobileNavbarCta);
+    window.addEventListener("resize", removeMobileNavbarCta);
+    setTimeout(removeMobileNavbarCta, 100);
+    setTimeout(removeMobileNavbarCta, 500);
+    new MutationObserver(removeMobileNavbarCta).observe(document.documentElement, { childList: true, subtree: true });
+
+    const updateContactLinks = () => {
         updateTelegramLink();
         addWeChatLink();
       };

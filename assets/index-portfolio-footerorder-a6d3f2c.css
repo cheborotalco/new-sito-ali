@@ -1249,3 +1249,5 @@
     display:none!important;
   }
 }
+/* Hide Discuss Your Project block on mobile */
+@media (width<=768px){#contact .contact-header-side{display:none!important}}
