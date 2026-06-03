@@ -75,6 +75,19 @@
     setTimeout(removeMobileNavbarCta, 500);
     new MutationObserver(removeMobileNavbarCta).observe(document.documentElement, { childList: true, subtree: true });
 
+
+    const removeContactCountryField = () => {
+      document.querySelectorAll(".contact-form-card select[name=\"country\"]").forEach((select) => {
+        const row = select.closest(".contact-form-row");
+        select.remove();
+        if (row) row.classList.add("no-country");
+      });
+    };
+    window.addEventListener("load", removeContactCountryField);
+    setTimeout(removeContactCountryField, 100);
+    setTimeout(removeContactCountryField, 500);
+    new MutationObserver(removeContactCountryField).observe(document.documentElement, { childList: true, subtree: true });
+
     const updateContactLinks = () => {
         updateTelegramLink();
         addWeChatLink();
@@ -115,7 +128,7 @@
       setTimeout(revealAchievementDivider, 500);
       setTimeout(enhanceFooter, 500);
     </script>
-    <link rel="stylesheet" crossorigin href="/assets/index-portfolio-iosstable-31f6b2c.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-portfolio-contactfix-4a91c2d.css">
   </head>
   <body>
     <div id="root"></div>
