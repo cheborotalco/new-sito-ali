@@ -24,7 +24,6 @@ function validate(body) {
   const preferred = body.preferred_contact;
 
   if (!body.name || String(body.name).trim().length < 2) errors.push('Name is required.');
-  if (!body.origin_country) errors.push('Country of origin is required.');
   if (!['email', 'whatsapp', 'telegram'].includes(preferred)) errors.push('Preferred contact method is required.');
   if (!body.request_reason) errors.push('Reason for your request is required.');
   if (!body.message || String(body.message).trim().length < 10) errors.push('Message must be at least 10 characters.');
@@ -49,7 +48,7 @@ function buildEmail(body) {
 
   const rows = [
     ['Name', body.name],
-    ['Country of origin', body.origin_country],
+    ...(body.origin_country ? [['Country of origin', body.origin_country]] : []),
     ['Preferred contact', body.preferred_contact],
     ['Contact detail', contactValue],
     ['Reason', body.request_reason],
