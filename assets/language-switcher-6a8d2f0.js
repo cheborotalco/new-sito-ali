@@ -150,17 +150,20 @@
     ['Implementing AI in traditional business', 'Implementare AI nel business tradizionale']
   ]);
 
-  const normalize = value => (value || '').replace(/s+/g, ' ').trim();
+  const normalize = value => (value || '').replace(/\s+/g, ' ').trim();
   const preserve = (original, translated) => {
-    const lead = (original.match(/^s*/) || [''])[0];
-    const trail = (original.match(/s*$/) || [''])[0];
+    const lead = (original.match(/^\s*/) || [''])[0];
+    const trail = (original.match(/\s*$/) || [''])[0];
     return lead + translated + trail;
   };
-  const getLang = () => localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+  const getLang = () => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored === 'ru' || stored === 'en' ? stored : DEFAULT_LANG;
+  };
   const setTitle = lang => {
     const title = document.title;
     if (!document.documentElement.dataset.originalTitle) document.documentElement.dataset.originalTitle = title;
-    if (lang === 'en') {
+    if (lang === 'en' || lang === 'ru') {
       document.title = document.documentElement.dataset.originalTitle;
     } else if (title.includes('Privacy Policy')) {
       document.title = 'Privacy Policy | Alisa Chebotarenko';
@@ -179,7 +182,7 @@
     if (!textOriginals.has(node)) textOriginals.set(node, node.nodeValue);
     const original = textOriginals.get(node);
     if (!normalize(original)) return;
-    if (lang === 'en') {
+    if (lang === 'en' || lang === 'ru') {
       if (node.nodeValue !== original) node.nodeValue = original;
       return;
     }
@@ -201,7 +204,7 @@
       }
       if (!(attr in store)) store[attr] = el.getAttribute(attr);
       const original = store[attr];
-      if (lang === 'en') {
+      if (lang === 'en' || lang === 'ru') {
         if (el.getAttribute(attr) !== original) el.setAttribute(attr, original);
         return;
       }
@@ -244,7 +247,7 @@
     const wrap = document.createElement('div');
     wrap.className = 'language-switcher';
     wrap.setAttribute('aria-label', 'Language selector');
-    wrap.innerHTML = '<button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="it" aria-pressed="false">IT</button>';
+    wrap.innerHTML = '<button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ru" aria-pressed="false">RU</button>';
     wrap.addEventListener('click', event => {
       const button = event.target.closest('button[data-lang]');
       if (!button) return;

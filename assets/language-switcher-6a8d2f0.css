@@ -66,3 +66,8 @@
     margin-right: 8px;
   }
 }
+
+.navbar-tech .btn-tech {
+  display: none !important;
+}
+
