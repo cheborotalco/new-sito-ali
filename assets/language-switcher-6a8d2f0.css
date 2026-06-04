@@ -88,3 +88,14 @@
   }
 }
 
+@media (min-width: 1101px) {
+  .navbar-tech .nav-links-tech,
+  .navbar-tech .nav-link-tech {
+    white-space: nowrap;
+  }
+
+  .navbar-tech .nav-links-tech {
+    gap: clamp(1.6rem, 2vw, 2.5rem);
+  }
+}
+
