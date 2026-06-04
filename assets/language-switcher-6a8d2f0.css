@@ -71,3 +71,20 @@
   display: none !important;
 }
 
+@media (min-width: 1101px) {
+  .navbar-tech .navbar-tech-inner {
+    position: relative;
+  }
+
+  .navbar-tech .nav-links-tech {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar-tech .language-switcher {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
