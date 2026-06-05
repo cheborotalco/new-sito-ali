@@ -583,3 +583,47 @@
     height: 2.9rem !important;
   }
 }
+
+/* Mobile hero correction: keep the photo clear of the navbar and park CTAs near the visible bottom. */
+@media (width <= 768px) {
+  .hero,
+  .hero-container.container {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+  }
+
+  .hero-container.container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + clamp(7.25rem, 15.2svh, 8.25rem)) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(2.75rem, 5.7svh, 3.45rem)) !important;
+  }
+
+  .hero-cta-photo-mobile {
+    height: clamp(14.15rem, 30.8svh, 18.85rem) !important;
+    margin-bottom: clamp(.32rem, .72svh, .5rem) !important;
+  }
+
+  .mobile-ai-headline {
+    margin-bottom: clamp(.24rem, .55svh, .36rem) !important;
+  }
+
+  .hero .subtitle-group {
+    margin-bottom: 0 !important;
+  }
+
+  .hero-cta-stack {
+    margin-top: auto !important;
+    gap: .46rem !important;
+  }
+}
+
+@media (width <= 390px), (height <= 760px) {
+  .hero-container.container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.9rem) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 3rem) !important;
+  }
+
+  .hero-cta-photo-mobile {
+    height: clamp(12.3rem, 28.5svh, 15.15rem) !important;
+  }
+}
