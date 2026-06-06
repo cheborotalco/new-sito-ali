@@ -651,3 +651,104 @@
     font-weight: 400 !important;
   }
 }
+
+/* Mobile hero hard fit: no horizontal clipping, both CTAs visible in the first screen. */
+@media (width <= 768px) {
+  html,
+  body,
+  #root {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .hero,
+  .hero-container.container {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+  }
+
+  .hero-container.container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + clamp(6.9rem, 13.4svh, 7.55rem)) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(1.15rem, 2.8svh, 1.7rem)) !important;
+  }
+
+  .hero-cta-photo-mobile {
+    height: clamp(11.9rem, 24.6svh, 14.9rem) !important;
+    margin-bottom: clamp(.34rem, .82svh, .52rem) !important;
+  }
+
+  .mobile-ai-headline {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    font-size: clamp(2.1rem, 9.35vw, 3.08rem) !important;
+    line-height: .9 !important;
+    margin-bottom: clamp(.34rem, .78svh, .5rem) !important;
+    letter-spacing: -.035em !important;
+  }
+
+  .mobile-ai-headline span {
+    max-width: 100% !important;
+    white-space: nowrap !important;
+  }
+
+  .hero .subtitle-group {
+    margin-bottom: clamp(.48rem, 1.05svh, .72rem) !important;
+    padding-left: .9rem !important;
+  }
+
+  .hero .subtitle-group::before {
+    font-family: Oswald, sans-serif !important;
+    font-size: clamp(1.35rem, 5.85vw, 1.8125rem) !important;
+    line-height: .95 !important;
+    letter-spacing: .11em !important;
+    white-space: nowrap !important;
+  }
+
+  .hero .subtitle-group .method-text {
+    font-size: clamp(.96rem, 4.35vw, 1.1875rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .hero-cta-stack {
+    margin-top: auto !important;
+    gap: .4rem !important;
+  }
+
+  .hero-cta-stack .hero-cta-primary,
+  .hero-cta-stack .hero-cta-secondary {
+    height: clamp(2.8rem, 5.9svh, 3.22rem) !important;
+    border-radius: 1.25rem !important;
+  }
+}
+
+@media (width <= 390px), (height <= 760px) {
+  .hero-container.container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.35rem) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1.05rem) !important;
+  }
+
+  .hero-cta-photo-mobile {
+    height: clamp(10.2rem, 22.4svh, 12.7rem) !important;
+  }
+
+  .mobile-ai-headline {
+    font-size: clamp(1.92rem, 8.85vw, 2.48rem) !important;
+  }
+
+  .hero .subtitle-group::before {
+    font-size: clamp(1.16rem, 5.35vw, 1.45rem) !important;
+  }
+
+  .hero .subtitle-group .method-text {
+    font-size: clamp(.84rem, 4vw, 1rem) !important;
+  }
+
+  .hero-cta-stack .hero-cta-primary,
+  .hero-cta-stack .hero-cta-secondary {
+    height: 2.72rem !important;
+  }
+}
