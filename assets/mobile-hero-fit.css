@@ -627,3 +627,27 @@
     height: clamp(12.3rem, 28.5svh, 15.15rem) !important;
   }
 }
+
+/* Mobile hero typography lock. */
+@media (width <= 768px) {
+  .nav-logo-tech {
+    font-size: clamp(1.75rem, 7vw, 2.1rem) !important;
+  }
+
+  .mobile-ai-headline {
+    font-size: 51px !important;
+    line-height: .92 !important;
+  }
+
+  .hero .subtitle-group::before {
+    font-size: 29px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+  }
+
+  .hero .subtitle-group .method-text {
+    font-size: 19px !important;
+    line-height: 1.05 !important;
+    font-weight: 400 !important;
+  }
+}
