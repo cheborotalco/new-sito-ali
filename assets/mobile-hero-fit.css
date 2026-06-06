@@ -120,7 +120,7 @@
     justify-content: flex-start !important;
     box-sizing: border-box !important;
     padding:
-      calc(env(safe-area-inset-top, 0px) + clamp(6.25rem, 12.9svh, 7.1rem))
+      calc(env(safe-area-inset-top, 0px) + clamp(7.45rem, 15svh, 8.35rem))
       clamp(1rem, 4.6vw, 1.35rem)
       calc(env(safe-area-inset-bottom, 0px) + clamp(1rem, 2.6svh, 1.55rem)) !important;
     overflow: hidden !important;
@@ -150,7 +150,7 @@
     order: 1 !important;
     display: block !important;
     width: 100% !important;
-    height: clamp(11.2rem, 24.2svh, 14.65rem) !important;
+    height: clamp(17.6rem, 35.5svh, 22rem) !important;
     min-height: 0 !important;
     max-height: none !important;
     margin: 0 0 clamp(.38rem, .9svh, .56rem) !important;
@@ -179,12 +179,13 @@
     margin: 0 0 clamp(.36rem, .82svh, .52rem) !important;
     color: #171820 !important;
     font-family: Oswald, sans-serif !important;
-    font-size: clamp(1.92rem, 8.25vw, 2.56rem) !important;
+    font-size: clamp(1.86rem, 7.65vw, 2.36rem) !important;
     font-weight: 700 !important;
-    line-height: .9 !important;
+    line-height: 1 !important;
     letter-spacing: -.035em !important;
     text-transform: uppercase !important;
-    overflow: hidden !important;
+    overflow: visible !important;
+    padding-bottom: .08em !important;
   }
 
   .mobile-ai-headline span {
@@ -194,7 +195,7 @@
   }
 
   .mobile-ai-headline span:nth-child(2) {
-    font-size: .95em !important;
+    font-size: .9em !important;
   }
 
   .mobile-ai-headline .accent {
@@ -303,7 +304,7 @@
 
 @media (width <= 390px), (height <= 760px) {
   .hero-container.container {
-    padding-top: calc(env(safe-area-inset-top, 0px) + 5.9rem) !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.85rem) !important;
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + .82rem) !important;
   }
 
@@ -316,12 +317,12 @@
   }
 
   .hero-cta-photo-mobile {
-    height: clamp(9.85rem, 22.1svh, 11.8rem) !important;
+    height: clamp(14.6rem, 31svh, 17rem) !important;
     margin-bottom: .26rem !important;
   }
 
   .mobile-ai-headline {
-    font-size: clamp(1.56rem, 7.5vw, 1.96rem) !important;
+    font-size: clamp(1.48rem, 6.75vw, 1.78rem) !important;
     margin-bottom: .24rem !important;
   }
 
@@ -354,16 +355,16 @@
 
 @media (height <= 680px) {
   .hero-container.container {
-    padding-top: calc(env(safe-area-inset-top, 0px) + 5.55rem) !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.25rem) !important;
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + .58rem) !important;
   }
 
   .hero-cta-photo-mobile {
-    height: 8.9rem !important;
+    height: 12.2rem !important;
   }
 
   .mobile-ai-headline {
-    font-size: 1.42rem !important;
+    font-size: 1.34rem !important;
   }
 
   .hero .subtitle-group::before {
