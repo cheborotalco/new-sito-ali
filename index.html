@@ -133,60 +133,40 @@
           const setProgress = (index, value) => {
             values[index].textContent = format(targets[index], value);
           };
-          const setItemVisible = (index, visible) => {
+          const items = Array.from(stats.querySelectorAll('.case-stat'));
+          const setItemState = (index, visible) => {
             const item = stats.children[index];
             if (!item) return;
             item.style.opacity = visible ? '' : '0';
             item.style.transform = visible ? '' : 'translateY(14px)';
             item.style.pointerEvents = visible ? '' : 'none';
           };
-          const lockFutureCounters = activeIndex => {
-            targets.forEach((target, index) => {
-              if (index <= activeIndex) {
-                setItemVisible(index, true);
-                return;
-              }
-              setProgress(index, 0);
-              setItemVisible(index, false);
-            });
-          };
-
-          targets.forEach((target, index) => setProgress(index, 0));
-          lockFutureCounters(-1);
 
           const runCounter = index => {
             if (index >= targets.length) {
-              stats.dataset.activeCounterIndex = String(targets.length - 1);
-              stats.querySelectorAll('.case-stat').forEach(item => {
+              items.forEach(item => {
                 item.style.opacity = '';
                 item.style.transform = '';
                 item.style.pointerEvents = '';
               });
-              if (stats._counterLockObserver) {
-                stats._counterLockObserver.disconnect();
-                delete stats._counterLockObserver;
-              }
               return;
             }
             const target = targets[index];
             const start = performance.now();
             const duration = 1200;
-            stats.dataset.activeCounterIndex = String(index);
-            lockFutureCounters(index);
+            setItemState(index, true);
 
             const tick = now => {
               const progress = Math.min((now - start) / duration, 1);
               const eased = 1 - Math.pow(1 - progress, 3);
               setProgress(index, Math.round(eased * target.value));
-              lockFutureCounters(index);
 
               if (progress < 1) {
                 requestAnimationFrame(tick);
               } else {
                 setProgress(index, target.value);
                 stats.children[index]?.classList.add('visible');
-                lockFutureCounters(index);
-                setTimeout(() => runCounter(index + 1), 420);
+                setTimeout(() => runCounter(index + 1), 500);
               }
             };
 
@@ -197,45 +177,39 @@
           const startCounters = () => {
             if (stats.dataset.countersStarted) return;
             stats.dataset.countersStarted = 'true';
-            stats._counterLockObserver = new MutationObserver(() => {
-              const activeIndex = Number(stats.dataset.activeCounterIndex || -1);
-              lockFutureCounters(activeIndex);
+            targets.forEach((target, index) => {
+              setProgress(index, 0);
+              setItemState(index, false);
             });
-            stats._counterLockObserver.observe(stats, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['class'] });
-            runCounter(0);
+            requestAnimationFrame(() => runCounter(0));
           };
 
           const isStatsVisible = () => {
             const rect = stats.getBoundingClientRect();
-            return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+            return rect.top < window.innerHeight && rect.bottom > 0;
           };
 
-          if (!('IntersectionObserver' in window)) {
-            const checkVisibility = () => {
-              if (!isStatsVisible()) return;
-              startCounters();
-              window.removeEventListener('scroll', checkVisibility);
-              window.removeEventListener('resize', checkVisibility);
-            };
-            window.addEventListener('scroll', checkVisibility, { passive: true });
-            window.addEventListener('resize', checkVisibility);
-            checkVisibility();
-            return;
-          }
+          const checkVisibility = () => {
+            if (!isStatsVisible()) return;
+            startCounters();
+            window.removeEventListener('scroll', checkVisibility);
+            window.removeEventListener('resize', checkVisibility);
+            if (observer) observer.disconnect();
+          };
 
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                startCounters();
-                observer.disconnect();
+          let observer = null;
+          if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver(entries => {
+              if (entries.some(entry => entry.isIntersecting)) {
+                checkVisibility();
               }
-            });
-          }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-          observer.observe(stats);
-          if (isStatsVisible()) {
-            requestAnimationFrame(startCounters);
+            }, { threshold: 0.01, rootMargin: '0px' });
+            observer.observe(stats);
           }
+
+          window.addEventListener('scroll', checkVisibility, { passive: true });
+          window.addEventListener('resize', checkVisibility);
+          requestAnimationFrame(checkVisibility);
         });
       };
       const enhanceFooter = () => {
