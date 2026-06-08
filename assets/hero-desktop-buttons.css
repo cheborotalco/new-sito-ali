@@ -1,0 +1,63 @@
+@media (min-width: 769px) {
+  .hero-cta-stack {
+    gap: 1rem !important;
+  }
+
+  .hero-cta-stack .hero-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 230px !important;
+    min-height: 3.25rem !important;
+    padding: 0.95rem 1.8rem !important;
+    border-radius: 1rem !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transform: none !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
+    overflow: hidden !important;
+  }
+
+  .hero-cta-stack .hero-cta-primary {
+    color: #fff !important;
+    background: linear-gradient(135deg, #c85cff 0%, #982ff0 48%, #8d24dd 100%) !important;
+    border: 0 !important;
+    box-shadow: 0 14px 28px rgba(141, 36, 221, 0.28) !important;
+  }
+
+  .hero-cta-stack .hero-cta-secondary {
+    color: #171142 !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid rgba(23, 17, 66, 0.22) !important;
+    box-shadow: 0 10px 24px rgba(23, 17, 66, 0.07) !important;
+  }
+
+  .hero-cta-stack .hero-cta-primary:hover,
+  .hero-cta-stack .hero-cta-primary:focus-visible {
+    color: #fff !important;
+    background: linear-gradient(135deg, #d16aff 0%, #8229e6 100%) !important;
+    box-shadow: 0 16px 32px rgba(141, 36, 221, 0.32) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .hero-cta-stack .hero-cta-secondary:hover,
+  .hero-cta-stack .hero-cta-secondary:focus-visible {
+    color: #171142 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(23, 17, 66, 0.32) !important;
+    box-shadow: 0 12px 26px rgba(23, 17, 66, 0.1) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .hero-cta-stack .hero-cta::before,
+  .hero-cta-stack .hero-cta::after {
+    content: none !important;
+    display: none !important;
+  }
+}
