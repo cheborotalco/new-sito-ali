@@ -166,8 +166,21 @@
             runCounter(0);
           };
 
+          const isStatsVisible = () => {
+            const rect = stats.getBoundingClientRect();
+            return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+          };
+
           if (!('IntersectionObserver' in window)) {
-            startCounters();
+            const checkVisibility = () => {
+              if (!isStatsVisible()) return;
+              startCounters();
+              window.removeEventListener('scroll', checkVisibility);
+              window.removeEventListener('resize', checkVisibility);
+            };
+            window.addEventListener('scroll', checkVisibility, { passive: true });
+            window.addEventListener('resize', checkVisibility);
+            checkVisibility();
             return;
           }
 
@@ -181,11 +194,9 @@
           }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
           observer.observe(stats);
-          const rect = stats.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+          if (isStatsVisible()) {
             requestAnimationFrame(startCounters);
           }
-          setTimeout(startCounters, 1400);
         });
       };
       const enhanceFooter = () => {
