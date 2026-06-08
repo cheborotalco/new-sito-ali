@@ -115,6 +115,79 @@
           observer.observe(divider);
         });
       };
+      const animateAchievementCounters = () => {
+        document.querySelectorAll('#projects .cases-stats').forEach(stats => {
+          if (stats.dataset.countersReady) return;
+          const values = Array.from(stats.querySelectorAll('.case-stat-value'));
+          if (values.length < 4) return;
+          stats.dataset.countersReady = 'true';
+
+          const targets = [
+            { value: 10, prefix: '', suffix: '+' },
+            { value: 5, prefix: '', suffix: '' },
+            { value: 550, prefix: '€', suffix: 'K+' },
+            { value: 6, prefix: '', suffix: '' }
+          ];
+
+          const format = (target, value) => `${target.prefix}${value}${target.suffix}`;
+          const setProgress = (index, value) => {
+            values[index].textContent = format(targets[index], value);
+          };
+
+          targets.forEach((target, index) => setProgress(index, 0));
+
+          const runCounter = index => {
+            if (index >= targets.length) return;
+            const target = targets[index];
+            const start = performance.now();
+            const duration = 1200;
+
+            const tick = now => {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              setProgress(index, Math.round(eased * target.value));
+
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                setProgress(index, target.value);
+                stats.children[index]?.classList.add('visible');
+                setTimeout(() => runCounter(index + 1), 220);
+              }
+            };
+
+            stats.children[index]?.classList.add('visible');
+            requestAnimationFrame(tick);
+          };
+
+          const startCounters = () => {
+            if (stats.dataset.countersStarted) return;
+            stats.dataset.countersStarted = 'true';
+            runCounter(0);
+          };
+
+          if (!('IntersectionObserver' in window)) {
+            startCounters();
+            return;
+          }
+
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                startCounters();
+                observer.disconnect();
+              }
+            });
+          }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+          observer.observe(stats);
+          const rect = stats.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+            requestAnimationFrame(startCounters);
+          }
+          setTimeout(startCounters, 1400);
+        });
+      };
       const enhanceFooter = () => {
         document.querySelectorAll('.footer-elegant').forEach(footer => {
           if (footer.querySelector('.footer-redesign')) return;
@@ -124,12 +197,16 @@
       window.addEventListener('load', enhanceMobileReferenceHero);
       window.addEventListener('load', updateContactLinks);
       window.addEventListener('load', revealAchievementDivider);
+      window.addEventListener('load', animateAchievementCounters);
       window.addEventListener('load', enhanceFooter);
       setTimeout(enhanceMobileReferenceHero, 100);
       setTimeout(enhanceMobileReferenceHero, 500);
       setTimeout(updateContactLinks, 500);
       setTimeout(revealAchievementDivider, 500);
+      setTimeout(animateAchievementCounters, 100);
+      setTimeout(animateAchievementCounters, 500);
       setTimeout(enhanceFooter, 500);
+      new MutationObserver(animateAchievementCounters).observe(document.documentElement, { childList: true, subtree: true });
     </script>
     <link rel="stylesheet" crossorigin href="/assets/index-portfolio-quotemodalclean-9c4f0a1.css">
     <link rel="stylesheet" crossorigin href="/assets/legal-footer-links-1c9e7a4.css">
