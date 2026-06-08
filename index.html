@@ -133,26 +133,60 @@
           const setProgress = (index, value) => {
             values[index].textContent = format(targets[index], value);
           };
+          const setItemVisible = (index, visible) => {
+            const item = stats.children[index];
+            if (!item) return;
+            item.style.opacity = visible ? '' : '0';
+            item.style.transform = visible ? '' : 'translateY(14px)';
+            item.style.pointerEvents = visible ? '' : 'none';
+          };
+          const lockFutureCounters = activeIndex => {
+            targets.forEach((target, index) => {
+              if (index <= activeIndex) {
+                setItemVisible(index, true);
+                return;
+              }
+              setProgress(index, 0);
+              setItemVisible(index, false);
+            });
+          };
 
           targets.forEach((target, index) => setProgress(index, 0));
+          lockFutureCounters(-1);
 
           const runCounter = index => {
-            if (index >= targets.length) return;
+            if (index >= targets.length) {
+              stats.dataset.activeCounterIndex = String(targets.length - 1);
+              stats.querySelectorAll('.case-stat').forEach(item => {
+                item.style.opacity = '';
+                item.style.transform = '';
+                item.style.pointerEvents = '';
+              });
+              if (stats._counterLockObserver) {
+                stats._counterLockObserver.disconnect();
+                delete stats._counterLockObserver;
+              }
+              return;
+            }
             const target = targets[index];
             const start = performance.now();
             const duration = 1200;
+            stats.dataset.activeCounterIndex = String(index);
+            lockFutureCounters(index);
 
             const tick = now => {
               const progress = Math.min((now - start) / duration, 1);
               const eased = 1 - Math.pow(1 - progress, 3);
               setProgress(index, Math.round(eased * target.value));
+              lockFutureCounters(index);
 
               if (progress < 1) {
                 requestAnimationFrame(tick);
               } else {
                 setProgress(index, target.value);
                 stats.children[index]?.classList.add('visible');
-                setTimeout(() => runCounter(index + 1), 220);
+                lockFutureCounters(index);
+                setTimeout(() => runCounter(index + 1), 420);
               }
             };
 
@@ -163,6 +197,11 @@
           const startCounters = () => {
             if (stats.dataset.countersStarted) return;
             stats.dataset.countersStarted = 'true';
+            stats._counterLockObserver = new MutationObserver(() => {
+              const activeIndex = Number(stats.dataset.activeCounterIndex || -1);
+              lockFutureCounters(activeIndex);
+            });
+            stats._counterLockObserver.observe(stats, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['class'] });
             runCounter(0);
           };
 
