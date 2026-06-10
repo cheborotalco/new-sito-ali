@@ -687,7 +687,7 @@
 
 @media (max-width: 390px) {
   .hero-container.container {
-    padding-top: calc(env(safe-area-inset-top, 0px) + 6rem) !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.75rem) !important;
     padding-left: .92rem !important;
     padding-right: .92rem !important;
     gap: .54rem !important;
@@ -816,7 +816,7 @@
   .hero-container.container {
     overflow: visible !important;
     touch-action: auto !important;
-    padding-top: calc(env(safe-area-inset-top, 0px) + clamp(6.85rem, 14.5svh, 8rem)) !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + clamp(7.65rem, 15.6svh, 9.2rem)) !important;
   }
 
   .hero-cta-photo-mobile,
@@ -840,8 +840,9 @@
 
 @media (max-width: 768px) and (max-height: 760px) {
   .hero-container.container {
-    padding-top: calc(env(safe-area-inset-top, 0px) + 6rem) !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.75rem) !important;
   }
 }
+
 
 
