@@ -816,6 +816,7 @@
   .hero-container.container {
     overflow: visible !important;
     touch-action: auto !important;
+    padding-top: calc(env(safe-area-inset-top, 0px) + clamp(7.9rem, 17svh, 9.35rem)) !important;
   }
 
   .hero-cta-photo-mobile,
@@ -834,6 +835,12 @@
   .navbar-tech a,
   .navbar-tech button {
     pointer-events: auto !important;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 760px) {
+  .hero-container.container {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 6.35rem) !important;
   }
 }
 
