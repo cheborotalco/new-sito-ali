@@ -114,7 +114,7 @@
               modal.setAttribute('role', 'dialog');
               modal.setAttribute('aria-modal', 'true');
               modal.setAttribute('aria-label', 'WeChat QR code');
-              modal.innerHTML = '<div class="wechat-qr-backdrop" data-close-wechat></div><div class="wechat-qr-card"><button class="wechat-qr-close" type="button" aria-label="Close WeChat QR" data-close-wechat>Ã—</button><span class="wechat-qr-kicker">WECHAT</span><h3>Scan to connect</h3><img src="/wechat-qr.jpeg" alt="WeChat QR code for Alisa" loading="lazy"><p>WeChat ID: <strong>alichebo</strong></p></div>';
+              modal.innerHTML = '<div class="wechat-qr-backdrop" data-close-wechat></div><div class="wechat-qr-card"><button class="wechat-qr-close" type="button" aria-label="Close WeChat QR" data-close-wechat>\u00d7</button><span class="wechat-qr-kicker">WECHAT</span><h3>Scan to connect</h3><img src="/wechat-qr.jpeg" alt="WeChat QR code for Alisa" loading="lazy"><p>WeChat ID: <strong>alichebo</strong></p></div>';
               document.body.appendChild(modal);
               modal.addEventListener('click', event => {
                 if (event.target.matches('[data-close-wechat]')) {
@@ -351,7 +351,7 @@
       const enhanceFooter = () => {
         document.querySelectorAll('.footer-elegant').forEach(footer => {
           if (footer.querySelector('.footer-redesign')) return;
-          footer.innerHTML = '<div class="container footer-redesign"><div class="footer-brand-block" style="display:block;visibility:visible;opacity:1"><a class="footer-logo" style="display:inline-flex;visibility:visible;opacity:1;color:#fff" href="#top" aria-label="Back to top">ALISA<span>.</span>C<span class="footer-caret">_</span></a><div class="footer-brand-rule" aria-hidden="true"></div></div><nav class="footer-nav-block" aria-label="Footer navigation"><span class="footer-section-label">NAVIGATION</span><div class="footer-nav-grid"><a href="#about">About</a><a href="#skills">Focus Areas</a><a href="#projects">Achievements</a><a href="#philosophy">Mindset</a><a href="#services">Expertise</a><a href="#contact">Contact</a></div></nav><div class="footer-legal-block"><p>Â© ' + new Date().getFullYear() + ' Alisa Chebotarenko</p><p>P.IVA 01820290086</p><div class="footer-legal-items" aria-label="Legal links"><a href="/privacy.html">Privacy Policy</a><a href="/cookies.html">Cookie Policy</a></div></div></div>';
+          footer.innerHTML = '<div class="container footer-redesign"><div class="footer-brand-block" style="display:block;visibility:visible;opacity:1"><a class="footer-logo" style="display:inline-flex;visibility:visible;opacity:1;color:#fff" href="#top" aria-label="Back to top">ALISA<span>.</span>C<span class="footer-caret">_</span></a><div class="footer-brand-rule" aria-hidden="true"></div></div><nav class="footer-nav-block" aria-label="Footer navigation"><span class="footer-section-label">NAVIGATION</span><div class="footer-nav-grid"><a href="#about">About</a><a href="#skills">Focus Areas</a><a href="#projects">Achievements</a><a href="#philosophy">Mindset</a><a href="#services">Expertise</a><a href="#contact">Contact</a></div></nav><div class="footer-legal-block"><p>\u00a9 ' + new Date().getFullYear() + ' Alisa Chebotarenko</p><p>P.IVA 01820290086</p><div class="footer-legal-items" aria-label="Legal links"><a href="/privacy.html">Privacy Policy</a><a href="/cookies.html">Cookie Policy</a></div></div></div>';
         });
       };
       window.addEventListener('load', enhanceMobileReferenceHero);
