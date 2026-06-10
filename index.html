@@ -80,6 +80,12 @@
         headline.innerHTML = '<span>IMPLEMENTING AI IN</span><span><span class="accent">TRADITIONAL</span> BUSINESS</span>';
         textBlock.appendChild(headline);
       };
+      const normalizeMobileHeroCopy = () => {
+        const primary = document.querySelector('.hero-cta-primary');
+        const secondary = document.querySelector('.hero-cta-secondary');
+        if (primary) primary.textContent = 'Let\u2019s talk';
+        if (secondary) secondary.textContent = 'Explore packages';
+      };
       const updateTelegramLink = () => {
         document.querySelectorAll('a[href="https://t.me/alisachebotarenko"]').forEach(link => {
           link.href = 'https://t.me/alichebo';
@@ -337,12 +343,15 @@
         });
       };
       window.addEventListener('load', enhanceMobileReferenceHero);
+      window.addEventListener('load', normalizeMobileHeroCopy);
       window.addEventListener('load', updateContactLinks);
       window.addEventListener('load', revealAchievementDivider);
       window.addEventListener('load', animateAchievementCounters);
       window.addEventListener('load', enhanceFooter);
       setTimeout(enhanceMobileReferenceHero, 100);
       setTimeout(enhanceMobileReferenceHero, 500);
+      setTimeout(normalizeMobileHeroCopy, 100);
+      setTimeout(normalizeMobileHeroCopy, 500);
       setTimeout(updateContactLinks, 500);
       setTimeout(revealAchievementDivider, 500);
       setTimeout(animateAchievementCounters, 100);
