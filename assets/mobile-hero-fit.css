@@ -1,10 +1,10 @@
-/* Taste-skill mobile hero rebuild.
+﻿/* Taste-skill mobile hero rebuild.
    Desktop keeps the existing hero; mobile gets one coherent first-screen composition. */
 .mobile-ai-headline {
   display: none;
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
   html,
   body,
   #root {
@@ -304,7 +304,7 @@
   }
 }
 
-@media (width <= 390px), (height <= 760px) {
+@media (max-width: 390px), (max-height: 760px) {
   .hero-container.container {
     padding-top: calc(env(safe-area-inset-top, 0px) + 6.85rem) !important;
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + .82rem) !important;
@@ -355,7 +355,7 @@
   }
 }
 
-@media (height <= 680px) {
+@media (max-height: 680px) {
   .hero-container.container {
     padding-top: calc(env(safe-area-inset-top, 0px) + 6.25rem) !important;
     padding-bottom: calc(env(safe-area-inset-bottom, 0px) + .58rem) !important;
@@ -384,14 +384,18 @@
 }
 
 /* Premium mobile hero refresh */
-@media (width <= 768px) {
+@media (max-width: 768px) {
   html,
-  body,
-  #root,
-  main {
+  body {
     overflow-y: auto !important;
     touch-action: pan-y !important;
     -webkit-overflow-scrolling: touch !important;
+  }
+
+  #root,
+  main {
+    overflow-y: visible !important;
+    touch-action: pan-y !important;
   }
 
   .hero {
@@ -676,7 +680,7 @@
   }
 }
 
-@media (width <= 390px) {
+@media (max-width: 390px) {
   .hero-container.container {
     padding-top: calc(env(safe-area-inset-top, 0px) + 5.55rem) !important;
     padding-left: .92rem !important;
@@ -722,7 +726,7 @@
   }
 }
 
-@media (height <= 700px) and (width <= 768px) {
+@media (max-height: 700px) and (max-width: 768px) {
   .hero {
     min-height: auto !important;
   }
@@ -767,3 +771,4 @@
     font-size: .74rem !important;
   }
 }
+
