@@ -3,7 +3,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden !important;
-  overflow-y: auto;
+  overflow-y: auto !important;
   overscroll-behavior-x: none;
 }
 
@@ -22,8 +22,7 @@ main,
 .contact-dark-section,
 .footer-elegant {
   max-width: 100%;
-  overflow-x: hidden !important;
-  overflow-y: visible;
+  overflow: visible !important;
 }
 
 .navbar-tech {
