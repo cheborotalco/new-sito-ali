@@ -98,11 +98,12 @@
   .hero {
     width: 100% !important;
     max-width: 100% !important;
-    height: 100svh !important;
+    height: auto !important;
     min-height: 100svh !important;
-    max-height: 100svh !important;
+    max-height: none !important;
     padding: 0 !important;
-    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
     background:
       radial-gradient(circle at 82% 10%, rgba(182, 101, 255, .14), transparent 28%),
       linear-gradient(180deg, #fbf8ff 0%, #fff 78%) !important;
@@ -111,9 +112,9 @@
   .hero-container.container {
     width: 100% !important;
     max-width: none !important;
-    height: 100svh !important;
+    height: auto !important;
     min-height: 100svh !important;
-    max-height: 100svh !important;
+    max-height: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -123,7 +124,8 @@
       calc(env(safe-area-inset-top, 0px) + clamp(7.45rem, 15svh, 8.35rem))
       clamp(1rem, 4.6vw, 1.35rem)
       calc(env(safe-area-inset-bottom, 0px) + clamp(1rem, 2.6svh, 1.55rem)) !important;
-    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
   }
 
   .hero .text-block,
