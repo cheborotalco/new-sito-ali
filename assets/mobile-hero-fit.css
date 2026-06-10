@@ -772,3 +772,63 @@
   }
 }
 
+/* Android Chrome scroll unlock: keep the document as the only vertical scroller. */
+@media (max-width: 768px) {
+  html {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    touch-action: auto !important;
+  }
+
+  body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    touch-action: auto !important;
+    overscroll-behavior-y: auto !important;
+  }
+
+  #root,
+  main,
+  .hero,
+  .about-dark-section,
+  .skills-light-section,
+  .projects,
+  .philosophy-kinetic,
+  .services-section,
+  .contact-dark-section,
+  .footer-elegant {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    touch-action: auto !important;
+    overscroll-behavior-y: auto !important;
+  }
+
+  .hero-container.container {
+    overflow: visible !important;
+    touch-action: auto !important;
+  }
+
+  .hero-cta-photo-mobile,
+  .hero-cta-photo-mobile img,
+  .mobile-ai-headline,
+  .hero .subtitle-group,
+  .hero .subtitle-group .method-text {
+    pointer-events: none !important;
+    touch-action: auto !important;
+  }
+
+  .hero-cta-stack,
+  .hero-cta-stack a,
+  .nav-toggle-tech,
+  .navbar-tech,
+  .navbar-tech a,
+  .navbar-tech button {
+    pointer-events: auto !important;
+  }
+}
+
