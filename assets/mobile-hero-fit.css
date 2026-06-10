@@ -498,7 +498,7 @@
   }
 
   .hero-cta-photo-mobile::after {
-    content: "AI IMPLEMENTATION" !important;
+    content: "available for new projects" !important;
     position: absolute !important;
     left: .9rem !important;
     bottom: .82rem !important;
@@ -507,7 +507,9 @@
     padding: .42rem .62rem !important;
     border: 1px solid rgba(255, 255, 255, .34) !important;
     border-radius: 999px !important;
-    background: rgba(23, 17, 66, .48) !important;
+    background:
+      radial-gradient(circle at .76rem 50%, #22c55e 0 .2rem, transparent .22rem),
+      rgba(23, 17, 66, .48) !important;
     color: #fff !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
@@ -516,8 +518,18 @@
     font-weight: 800 !important;
     line-height: 1 !important;
     letter-spacing: .13em !important;
-    text-transform: uppercase !important;
+    text-transform: none !important;
     pointer-events: none !important;
+  }
+
+  .hero-cta-photo-mobile::before {
+    background:
+      linear-gradient(180deg, transparent 55%, rgba(23, 17, 66, .18) 100%),
+      linear-gradient(135deg, rgba(255, 255, 255, .2), transparent 36%) !important;
+  }
+
+  .hero-cta-photo-mobile::after {
+    padding-left: 1.34rem !important;
   }
 
   .hero-cta-photo-mobile img {
@@ -588,7 +600,7 @@
   }
 
   .hero .subtitle-group::before {
-    content: "IT PROJECT MANAGER." !important;
+    content: "IT PROJECT MANAGER" !important;
     display: block !important;
     margin: 0 0 .46rem !important;
     color: #171142 !important;
@@ -602,20 +614,13 @@
   }
 
   .hero .subtitle-group::after {
-    content: "" !important;
-    position: absolute !important;
-    right: .82rem !important;
-    top: .86rem !important;
-    width: .5rem !important;
-    height: .5rem !important;
-    border-radius: 999px !important;
-    background: #f97316 !important;
-    box-shadow: 0 0 0 .3rem rgba(249, 115, 22, .12) !important;
+    content: none !important;
+    display: none !important;
   }
 
   .hero .subtitle-group .method-text {
     display: block !important;
-    color: rgba(23, 17, 66, .76) !important;
+    color: #f97316 !important;
     font-family: Inter, sans-serif !important;
     font-size: clamp(.88rem, 3.55vw, 1.02rem) !important;
     font-weight: 500 !important;
