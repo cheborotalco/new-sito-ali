@@ -71,6 +71,18 @@
     <script type="module" crossorigin src="/assets/index-portfolio-achievements-animate-86f3ff0.js"></script>
     <script type="module" crossorigin src="/assets/index-portfolio-quote-modal-4b19c8e.js"></script>
     <script type="module">
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      const returnToHeroOnPageLoad = () => {
+        if (window.location.hash) return;
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      };
+      window.addEventListener('pageshow', returnToHeroOnPageLoad);
+      window.addEventListener('load', returnToHeroOnPageLoad);
+      setTimeout(returnToHeroOnPageLoad, 80);
+      setTimeout(returnToHeroOnPageLoad, 420);
+
       const enhanceMobileReferenceHero = () => {
         const textBlock = document.querySelector('.hero .text-block');
         if (!textBlock || textBlock.querySelector('.mobile-ai-headline')) return;
@@ -249,7 +261,7 @@
           const targets = [
             { value: 10, prefix: '', suffix: '+' },
             { value: 5, prefix: '', suffix: '' },
-            { value: 550, prefix: 'â‚¬', suffix: 'K+' },
+            { value: 550, prefix: '\u20ac', suffix: 'K+' },
             { value: 6, prefix: '', suffix: '' }
           ];
 
