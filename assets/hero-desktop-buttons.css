@@ -77,7 +77,9 @@
     flex: 1 1 auto !important;
     align-self: flex-end !important;
     justify-self: end !important;
-    margin: 0 0 0.06em !important;
+    justify-content: end !important;
+    column-gap: 18px !important;
+    margin: 0 0 0.06em auto !important;
   }
 
   .hero .subtitle-group .method-text,
@@ -90,10 +92,12 @@
 
   .hero .subtitle-group span {
     transform: none !important;
+    justify-self: end !important;
   }
 
   .hero-side-photo {
     width: clamp(7.6rem, 10.7vw, 9.25rem) !important;
     height: clamp(7.6rem, 10.7vw, 9.25rem) !important;
+    justify-self: end !important;
   }
 }
