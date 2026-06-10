@@ -78,6 +78,67 @@
     setTimeout(removeMobileNavbarCta, 500);
     new MutationObserver(removeMobileNavbarCta).observe(document.documentElement, { childList: true, subtree: true });
 
+    const normalizeMobileNavigation = () => {
+      const nav = document.querySelector(".navbar-tech .nav-links-tech");
+      if (!nav) return;
+
+      const items = [
+        ["#about", "01.", "About"],
+        ["#skills", "02.", "Focus Areas"],
+        ["#projects", "03.", "Achievements"],
+        ["#philosophy", "04.", "Mindset"],
+        ["#services", "05.", "Expertise"],
+        ["#contact", "06.", "Contact"]
+      ].filter(([href]) => document.querySelector(href));
+
+      const signature = items.map(([href]) => href).join("|");
+      const current = Array.from(nav.querySelectorAll("a.nav-link-tech"))
+        .map(link => link.getAttribute("href"))
+        .join("|");
+
+      if (current !== signature) {
+        nav.innerHTML = items.map(([href, number, label]) => {
+          const contactClass = href === "#contact" ? " mobile-contact-link" : "";
+          return `<a href="${href}" class="nav-link-tech${contactClass}"><span>${number}</span> ${label}</a>`;
+        }).join("");
+      }
+
+      if (nav.dataset.mobileNavReady) return;
+      nav.dataset.mobileNavReady = "true";
+      nav.addEventListener("click", event => {
+        const link = event.target.closest("a.nav-link-tech");
+        if (!link) return;
+
+        const hash = link.getAttribute("href");
+        const section = hash ? document.querySelector(hash) : null;
+        if (!section) return;
+
+        event.preventDefault();
+        const navbar = document.querySelector(".navbar-tech");
+        const toggle = document.querySelector(".nav-toggle-tech");
+        const offset = Math.max((navbar?.offsetHeight || 0) + 18, 92);
+
+        if (toggle && (navbar?.classList.contains("menu-open") || nav.classList.contains("mobile-open"))) {
+          toggle.click();
+        }
+        setTimeout(() => {
+          navbar?.classList.remove("menu-open");
+          nav.classList.remove("mobile-open");
+          toggle?.setAttribute("aria-expanded", "false");
+          toggle?.setAttribute("aria-label", "Open menu");
+        }, 0);
+
+        const top = section.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
+        window.history.pushState(null, "", hash);
+      });
+    };
+    window.addEventListener("load", normalizeMobileNavigation);
+    window.addEventListener("resize", normalizeMobileNavigation);
+    setTimeout(normalizeMobileNavigation, 100);
+    setTimeout(normalizeMobileNavigation, 500);
+    new MutationObserver(normalizeMobileNavigation).observe(document.documentElement, { childList: true, subtree: true });
+
 
     const removeContactCountryField = () => {
       document.querySelectorAll(".contact-form-card select[name=\"country\"], .contact-form-card select[name=\"origin_country\"]").forEach((select) => {
