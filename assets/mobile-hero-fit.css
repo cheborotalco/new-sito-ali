@@ -385,6 +385,15 @@
 
 /* Premium mobile hero refresh */
 @media (width <= 768px) {
+  html,
+  body,
+  #root,
+  main {
+    overflow-y: auto !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
   .hero {
     isolation: isolate !important;
     width: 100% !important;
@@ -394,6 +403,8 @@
     padding: 0 !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
     background:
       radial-gradient(circle at 86% 9%, rgba(182, 101, 255, .16), transparent 28%),
       radial-gradient(circle at 4% 44%, rgba(249, 115, 22, .08), transparent 25%),
@@ -433,6 +444,7 @@
     gap: clamp(.72rem, 2.2svh, 1rem) !important;
     box-sizing: border-box !important;
     overflow: visible !important;
+    touch-action: pan-y !important;
   }
 
   .hero .text-block,
@@ -466,6 +478,8 @@
     box-shadow:
       0 1.2rem 2.5rem rgba(23, 17, 66, .14),
       0 .12rem 0 rgba(255, 255, 255, .84) inset !important;
+    pointer-events: none !important;
+    touch-action: pan-y !important;
   }
 
   .hero-cta-photo-mobile::before {
@@ -499,6 +513,7 @@
     line-height: 1 !important;
     letter-spacing: .13em !important;
     text-transform: uppercase !important;
+    pointer-events: none !important;
   }
 
   .hero-cta-photo-mobile img {
@@ -509,6 +524,8 @@
     object-position: center 28% !important;
     filter: saturate(1.02) contrast(1.02) !important;
     transform: none !important;
+    pointer-events: none !important;
+    touch-action: pan-y !important;
   }
 
   .mobile-ai-headline {
@@ -527,6 +544,8 @@
     text-transform: uppercase !important;
     text-align: left !important;
     overflow: visible !important;
+    pointer-events: none !important;
+    touch-action: pan-y !important;
   }
 
   .mobile-ai-headline span {
@@ -560,6 +579,8 @@
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     transform: none !important;
+    pointer-events: none !important;
+    touch-action: pan-y !important;
   }
 
   .hero .subtitle-group::before {
@@ -599,6 +620,7 @@
     text-align: left !important;
     text-transform: none !important;
     white-space: normal !important;
+    pointer-events: none !important;
   }
 
   .hero-cta-stack {
@@ -610,6 +632,8 @@
     max-width: 100% !important;
     margin: 0 auto !important;
     align-self: center !important;
+    pointer-events: auto !important;
+    touch-action: pan-y !important;
   }
 
   .hero-cta-stack .hero-cta-primary,
@@ -633,6 +657,8 @@
     white-space: normal !important;
     overflow-wrap: anywhere !important;
     text-align: center !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
   }
 
   .hero-cta-stack .hero-cta-primary {
