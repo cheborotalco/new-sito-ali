@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.alisac.it"
+        }
+      ],
+      "destination": "https://alisac.it/:path*",
+      "permanent": true
+    }
+  ]
+}
