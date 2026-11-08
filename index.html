@@ -1,391 +1,628 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon-alisac.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#171142" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>Alisa Chebotarenko | IT Project Manager</title>
-    <meta name="description" content="Alisa Chebotarenko is a PMP-certified IT Project Manager who implements AI tools in traditional businesses to improve workflows, delivery, and operational efficiency." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://alisac.it/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alisac.it/" />
-    <meta property="og:title" content="Alisa Chebotarenko | IT Project Manager" />
-    <meta property="og:description" content="PMP-certified IT Project Manager implementing AI tools in traditional businesses to improve workflows, delivery, and operational efficiency." />
-    <meta property="og:image" content="https://alisac.it/alisa.jpg" />
-    <meta property="og:site_name" content="Alisa Chebotarenko" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alisa Chebotarenko | IT Project Manager" />
-    <meta name="twitter:description" content="PMP-certified IT Project Manager implementing AI tools in traditional businesses to improve workflows, delivery, and operational efficiency." />
-    <meta name="twitter:image" content="https://alisac.it/alisa.jpg" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Person",
-            "@id": "https://alisac.it/#person",
-            "name": "Alisa Chebotarenko",
-            "url": "https://alisac.it/",
-            "image": "https://alisac.it/alisa.jpg",
-            "jobTitle": "IT Project Manager",
-            "description": "PMP-certified IT Project Manager implementing AI tools in traditional businesses.",
-            "knowsAbout": [
-              "IT project management",
-              "PMP project management",
-              "AI tools implementation",
-              "Business process improvement",
-              "Operational efficiency"
-            ],
-            "sameAs": [
-              "https://linkedin.com/in/alisachebotarenko",
-              "https://t.me/alichebo"
-            ]
-          },
-          {
-            "@type": "ProfessionalService",
-            "@id": "https://alisac.it/#service",
-            "name": "Alisa Chebotarenko IT Project Management",
-            "url": "https://alisac.it/",
-            "image": "https://alisac.it/alisa.jpg",
-            "description": "IT project management and AI tools implementation for traditional businesses, startups, and investors.",
-            "founder": {
-              "@id": "https://alisac.it/#person"
-            },
-            "areaServed": "Europe",
-            "serviceType": [
-              "IT Project Management",
-              "AI Tools Implementation",
-              "Operational Efficiency Review",
-              "Execution Risk Review"
-            ]
-          }
-        ]
-      }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-portfolio-achievements-animate-86f3ff0.js"></script>
-    <script type="module" crossorigin src="/assets/index-portfolio-quote-modal-4b19c8e.js"></script>
-    <script type="module">
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      const returnToHeroOnPageLoad = () => {
-        if (window.location.hash) return;
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      };
-      window.addEventListener('pageshow', returnToHeroOnPageLoad);
-      window.addEventListener('load', returnToHeroOnPageLoad);
-      setTimeout(returnToHeroOnPageLoad, 80);
-      setTimeout(returnToHeroOnPageLoad, 420);
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Alisa Chebotarenko — IT Project Manager · AI implementation</title>
+<meta name="description" content="PMP® certified IT Project Manager and PSPO I product owner. I turn AI ambition into shipped products: clear plans, aligned teams, measurable outcomes." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href="https://alisac.it/" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
 
-      const enhanceMobileReferenceHero = () => {
-        const textBlock = document.querySelector('.hero .text-block');
-        if (!textBlock || textBlock.querySelector('.mobile-ai-headline')) return;
-        const headline = document.createElement('div');
-        headline.className = 'mobile-ai-headline';
-        headline.setAttribute('aria-label', 'Implementing AI in traditional business');
-        headline.innerHTML = '<span>IMPLEMENTING AI IN</span><span><span class="accent">TRADITIONAL</span> BUSINESS</span>';
-        textBlock.appendChild(headline);
-      };
-      const normalizeMobileHeroCopy = () => {
-        const primary = document.querySelector('.hero-cta-primary');
-        const secondary = document.querySelector('.hero-cta-secondary');
-        if (primary) primary.textContent = 'Let\u2019s talk';
-        if (secondary) secondary.textContent = 'Explore packages';
-      };
-      const updateTelegramLink = () => {
-        document.querySelectorAll('a[href="https://t.me/alisachebotarenko"]').forEach(link => {
-          link.href = 'https://t.me/alichebo';
-        });
-      };
-      const addWeChatLink = () => {
-        document.querySelectorAll('.contact-actions-row').forEach(row => {
-          if (row.querySelector('.wechat-icon')) return;
-          const openWeChatQr = () => {
-            let modal = document.querySelector('.wechat-qr-modal');
-            if (!modal) {
-              modal = document.createElement('div');
-              modal.className = 'wechat-qr-modal';
-              modal.setAttribute('role', 'dialog');
-              modal.setAttribute('aria-modal', 'true');
-              modal.setAttribute('aria-label', 'WeChat QR code');
-              modal.innerHTML = '<div class="wechat-qr-backdrop" data-close-wechat></div><div class="wechat-qr-card"><button class="wechat-qr-close" type="button" aria-label="Close WeChat QR" data-close-wechat>\u00d7</button><span class="wechat-qr-kicker">WECHAT</span><h3>Scan to connect</h3><img src="/wechat-qr.jpeg" alt="WeChat QR code for Alisa" loading="lazy"><p>WeChat ID: <strong>alichebo</strong></p></div>';
-              document.body.appendChild(modal);
-              modal.addEventListener('click', event => {
-                if (event.target.matches('[data-close-wechat]')) {
-                  modal.classList.remove('is-open');
-                  document.body.classList.remove('wechat-modal-open');
-                }
-              });
-              window.addEventListener('keydown', event => {
-                if (event.key === 'Escape' && modal.classList.contains('is-open')) {
-                  modal.classList.remove('is-open');
-                  document.body.classList.remove('wechat-modal-open');
-                }
-              });
-            }
-            modal.classList.add('is-open');
-            document.body.classList.add('wechat-modal-open');
-          };
-          const button = document.createElement('button');
-          button.type = 'button';
-          button.className = 'circle-btn-elegant social-icon wechat-icon';
-          button.setAttribute('aria-label', 'Open WeChat QR code');
-          button.title = 'WeChat: alichebo';
-          button.innerHTML = '<svg viewBox="0 0 96 96" aria-hidden="true"><path fill="currentColor" d="M38.4 21.5c-17.2 0-31.1 10.9-31.1 24.3 0 7.5 4.3 14.2 11.1 18.7l-2.5 8.9 10.7-5.5c3.6 1.3 7.6 2.1 11.8 2.1 17.2 0 31.1-10.9 31.1-24.3S55.6 21.5 38.4 21.5Zm-10.5 18a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm20.9 0a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Z"/><path fill="currentColor" d="M88.7 55.6c0-11.8-11.5-21.4-25.7-21.4-.8 0-1.6 0-2.4.1 4.8 4.2 7.7 9.8 7.7 16 0 13.4-13.9 24.3-31.1 24.3h-1.4c4.7 7.3 14.3 12.3 25.2 12.3 3.5 0 6.9-.5 10-1.5l8.8 4.5-2.1-7.4c6.7-4 11-9.8 11-16.9Zm-35.5-3.1a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm18.3 0a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Z" opacity=".72"/></svg>';
-          button.addEventListener('click', openWeChatQr);
-          row.appendChild(button);
-        });
-      };
-  
-    const removeMobileNavbarCta = () => {
-      if (!window.matchMedia("(max-width: 1100px)").matches) return;
-      document.querySelectorAll(".navbar-tech .btn-tech").forEach((link) => link.remove());
-    };
-    window.addEventListener("load", removeMobileNavbarCta);
-    window.addEventListener("resize", removeMobileNavbarCta);
-    setTimeout(removeMobileNavbarCta, 100);
-    setTimeout(removeMobileNavbarCta, 500);
-    new MutationObserver(removeMobileNavbarCta).observe(document.documentElement, { childList: true, subtree: true });
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alisac.it/" />
+<meta property="og:title" content="Alisa Chebotarenko — IT Project Manager · AI implementation" />
+<meta property="og:description" content="PMP® certified IT Project Manager and PSPO I product owner. I turn AI ambition into shipped products." />
+<meta property="og:image" content="https://alisac.it/assets/img/alisa.jpg" />
+<meta property="og:site_name" content="Alisa Chebotarenko" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Alisa Chebotarenko — IT Project Manager" />
+<meta name="twitter:description" content="PMP® certified IT Project Manager and PSPO I product owner." />
+<meta name="twitter:image" content="https://alisac.it/assets/img/alisa.jpg" />
 
-    const normalizeMobileNavigation = () => {
-      const nav = document.querySelector(".navbar-tech .nav-links-tech");
-      if (!nav) return;
+<link rel="stylesheet" href="/assets/css/main.css" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Person",
+      "@id":"https://alisac.it/#person",
+      "name":"Alisa Chebotarenko",
+      "jobTitle":"IT Project Manager",
+      "description":"PMP certified project manager and Professional Scrum Product Owner working on AI adoption in traditional businesses.",
+      "image":"https://alisac.it/assets/img/alisa.jpg",
+      "url":"https://alisac.it/",
+      "knowsLanguage":["it","en","ru"],
+      "knowsAbout":["Project management","Agile delivery","Scrum","Product ownership","AI adoption","Foundation models","Machine learning fundamentals","Risk management"],
+      "hasCredential":[
+        {"@type":"EducationalOccupationalCredential","name":"PMP - Project Management Professional","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Project Management Institute"}},
+        {"@type":"EducationalOccupationalCredential","name":"Professional Scrum Product Owner I","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Scrum.org"}},
+        {"@type":"EducationalOccupationalCredential","name":"AWS Certified AI Practitioner","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Amazon Web Services"}}
+      ],
+      "sameAs":["https://linkedin.com/in/alisachebotarenko","https://t.me/alichebo"]
+    },
+    {
+      "@type":"ProfessionalService",
+      "@id":"https://alisac.it/#service",
+      "name":"Alisa Chebotarenko - IT Project Management & AI Adoption",
+      "url":"https://alisac.it/",
+      "image":"https://alisac.it/assets/img/alisa.jpg",
+      "description":"Project management, Agile delivery and AI adoption advisory for traditional businesses, startups and investors.",
+      "founder":{"@id":"https://alisac.it/#person"},
+      "areaServed":"Europe",
+      "serviceType":["IT project management","AI adoption advisory","Agile delivery","Product ownership","Operational efficiency assessment"]
+    }
+  ]
+}
+</script>
+</head>
+<body>
 
-      const items = [
-        ["#about", "01.", "About"],
-        ["#skills", "02.", "Focus Areas"],
-        ["#projects", "03.", "Achievements"],
-        ["#philosophy", "04.", "Mindset"],
-        ["#services", "05.", "Expertise"],
-        ["#contact", "06.", "Contact"]
-      ].filter(([href]) => document.querySelector(href));
+<a class="skip" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 
-      const signature = items.map(([href]) => href).join("|");
-      const current = Array.from(nav.querySelectorAll("a.nav-link-tech"))
-        .map(link => link.getAttribute("href"))
-        .join("|");
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="#top" aria-label="Alisa Chebotarenko — home">ALISA<span>.</span>C<i>_</i></a>
 
-      if (current !== signature) {
-        nav.innerHTML = items.map(([href, number, label]) => {
-          const contactClass = href === "#contact" ? " mobile-contact-link" : "";
-          return `<a href="${href}" class="nav-link-tech${contactClass}"><span>${number}</span> ${label}</a>`;
-        }).join("");
-      }
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="#approach">Approach</a>
+      <a class="nav__link" href="#focus">Focus areas</a>
+      <a class="nav__link" href="#work">Work</a>
+      <a class="nav__link" href="#services">Services</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </nav>
 
-      if (nav.dataset.mobileNavReady) return;
-      nav.dataset.mobileNavReady = "true";
-      nav.addEventListener("click", event => {
-        const link = event.target.closest("a.nav-link-tech");
-        if (!link) return;
+    <div class="nav__actions">
+      <a class="btn btn--nav" href="#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="sheet">
+        <span class="nav__toggle-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        Menu
+      </button>
+    </div>
+  </div>
+</header>
 
-        const hash = link.getAttribute("href");
-        const section = hash ? document.querySelector(hash) : null;
-        if (!section) return;
+<!-- mobile sheet -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <nav class="sheet__nav" aria-label="Mobile">
+    <a class="sheet__link" href="#approach">Approach <span>01</span></a>
+    <a class="sheet__link" href="#focus">Focus areas <span>02</span></a>
+    <a class="sheet__link" href="#work">Work <span>03</span></a>
+    <a class="sheet__link" href="#services">Services <span>04</span></a>
+    <a class="sheet__link" href="#mindset">Mindset <span>05</span></a>
+    <a class="sheet__link" href="#contact">Contact <span>06</span></a>
+  </nav>
+  <div class="sheet__footer">
+    <a class="btn btn--primary btn--block" href="#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <div class="sheet__meta">
+      <a href="mailto:alisa.1chebotarenko@gmail.com">alisa.1chebotarenko@gmail.com</a>
+      <a href="https://t.me/alichebo" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/alisachebotarenko" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
 
-        event.preventDefault();
-        const navbar = document.querySelector(".navbar-tech");
-        const toggle = document.querySelector(".nav-toggle-tech");
-        const offset = Math.max((navbar?.offsetHeight || 0) + 18, 92);
+<main id="main">
+<a id="top"></a>
 
-        if (toggle && (navbar?.classList.contains("menu-open") || nav.classList.contains("mobile-open"))) {
-          toggle.click();
-        }
-        setTimeout(() => {
-          navbar?.classList.remove("menu-open");
-          nav.classList.remove("mobile-open");
-          toggle?.setAttribute("aria-expanded", "false");
-          toggle?.setAttribute("aria-label", "Open menu");
-        }, 0);
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow" data-reveal>IT Project Manager</span>
+      <h1 data-reveal style="--i:1">
+        <em>Alisa</em>
+        <span class="surname">Chebotarenko</span>
+      </h1>
+      <p class="hero__claim" data-reveal style="--i:2">
+        I turn AI ambition into <strong>shipped products</strong> — clear plans,
+        aligned teams, measurable outcomes.
+      </p>
+      <div class="hero__cta" data-reveal style="--i:3">
+        <a class="btn btn--primary" href="#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="#focus">See how I work</a>
+      </div>
+      <div class="hero__facts">
+      <div class="hero__creds" data-reveal style="--i:4" aria-label="Certifications">
+        <span class="hero__creds-label">My certifications:</span>
+        <div class="hero__creds-row">
+          <span class="cred-badge">
+            <span class="cred-badge__text"><b>PMP<sup>®</sup></b></span>
+            <img src="/assets/img/cert-pmp.png" alt="PMP certification badge" width="34" height="34" loading="lazy" />
+          </span>
+          <span class="cred-badge">
+            <span class="cred-badge__text"><b>PSPO I</b></span>
+            <img src="/assets/img/cert-pspo.png" alt="Professional Scrum Product Owner I badge" width="34" height="34" loading="lazy" />
+          </span>
+          <span class="cred-badge">
+            <span class="cred-badge__text"><b>AWS AI Practitioner</b></span>
+            <img src="/assets/img/cert-aws.png" alt="AWS Certified AI Practitioner badge" width="34" height="34" loading="lazy" />
+          </span>
+        </div>
+      </div>
+      <div class="hero__meta" data-reveal style="--i:5">
+        <span>Speaking Italian · English · Russian</span>
+        <span class="hero__loc">Based in Italy, working across Europe</span>
+      </div>
+      </div>
+    </div>
 
-        const top = section.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
-        window.history.pushState(null, "", hash);
-      });
-    };
-    window.addEventListener("load", normalizeMobileNavigation);
-    window.addEventListener("resize", normalizeMobileNavigation);
-    setTimeout(normalizeMobileNavigation, 100);
-    setTimeout(normalizeMobileNavigation, 500);
-    new MutationObserver(normalizeMobileNavigation).observe(document.documentElement, { childList: true, subtree: true });
+    <figure class="hero__figure" data-reveal style="--i:2">
+      <div class="hero__photo">
+        <img src="/assets/img/alisa.jpg" alt="Portrait of Alisa Chebotarenko" width="640" height="800" fetchpriority="high" />
+      </div>
+      <span class="hero__status"><i aria-hidden="true"></i> Available for new projects</span>
+    </figure>
+  </div>
+</section>
 
+<!-- ================= APPROACH ================= -->
+<section class="section" id="approach">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow" data-reveal>01 — Approach</span>
+      <h2 class="about__quote" data-reveal style="--i:1;margin-top:18px">
+        Successful projects are rarely about <span class="accent">technology</span> alone.
+      </h2>
+      <p class="lead" data-reveal style="--i:2;margin-top:20px;max-width:38ch">What decides the outcome is the quality of the decisions around it: the scope you accept, the risks you name early, and the people who own the result.</p>
+    </div>
+    <div class="about__cols">
+      <article class="about__item" data-reveal>
+        <span class="about__num">01 // EDUCATION</span>
+        <h3 class="h3">Technical roots, managerial practice</h3>
+        <p>With a foundation in Computer Science and a Master’s degree in Project Management, I have continuously reinforced my expertise through multiple industry-recognized certifications. This background allows me to bridge technical execution with business strategy and speak the language of both engineers and executives.</p>
+      </article>
+      <article class="about__item" data-reveal style="--i:1">
+        <span class="about__num">02 // EXPERIENCE</span>
+        <h3 class="h3">Five years, end to end</h3>
+        <p>For more than five years I have run IT and AI initiatives from concept and requirements through launch and continuous development — coordinating stakeholders, clients, and technical teams across Italy, Europe, and Asia. I have steered the delivery of complex digital products by negotiating with technical partners, optimizing operational costs, and translating high-level requirements into clear, sustainable technical roadmaps.</p>
+      </article>
+      <article class="about__item" data-reveal style="--i:2">
+        <span class="about__num">03 // FOCUS</span>
+        <h3 class="h3">Structure, then momentum</h3>
+        <p>I create structure, bring order to complexity, and align people around the few priorities that actually matter. I translate strategic ambition into realistic execution cycles, setting unambiguous success metrics and ensuring every contributor understands their direct impact on the end result. My job is to make good decisions possible — and then to keep delivery honest.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    const removeContactCountryField = () => {
-      document.querySelectorAll(".contact-form-card select[name=\"country\"], .contact-form-card select[name=\"origin_country\"]").forEach((select) => {
-        const row = select.closest(".contact-form-row");
-        select.remove();
-        if (row) row.classList.add("no-country");
-      });
-    };
-    window.addEventListener("load", removeContactCountryField);
-    setTimeout(removeContactCountryField, 100);
-    setTimeout(removeContactCountryField, 500);
-    new MutationObserver(removeContactCountryField).observe(document.documentElement, { childList: true, subtree: true });
+<!-- ================= FOCUS AREAS ================= -->
+<section class="section section--tint" id="focus">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:clamp(28px,4vw,48px)">
+      <span class="eyebrow" data-reveal>02 — Focus areas</span>
+      <h2 class="h2" data-reveal style="--i:1">Where I am actually useful</h2>
+      <p class="lead" data-reveal style="--i:2">Not a generic project-manager skill list. Four areas where I bring real depth: Agile delivery, AI fundamentals, cloud foundations, and governance that survives contact with reality.</p>
+    </div>
 
-    const updateContactLinks = () => {
-        updateTelegramLink();
-        addWeChatLink();
-      };
-      const revealAchievementDivider = () => {
-        document.querySelectorAll('.section-divider').forEach(divider => {
-          if (divider.dataset.revealReady) return;
-          divider.dataset.revealReady = 'true';
-          const showDivider = () => divider.classList.add('divider-visible');
-          if (!('IntersectionObserver' in window)) {
-            showDivider();
-            return;
-          }
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                showDivider();
-                observer.unobserve(divider);
-              }
-            });
-          }, { threshold: 0.2, rootMargin: '0px 0px -12% 0px' });
-          observer.observe(divider);
-        });
-      };
-      const animateAchievementCounters = () => {
-        document.querySelectorAll('#projects .cases-stats').forEach(stats => {
-          if (stats.dataset.countersReady) return;
-          const values = Array.from(stats.querySelectorAll('.case-stat-value'));
-          if (values.length < 4) return;
-          stats.dataset.countersReady = 'true';
+    <div class="focus">
+      <article class="focus__card" data-reveal>
+        <div class="focus__top"><span class="focus__index">01</span><span class="focus__tag">Agile & product</span></div>
+        <h3 class="h3">Agile delivery & product ownership</h3>
+        <p class="focus__tagline">Scrum done properly, not Scrum theatre: clear accountabilities, a backlog that reflects value, and delivery you can forecast.</p>
+        <ul class="focus__list">
+          <li>Scrum and Kanban — roles, events, artefacts, flow</li>
+          <li>Backlog management, refinement and prioritisation</li>
+          <li>Sprint goals, velocity and flow metrics that mean something</li>
+          <li>Working with Product Owners, POs and development teams</li>
+          <li>Hybrid models where the organisation is not ready for pure Agile</li>
+        </ul>
+      </article>
 
-          const targets = [
-            { value: 10, prefix: '', suffix: '+' },
-            { value: 5, prefix: '', suffix: '' },
-            { value: 550, prefix: '\u20ac', suffix: 'K+' },
-            { value: 6, prefix: '', suffix: '' }
-          ];
+      <article class="focus__card" data-reveal style="--i:1">
+        <div class="focus__top"><span class="focus__index">02</span><span class="focus__tag">AI foundations</span></div>
+        <h3 class="h3">AI fundamentals — beyond the buzzwords</h3>
+        <p class="focus__tagline">I know what is inside the box: which model family fits which problem, what the data has to look like, and how to tell whether it works.</p>
+        <ul class="focus__list">
+          <li>Learning paradigms: supervised, unsupervised, reinforcement learning</li>
+          <li>Model families: predictive ML, computer vision, NLP, recommendation</li>
+          <li>Foundation models and LLMs — capabilities and hard limits</li>
+          <li>Prompt design, fine-tuning vs RAG, embeddings and context</li>
+          <li>Evaluation, hallucination control, cost and latency trade-offs</li>
+        </ul>
+      </article>
 
-          const format = (target, value) => `${target.prefix}${value}${target.suffix}`;
-          const setProgress = (index, value) => {
-            values[index].textContent = format(targets[index], value);
-          };
-          const items = Array.from(stats.querySelectorAll('.case-stat'));
-          const setItemState = (index, visible) => {
-            const item = stats.children[index];
-            if (!item) return;
-            item.style.opacity = visible ? '' : '0';
-            item.style.transform = visible ? '' : 'translateY(14px)';
-            item.style.pointerEvents = visible ? '' : 'none';
-          };
+      <article class="focus__card" data-reveal style="--i:2">
+        <div class="focus__top"><span class="focus__index">03</span><span class="focus__tag">Cloud · AWS</span></div>
+        <h3 class="h3">Cloud foundations</h3>
+        <p class="focus__tagline">Enough AWS fluency to talk architecture, cost and security with the technical team — and to know which questions to ask a vendor.</p>
+        <ul class="focus__list">
+          <li>AWS core services: compute, storage, networking, databases</li>
+          <li>IAM, security and the shared responsibility model</li>
+          <li>Regions, availability and deployment models (cloud, hybrid)</li>
+          <li>Cost management, billing and architecture trade-offs</li>
+          <li>Migration and adoption patterns for traditional businesses</li>
+        </ul>
+      </article>
 
-          const runCounter = index => {
-            if (index >= targets.length) {
-              items.forEach(item => {
-                item.style.opacity = '';
-                item.style.transform = '';
-                item.style.pointerEvents = '';
-              });
-              return;
-            }
-            const target = targets[index];
-            const start = performance.now();
-            const duration = 1200;
-            setItemState(index, true);
+      <article class="focus__card" data-reveal style="--i:3">
+        <div class="focus__top"><span class="focus__index">04</span><span class="focus__tag">Governance</span></div>
+        <h3 class="h3">Delivery governance, PMP-grade</h3>
+        <p class="focus__tagline">The unglamorous part that decides whether a project lands: scope, schedule, budget, risk, and a single version of the truth.</p>
+        <ul class="focus__list">
+          <li>Scope definition, WBS and critical path planning</li>
+          <li>Budget control, forecasting and earned value</li>
+          <li>Risk registers, assumptions and mitigation plans</li>
+          <li>Change control without bureaucracy for its own sake</li>
+          <li>Executive reporting and stakeholder alignment</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-            const tick = now => {
-              const progress = Math.min((now - start) / duration, 1);
-              const eased = 1 - Math.pow(1 - progress, 3);
-              setProgress(index, Math.round(eased * target.value));
+<!-- ================= WORK ================= -->
+<section class="section section--tint" id="work">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:clamp(28px,4vw,48px)">
+      <span class="eyebrow" data-reveal>03 — Work</span>
+      <h2 class="h2" data-reveal style="--i:1">Selected work</h2>
+      <p class="lead" data-reveal style="--i:2">A few initiatives I have coordinated end to end — product, technology and people.</p>
+    </div>
 
-              if (progress < 1) {
-                requestAnimationFrame(tick);
-              } else {
-                setProgress(index, target.value);
-                stats.children[index]?.classList.add('visible');
-                setTimeout(() => runCounter(index + 1), 500);
-              }
-            };
+    <div class="work-stats" data-reveal>
+      <div class="work-stat"><span class="work-stat__v" data-count="10" data-suffix="+">10+</span><span class="work-stat__l">Projects delivered</span></div>
+      <div class="work-stat"><span class="work-stat__v" data-count="5">5</span><span class="work-stat__l">Countries</span></div>
+      <div class="work-stat"><span class="work-stat__v" data-count="550" data-prefix="€" data-suffix="K+">€550K+</span><span class="work-stat__l">Budget managed</span></div>
+      <div class="work-stat"><span class="work-stat__v" data-count="6">6</span><span class="work-stat__l">Markets</span></div>
+    </div>
 
-            stats.children[index]?.classList.add('visible');
-            requestAnimationFrame(tick);
-          };
+    <div class="work-carousel" data-carousel aria-roledescription="carousel" aria-label="Selected work">
+      <div class="work-track">
+        <article class="work-card" data-pos="0">
+          <div class="case">
+            <div class="case__kicker"><i aria-hidden="true"></i> Circular economy</div>
+            <h3 class="case__title">From production waste to a market-ready product line</h3>
+            <p class="case__text">Led the transformation of production waste into a commercial product line — concept development, cross-functional coordination and market launch inside a circular-economy framework.</p>
+            <div class="case__tags"><span class="pill">Full lifecycle</span><span class="pill">China / Russia</span><span class="pill">Market launch</span></div>
+          </div>
+        </article>
+        <article class="work-card" data-pos="1">
+          <div class="case">
+            <div class="case__kicker"><i aria-hidden="true"></i> Product repositioning</div>
+            <h3 class="case__title">Luxury air-quality product, premium repositioning</h3>
+            <p class="case__text">Coordinated a redesign and premium repositioning that integrated industrial design, aromatherapy, voice guidance and mobile monitoring — strengthening the experience and attracting early-stage business-angel interest.</p>
+            <div class="case__tags"><span class="pill">Italy</span><span class="pill">Mobile integration</span><span class="pill">Investor readiness</span></div>
+          </div>
+        </article>
+        <article class="work-card" data-pos="-1">
+          <div class="case">
+            <div class="case__kicker"><i aria-hidden="true"></i> AI innovation</div>
+            <h3 class="case__title">AI-powered hospitality</h3>
+            <p class="case__text">Coordinated an AI-enhanced hospitality solution improving guest comfort, privacy and sleep quality in shared accommodation — combining product innovation, UX design and intelligent technology integration.</p>
+            <div class="case__tags"><span class="pill">France</span><span class="pill">AI integration</span><span class="pill">Customer experience</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="work-controls">
+        <button class="circle-btn" type="button" data-prev aria-label="Previous project"><span aria-hidden="true">←</span></button>
+        <button class="circle-btn" type="button" data-next aria-label="Next project"><span aria-hidden="true">→</span></button>
+      </div>
+    </div>
 
-          const startCounters = () => {
-            if (stats.dataset.countersStarted) return;
-            stats.dataset.countersStarted = 'true';
-            targets.forEach((target, index) => {
-              setProgress(index, 0);
-              setItemState(index, false);
-            });
-            requestAnimationFrame(() => runCounter(0));
-          };
+  </div>
+</section>
 
-          const isStatsVisible = () => {
-            const rect = stats.getBoundingClientRect();
-            return rect.top < window.innerHeight && rect.bottom > 0;
-          };
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:clamp(24px,3vw,40px)">
+      <span class="eyebrow" data-reveal>04 — Services</span>
+      <h2 class="h2" data-reveal style="--i:1">Focused engagements, clear deliverables</h2>
+      <p class="lead" data-reveal style="--i:2">Short, decision-oriented work for three different situations. Each engagement ends with a written summary you can act on; scope and fee are agreed after a first conversation.</p>
+    </div>
 
-          const checkVisibility = () => {
-            if (!isStatsVisible()) return;
-            startCounters();
-            window.removeEventListener('scroll', checkVisibility);
-            window.removeEventListener('resize', checkVisibility);
-            if (observer) observer.disconnect();
-          };
+    <div class="svc-tabs" role="tablist" aria-label="Service categories" data-reveal>
+      <button class="svc-tab is-active" role="tab" id="tab-private" aria-controls="panel-private" aria-selected="true"><span>01</span>Private client</button>
+      <button class="svc-tab" role="tab" id="tab-investor" aria-controls="panel-investor" aria-selected="false"><span>02</span>Investor</button>
+      <button class="svc-tab" role="tab" id="tab-startup" aria-controls="panel-startup" aria-selected="false"><span>03</span>Startup</button>
+    </div>
 
-          let observer = null;
-          if ('IntersectionObserver' in window) {
-            observer = new IntersectionObserver(entries => {
-              if (entries.some(entry => entry.isIntersecting)) {
-                checkVisibility();
-              }
-            }, { threshold: 0.01, rootMargin: '0px' });
-            observer.observe(stats);
-          }
+    <div class="svc-panel is-active" id="panel-private" role="tabpanel" aria-labelledby="tab-private" tabindex="0">
+      <div class="services">
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Critical decision review</h3></div>
+          <p class="svc__desc">An independent expert review of a critical business decision before you act on it. I structure the information, challenge the assumptions, surface the risks and evaluate the scenarios.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Discovery session, up to 90 minutes</li><li>Review of the current situation and objectives</li><li>Analysis of provided materials</li><li>Risk and constraint assessment</li><li>Evaluation of alternative scenarios</li><li>Executive summary with findings and recommendations</li><li>Online discussion of results</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 5 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Critical decision review — Private client">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> financial, legal or tax due diligence, investment advice, business plan development, implementation or ongoing advisory.</p>
+        </article>
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Project Go / No-Go</h3></div>
+          <p class="svc__desc">A structured assessment of a project, business idea or new initiative before significant resources are committed. The output is a reasoned recommendation, not a scorecard.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Discovery session, up to 90 minutes</li><li>Review of the project, idea or business concept</li><li>Assessment of resources, timelines and constraints</li><li>Identification of key risks and critical assumptions</li><li>Analysis of success factors and potential obstacles</li><li>Executive summary with findings and recommendations</li><li>Online discussion of results</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 7 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Project Go / No-Go — Private client">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> financial, legal or tax due diligence, business valuation or investment advice, business plan development, project implementation or management.</p>
+        </article>
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Operational efficiency scan</h3></div>
+          <p class="svc__desc">A focused assessment of your processes to find inefficiencies, bottlenecks and realistic automation opportunities — and to establish where AI would create measurable value, if any.</p>
 
-          window.addEventListener('scroll', checkVisibility, { passive: true });
-          window.addEventListener('resize', checkVisibility);
-          requestAnimationFrame(checkVisibility);
-        });
-      };
-      const enhanceFooter = () => {
-        document.querySelectorAll('.footer-elegant').forEach(footer => {
-          if (footer.querySelector('.footer-redesign')) return;
-          footer.innerHTML = '<div class="container footer-redesign"><div class="footer-brand-block" style="display:block;visibility:visible;opacity:1"><a class="footer-logo" style="display:inline-flex;visibility:visible;opacity:1;color:#fff" href="#top" aria-label="Back to top">ALISA<span>.</span>C<span class="footer-caret">_</span></a><div class="footer-brand-rule" aria-hidden="true"></div></div><nav class="footer-nav-block" aria-label="Footer navigation"><span class="footer-section-label">NAVIGATION</span><div class="footer-nav-grid"><a href="#about">About</a><a href="#skills">Focus Areas</a><a href="#projects">Achievements</a><a href="#philosophy">Mindset</a><a href="#services">Expertise</a><a href="#contact">Contact</a></div></nav><div class="footer-legal-block"><p>\u00a9 ' + new Date().getFullYear() + ' Alisa Chebotarenko</p><p>P.IVA 01820290086</p><div class="footer-legal-items" aria-label="Legal links"><a href="/privacy.html">Privacy Policy</a><a href="/cookies.html">Cookie Policy</a></div></div></div>';
-        });
-      };
-      window.addEventListener('load', enhanceMobileReferenceHero);
-      window.addEventListener('load', normalizeMobileHeroCopy);
-      window.addEventListener('load', updateContactLinks);
-      window.addEventListener('load', revealAchievementDivider);
-      window.addEventListener('load', animateAchievementCounters);
-      window.addEventListener('load', enhanceFooter);
-      setTimeout(enhanceMobileReferenceHero, 100);
-      setTimeout(enhanceMobileReferenceHero, 500);
-      setTimeout(normalizeMobileHeroCopy, 100);
-      setTimeout(normalizeMobileHeroCopy, 500);
-      setTimeout(updateContactLinks, 500);
-      setTimeout(revealAchievementDivider, 500);
-      setTimeout(animateAchievementCounters, 100);
-      setTimeout(animateAchievementCounters, 500);
-      setTimeout(enhanceFooter, 500);
-      new MutationObserver(animateAchievementCounters).observe(document.documentElement, { childList: true, subtree: true });
-    </script>
-    <link rel="stylesheet" crossorigin href="/assets/index-portfolio-quotemodalclean-9c4f0a1.css">
-    <link rel="stylesheet" crossorigin href="/assets/legal-footer-links-1c9e7a4.css">
-    <link rel="stylesheet" crossorigin href="/assets/no-horizontal-scroll-7a2d9f0.css?v=20260610-scrollunlock">
-    <link rel="stylesheet" crossorigin href="/assets/language-switcher-6a8d2f0.css">
-    <link rel="stylesheet" crossorigin href="/assets/mobile-hero-fit.css?v=20260610-target-1253">
-    <link rel="stylesheet" crossorigin href="/assets/hero-desktop-buttons.css?v=20260610-hero-buttons-52">
-    <script defer src="/assets/language-switcher-6a8d2f0.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+          <div class="tier-switch" role="tablist" aria-label="Package">
+            <button class="tier-tab is-active" role="tab" aria-selected="true" data-tier="standard">Standard</button>
+            <button class="tier-tab" role="tab" aria-selected="false" data-tier="growth">Growth</button>
+          </div>
+
+          <div class="tier-body">
+            <div class="tier-panel is-active" data-tier-panel="standard">
+              <ul class="svc__list">
+                <li>Discovery session, up to 90 minutes</li>
+                <li>Up to 3 stakeholder interviews</li>
+                <li>Business process review</li>
+                <li>Analysis of provided materials</li>
+                <li>Executive summary with findings and recommendations</li>
+                <li>Online presentation of results</li>
+              </ul>
+            </div>
+            <div class="tier-panel" data-tier-panel="growth">
+              <ul class="svc__list">
+                <li>Discovery session</li>
+                <li>Up to 10 interviews with managers and key stakeholders</li>
+                <li>Review of up to 3 core business processes</li>
+                <li>Bottleneck and operational risk analysis</li>
+                <li>AI and automation opportunity assessment</li>
+                <li>Improvement prioritisation</li>
+                <li>Detailed assessment report</li>
+                <li>Implementation roadmap</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="svc__foot">
+            <span class="pill" data-tier-pill>Up to 10 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Operational efficiency scan — Standard">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> implementation of recommendations, software development, AI deployment, CRM/ERP configuration, employee training, project management, change management support or technical support.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-panel" id="panel-investor" role="tabpanel" aria-labelledby="tab-investor" tabindex="0" hidden>
+      <div class="services">
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Deal risk screening</h3></div>
+          <p class="svc__desc">An independent evaluation of an investment opportunity before committing time or capital. I review the business model, market potential, team structure and operational risks to surface strengths, red flags and what still needs validation.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Discovery session</li><li>Review of investment materials</li><li>Business model analysis</li><li>Team and role assessment</li><li>Operational risk evaluation</li><li>Risk summary and recommendations</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 5 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Deal risk screening — Investor">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> legal, financial, tax or technical due diligence, valuation services or investment recommendations.</p>
+        </article>
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Execution risk review</h3></div>
+          <p class="svc__desc">An assessment of a startup's ability to execute its strategy and deliver on its roadmap: team structure, execution processes, resource allocation and operational readiness.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Discovery session</li><li>Founder interviews</li><li>Roadmap review</li><li>Execution process analysis</li><li>Team and resource assessment</li><li>Execution risk report</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 7 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Execution risk review — Investor">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> code review, cybersecurity assessment, software audits, technical due diligence or implementation support.</p>
+        </article>
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Post-investment 100-day plan</h3></div>
+          <p class="svc__desc">A structured review to support investors after the money is in. I assess operational priorities, organisational alignment and execution readiness, then build a practical 30/60/100-day action plan.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Founder and stakeholder interviews</li><li>Operational process review</li><li>Organisational structure assessment</li><li>Priority and risk analysis</li><li>30/60/100-day roadmap</li><li>KPI and governance recommendations</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 10 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Post-investment 100-day plan — Investor">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> project management, implementation of recommendations, team supervision, operational leadership or ongoing advisory.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-panel" id="panel-startup" role="tabpanel" aria-labelledby="tab-startup" tabindex="0" hidden>
+      <div class="services">
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Founder & team execution review</h3></div>
+          <p class="svc__desc">An independent assessment of a team's ability to execute its vision — leadership, communication, role alignment, accountability and operational readiness.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Discovery session</li><li>Founder interviews</li><li>Team structure review</li><li>Role and responsibility analysis</li><li>Communication and decision-making assessment</li><li>Identification of execution risks</li><li>Executive summary with recommendations</li><li>Online discussion of findings</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 7 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Founder & team execution review — Startup">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> psychological evaluation, recruitment services, performance reviews, legal due diligence or ongoing coaching and mentoring.</p>
+        </article>
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Delivery & execution leadership</h3></div>
+          <p class="svc__desc">Hands-on help turning plans into results: aligning priorities, improving accountability, coordinating execution and keeping momentum on critical initiatives.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Initial assessment of priorities and workflows</li><li>Weekly coordination sessions</li><li>Execution and delivery tracking</li><li>Team alignment support</li><li>Risk and blocker identification</li><li>Stakeholder communication support</li><li>Monthly progress review</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Monthly engagement, minimum 1 month</span>
+            <a class="btn btn--quote" href="#contact" data-service="Delivery & execution leadership — Startup">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> full-time operational management, hiring decisions, direct team supervision, software development management or executive authority.</p>
+        </article>
+        <article class="svc" data-reveal>
+          <div class="svc__head"><h3 class="svc__title">Startup operations setup</h3></div>
+          <p class="svc__desc">Building the operational foundation for sustainable growth: clear processes, communication flows, team responsibilities and decision-making structures that reduce chaos.</p>
+          <div class="svc__col">
+            <h4>What's included</h4>
+            <ul class="svc__list"><li>Discovery session</li><li>Founder and key stakeholder interviews</li><li>Operational process review</li><li>Team structure assessment</li><li>Role and responsibility mapping</li><li>Communication workflow recommendations</li><li>Startup operations report</li><li>Growth roadmap</li><li>Online presentation of findings</li></ul>
+          </div>
+          <div class="svc__foot">
+            <span class="pill">Up to 10 business days</span>
+            <a class="btn btn--quote" href="#contact" data-service="Startup operations setup — Startup">Request a quote <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <p class="svc__excluded"><b>Not included:</b> implementation, software setup, recruitment, project management, employee training or ongoing operational support.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINDSET ================= -->
+<section class="section" id="mindset">
+  <div class="wrap">
+    <div class="mindset" data-reveal>
+      <div class="mindset__aurora" aria-hidden="true"></div>
+      <div class="mindset__inner">
+        <span class="eyebrow">The mindset</span>
+        <p class="mindset__quote" data-words aria-label="I create structure from complexity, align people around key priorities, and turn projects into clear, actionable plans.">I create <em>structure</em> from complexity, align people around key priorities, and turn projects into clear, <em>actionable</em> plans.</p>
+        <div class="mindset__line" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="wrap contact">
+    <div class="contact__intro">
+      <span class="eyebrow" data-reveal>05 — Contact</span>
+      <h2 class="h2" data-reveal style="--i:1">Discuss your project</h2>
+      <p class="lead" data-reveal style="--i:2">Tell me what you are working on and where the uncertainty sits. If I can help, I will say so; if I cannot, I will tell you that too.</p>
+      <div class="contact__links" data-reveal style="--i:3">
+        <a class="contact__link" href="mailto:alisa.1chebotarenko@gmail.com"><span>Email</span><span>alisa.1chebotarenko@gmail.com</span></a>
+        <a class="contact__link" href="https://t.me/alichebo" target="_blank" rel="noopener"><span>Telegram</span><span>@alichebo</span></a>
+        <a class="contact__link" href="https://linkedin.com/in/alisachebotarenko" target="_blank" rel="noopener"><span>LinkedIn</span><span>alisachebotarenko</span></a>
+      </div>
+      <ol class="steps" data-reveal style="--i:4">
+        <li><span>01</span> I reply within one business day.</li>
+        <li><span>02</span> A 30-minute call to understand context and constraints.</li>
+        <li><span>03</span> A short written proposal with scope, deliverables and fee.</li>
+      </ol>
+    </div>
+
+    <form class="form" id="contactForm" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+      </div>
+      <div class="field">
+        <label for="request_reason">What is this about?</label>
+        <input id="request_reason" name="request_reason" type="text" placeholder="Project, decision, AI adoption…" required />
+      </div>
+
+      <fieldset class="field field--full radio-group" aria-label="Preferred contact method">
+        <legend>How do you prefer to be contacted?</legend>
+        <label class="radio"><input type="radio" name="preferred_contact" value="email" checked /><span>Email</span></label>
+        <label class="radio"><input type="radio" name="preferred_contact" value="whatsapp" /><span>WhatsApp</span></label>
+        <label class="radio"><input type="radio" name="preferred_contact" value="telegram" /><span>Telegram</span></label>
+      </fieldset>
+
+      <div class="field field--full" data-channel="email">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" />
+      </div>
+
+      <div class="field field--full" data-channel="whatsapp" hidden>
+        <label for="phone">WhatsApp number</label>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:8px">
+          <input id="phone_country_code" name="phone_country_code" type="tel" value="+39" aria-label="Country code" />
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="333 123 4567" />
+        </div>
+      </div>
+
+      <div class="field field--full" data-channel="telegram" hidden>
+        <label for="telegram_username">Telegram username</label>
+        <input id="telegram_username" name="telegram_username" type="text" placeholder="@username" />
+      </div>
+
+      <div class="field field--full">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Context, constraints, what you need to decide…" required></textarea>
+        <span class="field__hint">At least 10 characters. No confidential material at this stage.</span>
+      </div>
+
+      <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+
+      <label class="consent field--full">
+        <input type="checkbox" name="privacy_consent" required />
+        <span>I agree to the processing of my personal data for the purpose of being contacted about this request. See the <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span>
+      </label>
+
+      <div class="field--full form__actions">
+        <button class="btn btn--primary" type="submit" id="submitBtn">Send message <span class="btn__arrow" aria-hidden="true">→</span></button>
+        <p class="form__note">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.6c0 4.2 3.1 7.6 7.5 9.4 4.4-1.8 7.5-5.2 7.5-9.4V6L12 3Z"/><path d="m8.8 12 2.1 2.1 4.3-4.3"/></svg>
+          No spam, no newsletter — just a reply from me.
+        </p>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo logo--footer" href="#top" aria-label="Back to top">ALISA<span>.</span>C<i>_</i></a>
+        <p class="footer__tagline">IT Project Manager · AI implementation. I help traditional businesses turn AI ambition into delivered products — clear plans, aligned teams, measurable outcomes.</p>
+        <a class="footer__cta" href="#contact">Start a conversation <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Sections">
+          <h3>Navigate</h3>
+          <a href="#approach">Approach</a>
+          <a href="#focus">Focus areas</a>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer__col">
+          <h3>Contact</h3>
+          <a href="mailto:alisa.1chebotarenko@gmail.com">Email</a>
+          <a href="https://t.me/alichebo" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://linkedin.com/in/alisachebotarenko" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer__col">
+          <h3>Credentials</h3>
+          <a href="https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url" target="_blank" rel="noopener noreferrer">PMP<sup>®</sup> — PMI<span class="ext" aria-hidden="true">↗</span><span class="sr-only"> (verify on Credly, opens in a new tab)</span></a>
+          <a href="https://www.credly.com/badges/5ab0bd35-0288-4f58-88f1-1152033aafde/public_url" target="_blank" rel="noopener noreferrer">PSPO I — Scrum.org<span class="ext" aria-hidden="true">↗</span><span class="sr-only"> (verify on Credly, opens in a new tab)</span></a>
+          <span>AWS Certified AI Practitioner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Alisa Chebotarenko · P.IVA 01820290086</span>
+      <div class="footer__legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/cookies.html">Cookie Policy</a>
+        <a class="footer__top-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
 </html>
-
-
-
-
-
-
