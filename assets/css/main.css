@@ -643,6 +643,8 @@ body.is-locked{overflow:hidden}
   .svc-tab span{display:none}
   .hero__creds{gap:8px}
   .work-carousel{margin-inline:calc(var(--gutter) * -1)}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;gap:10px}
+  .footer__legal{justify-content:center;row-gap:8px}
   .work-card{width:86%}
   .work-card[data-pos="-1"]{
     transform:translateX(-84%) scale(.92);opacity:.65;
