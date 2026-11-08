@@ -4,6 +4,26 @@
 
 (() => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // copy for the contact form, per language
+  const isRu = (document.documentElement.lang || 'en').toLowerCase().startsWith('ru');
+  const L = isRu ? {
+    name: 'имя', reason: 'тему запроса', message: 'сообщение не короче 10 символов',
+    consent: 'согласие на обработку данных', email: 'корректный e-mail',
+    phone: 'корректный номер WhatsApp', telegram: 'корректный ник в Telegram',
+    prefix: 'Добавьте: ', suffix: '.',
+    sending: 'Отправляем…',
+    ok: 'Спасибо — сообщение отправлено. Обычно отвечаю в течение одного рабочего дня.',
+    fail: ' Не удалось отправить. Можно написать на alisa.1chebotarenko@gmail.com.'
+  } : {
+    name: 'your name', reason: 'what this is about', message: 'a message of at least 10 characters',
+    consent: 'privacy consent', email: 'a valid email',
+    phone: 'a valid WhatsApp number', telegram: 'a valid Telegram username',
+    prefix: 'Please add ', suffix: '.',
+    sending: 'Sending…',
+    ok: 'Thank you — your message is on its way. I usually reply within one business day.',
+    fail: ' You can also write to alisa.1chebotarenko@gmail.com.'
+  };
   const nav = document.getElementById('nav');
   const sheet = document.getElementById('sheet');
   const toggle = document.getElementById('navToggle');
@@ -167,22 +187,22 @@
     if (honey) return; // honeypot filled: silently drop
 
     const errors = [];
-    if (!data.name || data.name.trim().length < 2) errors.push('your name');
-    if (!data.request_reason) errors.push('what this is about');
-    if (!data.message || data.message.trim().length < 10) errors.push('a message of at least 10 characters');
-    if (!data.privacy_consent) errors.push('privacy consent');
-    if (data.preferred_contact === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email || '')) errors.push('a valid email');
-    if (data.preferred_contact === 'whatsapp' && !/^[0-9\s()+-]{6,20}$/.test(data.phone || '')) errors.push('a valid WhatsApp number');
-    if (data.preferred_contact === 'telegram' && !/^@?[A-Za-z0-9_]{5,32}$/.test(data.telegram_username || '')) errors.push('a valid Telegram username');
+    if (!data.name || data.name.trim().length < 2) errors.push(L.name);
+    if (!data.request_reason) errors.push(L.reason);
+    if (!data.message || data.message.trim().length < 10) errors.push(L.message);
+    if (!data.privacy_consent) errors.push(L.consent);
+    if (data.preferred_contact === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email || '')) errors.push(L.email);
+    if (data.preferred_contact === 'whatsapp' && !/^[0-9\s()+-]{6,20}$/.test(data.phone || '')) errors.push(L.phone);
+    if (data.preferred_contact === 'telegram' && !/^@?[A-Za-z0-9_]{5,32}$/.test(data.telegram_username || '')) errors.push(L.telegram);
 
     if (errors.length) {
-      setStatus('Please add ' + errors.join(', ') + '.', 'is-error');
+      setStatus(L.prefix + errors.join(', ') + L.suffix, 'is-error');
       return;
     }
 
     submitBtn.disabled = true;
     submitBtn.style.opacity = '.6';
-    setStatus('Sending…');
+    setStatus(L.sending);
 
     try {
       const res = await fetch('/api/contact', {
@@ -192,11 +212,11 @@
       });
       const payload = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(payload.error || 'Something went wrong.');
-      setStatus('Thank you — your message is on its way. I usually reply within one business day.', 'is-ok');
+      setStatus(L.ok, 'is-ok');
       form.reset();
       syncChannels();
     } catch (err) {
-      setStatus(err.message + ' You can also write to alisa.1chebotarenko@gmail.com.', 'is-error');
+      setStatus(err.message + L.fail, 'is-error');
     } finally {
       submitBtn.disabled = false;
       submitBtn.style.opacity = '';
