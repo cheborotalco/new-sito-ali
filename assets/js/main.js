@@ -229,12 +229,12 @@
             const span = document.createElement('span');
             span.className = 'w';
             span.textContent = tok;
-            span.style.setProperty('--d', (i++ * 45) + 'ms');
+            span.style.setProperty('--d', (i++ * 30) + 'ms');
             frag.appendChild(span);
             frag.appendChild(document.createTextNode(' '));
           });
           parent.replaceChild(frag, node);
-        } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'EM') {
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
           wrapWords(node);
         }
       });

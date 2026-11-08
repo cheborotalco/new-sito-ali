@@ -302,6 +302,10 @@ body.is-locked{overflow:hidden}
   text-wrap:balance;max-width:22ch;
 }
 .about__quote .accent{color:var(--violet)}
+.about__quote .grad-dark{
+  background:linear-gradient(96deg,#6b34c9 0%,#b665ff 48%,#00a8c6 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
 .about__cols{display:grid;gap:28px}
 .about__item{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid var(--line)}
 .about__num{font-size:.6875rem;font-weight:600;letter-spacing:.16em;color:var(--muted)}
@@ -490,11 +494,12 @@ body.is-locked{overflow:hidden}
   line-height:1.07;letter-spacing:-.042em;font-weight:600;
   max-width:none;width:100%;margin:0;text-wrap:pretty;
 }
-.mindset__quote em{
-  font-style:normal;
+.mindset__quote .grad .w,
+.mindset__quote .grad{
   background:linear-gradient(96deg,#c98bff 0%,#8fe0ff 55%,#33d3f0 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
+.mindset__quote .grad .w{display:inline-block}
 .mindset__quote .w{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .75s var(--ease-out),transform .75s var(--ease-out);transition-delay:var(--d,0ms)}
 .mindset__quote.is-in .w{opacity:1;transform:none}
 .mindset__line{height:1px;background:linear-gradient(90deg,rgba(255,255,255,.4),rgba(255,255,255,0));margin-top:6px}
