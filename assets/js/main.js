@@ -33,20 +33,43 @@
 
   /* ---------- reveal on scroll ---------- */
   const revealEls = [...document.querySelectorAll('[data-reveal]')];
-  if ('IntersectionObserver' in window && !reduce) {
+  if (!reduce) {
     revealEls.forEach(el => {
       const i = Number(el.style.getPropertyValue('--i') || 0);
       el.style.transitionDelay = `${Math.min(i, 6) * 70}ms`;
     });
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    revealEls.forEach(el => io.observe(el));
+    let ticking = false;
+    const checkReveals = () => {
+      ticking = false;
+      const vh = window.innerHeight || 800;
+      for (const el of revealEls) {
+        if (el.classList.contains('is-in')) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('is-in');
+      }
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(checkReveals);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', checkReveals);
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+      revealEls.forEach(el => io.observe(el));
+    }
+    requestAnimationFrame(checkReveals);
+    setTimeout(checkReveals, 400);
+
+    // safety net: keep checking until everything has been revealed
+    const poll = setInterval(() => {
+      checkReveals();
+      if (revealEls.every(el => el.classList.contains('is-in'))) clearInterval(poll);
+    }, 700);
   } else {
     revealEls.forEach(el => el.classList.add('is-in'));
   }
@@ -229,7 +252,7 @@
             const span = document.createElement('span');
             span.className = 'w';
             span.textContent = tok;
-            span.style.setProperty('--d', (i++ * 30) + 'ms');
+            span.style.setProperty('--d', (i++ * 18) + 'ms');
             frag.appendChild(span);
             frag.appendChild(document.createTextNode(' '));
           });
@@ -240,12 +263,8 @@
       });
     };
     wrapWords(el);
-    if ('IntersectionObserver' in window) {
-      const wio = new IntersectionObserver(es => {
-        es.forEach(e => { if (e.isIntersecting) { el.classList.add('is-in'); wio.unobserve(el); } });
-      }, { threshold: 0.25 });
-      wio.observe(el);
-    } else el.classList.add('is-in');
+
+
   });
 
   /* ---------- tier switch (Standard / Growth) ---------- */

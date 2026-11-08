@@ -500,8 +500,7 @@ body.is-locked{overflow:hidden}
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
 .mindset__quote .grad .w{display:inline-block}
-.mindset__quote .w{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .75s var(--ease-out),transform .75s var(--ease-out);transition-delay:var(--d,0ms)}
-.mindset__quote.is-in .w{opacity:1;transform:none}
+.mindset__quote .w{display:inline-block}
 .mindset__line{height:1px;background:linear-gradient(90deg,rgba(255,255,255,.4),rgba(255,255,255,0));margin-top:6px}
 .mindset .eyebrow{color:rgba(255,255,255,.65)}
 
