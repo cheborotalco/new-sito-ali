@@ -673,12 +673,15 @@ body.is-locked{overflow:hidden}
   .hero__grid{position:static;display:flex;flex-direction:column;gap:clamp(20px,4vw,28px)}
   .hero__copy{position:relative;z-index:1}
   .hero__facts{
-    display:flex;flex-direction:column;gap:16px;
+    display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;
     padding:18px 18px 56px;border:1px solid var(--line);border-radius:26px;
     background:linear-gradient(180deg,#ffffff,#f8f6fc);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
     position:relative;z-index:1;
   }
+  .hero__creds{align-items:center;text-align:center}
+  .hero__creds-row{justify-content:center}
+  .hero__meta{align-items:center;text-align:center;justify-items:center}
   .hero__creds{gap:10px}
   .hero__meta{gap:4px}
   .hero__figure{
