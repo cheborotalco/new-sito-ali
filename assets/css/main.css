@@ -642,9 +642,18 @@ body.is-locked{overflow:hidden}
   .svc-tab{justify-content:center;padding:0 8px;font-size:.8125rem;gap:0}
   .svc-tab span{display:none}
   .hero__creds{gap:8px}
+  .work-carousel{margin-inline:calc(var(--gutter) * -1)}
   .work-card{width:86%}
-  .work-card[data-pos="-1"]{transform:translateX(-84%) scale(.92);opacity:.6}
-  .work-card[data-pos="1"]{transform:translateX(84%) scale(.92);opacity:.6}
+  .work-card[data-pos="-1"]{
+    transform:translateX(-84%) scale(.92);opacity:.65;
+    -webkit-mask-image:linear-gradient(90deg,#000 52%,rgba(0,0,0,.45) 82%,transparent 100%);
+    mask-image:linear-gradient(90deg,#000 52%,rgba(0,0,0,.45) 82%,transparent 100%);
+  }
+  .work-card[data-pos="1"]{
+    transform:translateX(84%) scale(.92);opacity:.65;
+    -webkit-mask-image:linear-gradient(270deg,#000 52%,rgba(0,0,0,.45) 82%,transparent 100%);
+    mask-image:linear-gradient(270deg,#000 52%,rgba(0,0,0,.45) 82%,transparent 100%);
+  }
   .circle-btn{width:44px;height:44px}
   .hero__creds-row{gap:5px;flex-wrap:wrap}
   .cred-badge{flex:0 0 auto;gap:6px;padding:2px 2px 2px 9px;min-height:38px}
