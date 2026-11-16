@@ -379,6 +379,14 @@ body.is-locked{overflow:hidden}
 .pill--cyan{background:var(--cyan-soft);border-color:rgba(0,191,224,.28);color:#0a6f81}
 .svc__foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
 .svc__foot .btn--quote{width:100%}
+.svc__price{display:inline-flex;align-items:center;gap:7px;font-variant-numeric:tabular-nums;margin-left:auto}
+.svc__price-from{
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#5d279e;background:var(--violet-soft);
+  padding:4px 9px;border-radius:999px;border:1px solid rgba(182,101,255,.32);
+}
+.svc__price b{font-size:clamp(1.1rem,1.5vw,1.3rem);font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+.svc__price small{font-size:.75rem;font-weight:600;color:var(--muted)}
 .svc__tiers{display:grid;gap:6px;font-size:.8125rem;color:var(--muted)}
 .svc__tiers b{color:var(--ink);font-weight:600}
 

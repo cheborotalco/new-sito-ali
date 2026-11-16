@@ -294,6 +294,7 @@
     if (!tabs.length) return;
     const cta = card.querySelector('[data-service]');
     const pill = card.querySelector('[data-tier-pill]');
+    const price = card.querySelector('[data-tier-price]');
     const title = card.querySelector('.svc__title')?.textContent?.trim() || (isRu ? 'Аудит операционной эффективности' : 'Operational Efficiency Scan');
     const activate = tab => {
       const tier = tab.dataset.tier;
@@ -311,6 +312,11 @@
         pill.textContent = isRu
           ? (tier === 'growth' ? 'До 20 рабочих дней' : 'До 10 рабочих дней')
           : (tier === 'growth' ? 'Up to 20 business days' : 'Up to 10 business days');
+      }
+      if (price) {
+        price.textContent = isRu
+          ? (tier === 'growth' ? '€1 900' : '€950')
+          : (tier === 'growth' ? '€1,900' : '€950');
       }
     };
     tabs.forEach(tab => tab.addEventListener('click', () => activate(tab)));
