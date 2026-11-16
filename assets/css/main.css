@@ -222,10 +222,14 @@ body.is-locked{overflow:hidden}
 .hero h1 em{font-style:normal;display:block;color:var(--ink)}
 .hero h1 .surname{display:block;background:linear-gradient(96deg,var(--ink) 0%,#3a2a72 52%,#7c3fd4 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero__claim{
-  font-size:clamp(1.08rem,1.5vw,1.32rem);line-height:1.45;color:var(--ink-soft);
-  max-width:34ch;text-wrap:pretty;letter-spacing:-.012em;
+  display:flex;flex-direction:column;gap:8px;
+  font-size:clamp(1rem,1.3vw,1.16rem);line-height:1.5;color:var(--ink-soft);font-weight:400;
+  max-width:44ch;text-wrap:pretty;letter-spacing:-.012em;
 }
-.hero__claim strong{color:var(--ink);font-weight:600}
+.hero__claim strong{
+  display:block;color:var(--ink);font-weight:600;
+  font-size:clamp(1.18rem,1.7vw,1.45rem);line-height:1.3;letter-spacing:-.02em;
+}
 .hero__cta{display:flex;flex-wrap:wrap;gap:10px}
 .hero__meta{display:flex;flex-direction:column;gap:2px;font-size:.8125rem;color:#4a4568;font-weight:500}
 .hero__loc{color:rgba(114,109,140,.85)}
