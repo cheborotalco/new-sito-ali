@@ -161,6 +161,8 @@
       welcome: "Hi — I'm **Alisa's Assistant**. What would you like to discuss with Alisa?",
       topicChips: ['New project / Go-No-Go', 'AI Adoption & Efficiency', 'Investor / Startup Review', 'AI Act & Governance'],
       serviceIntro: svc => `Got it — we'll focus on **${svc}**. How may I address you (your name)?`,
+      greetingOnly: "Hi! Please tell me briefly what **project, decision or AI topic** you'd like to discuss with Alisa (or pick one of the options below).",
+      invalidReason: "Please describe your **project or topic** in a few words (at least 4 characters) so Alisa knows what this is about.",
       askName: "Understood. What is your **name**?",
       invalidName: "Please share your first name (or full name) so Alisa knows who is writing.",
       askMessage: name => `Nice to meet you, **${name}**. Briefly describe your context, goal or the decision on the table (at least 10 characters):`,
@@ -180,45 +182,20 @@
       consentHtml: 'I agree to the processing of my personal data for the purpose of being contacted about this request. See the <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
       sendBtn: 'Send to Alisa →',
       resetBtn: 'Start over',
+      newRequestChip: 'Send another request',
       needConsent: 'Please tick the privacy consent checkbox before sending.',
       sending: 'Sending to Alisa…',
       sentOk: "Thank you — your request has been sent to Alisa! She usually replies within one business day.",
-      guardOffTopic: "🔒 **Guardrail active:** I am Alisa's intake assistant and can only handle project, AI adoption, governance and advisory inquiries for Alisa. I cannot answer unrelated questions or perform general tasks.",
+      sessionLimit: "We've reached the message limit for this session. You can restart below or email Alisa directly at **alisa.1chebotarenko@gmail.com**.",
+      guardOffTopic: "🔒 **Guardrail active:** I am Alisa's intake assistant and can only handle project, AI adoption, governance and advisory inquiries for Alisa. I cannot answer unrelated questions, process external links or perform general tasks.",
       guardFaqPricing: "Alisa's focused engagements start from **€750** (*Critical Decision Review*), **€950** (*Project Go/No-Go*, *Efficiency Scan*, *Deal Risk Screening*), **€1,500** (*Execution Reviews*), **€2,000/month** (*Delivery Leadership*) and **€2,500** (*100-Day Plan* / *Operations Setup*) — always tailored individually to your case."
-    },
-    it: {
-      welcome: "Ciao! Sono **Alisa's Assistant**. Parlo italiano, inglese e russo. Di quale progetto o esigenza vorresti parlare con Alisa?",
-      topicChips: ['Nuovo progetto / Go-No-Go', 'Adozione AI & Efficienza', 'Valutazione Investor / Startup', 'AI Act & Governance'],
-      serviceIntro: svc => `Perfetto — impostiamo la richiesta su **${svc}**. Come ti chiami?`,
-      askName: "Ricevuto. Come ti chiami?",
-      invalidName: "Indicami il tuo nome (anche solo il nome proprio) così Alisa sa con chi sta parlando.",
-      askMessage: name => `Piacere **${name}**. Raccontami in breve il contesto, l'obiettivo o i dubbi su cui vuoi confrontarti con Alisa (almeno 10 caratteri):`,
-      invalidMessage: "Aggiungi qualche dettaglio in più (almeno 10 caratteri) per permettere ad Alisa di inquadrare il caso.",
-      askChannel: "Come preferisci essere ricontattato/a da Alisa?",
-      channelChips: [
-        { label: 'Email', value: 'email' },
-        { label: 'WhatsApp', value: 'whatsapp' },
-        { label: 'Telegram', value: 'telegram' }
-      ],
-      askEmail: "Qual è il tuo **indirizzo email**?",
-      invalidContact: "Per inoltrare la richiesta ad Alisa mi serve un **indirizzo email**, un **nickname Telegram** (@username) o un **numero di telefono** valido (es. +39 333 1234567).",
-      askWhatsapp: "Qual è il tuo **numero WhatsApp** (con prefisso internazionale, es. +39 333 1234567)?",
-      askTelegram: "Qual è il tuo **username Telegram** (es. @username)?",
-      summaryIntro: "Grazie! Ecco il riepilogo della richiesta per Alisa — spunta il consenso privacy qui sotto e clicca **Invia ad Alisa**:",
-      labels: { name: 'Nome', reason: 'Oggetto', message: 'Contesto', channel: 'Canale', contact: 'Recapito' },
-      consentHtml: 'Acconsento al trattamento dei miei dati personali per essere ricontattato/a in merito a questa richiesta. Vedi la <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
-      sendBtn: 'Invia ad Alisa →',
-      resetBtn: 'Ricomincia',
-      needConsent: 'Spunta la casella del consenso privacy prima di inviare.',
-      sending: 'Invio in corso…',
-      sentOk: "Grazie! La tua richiesta è stata inviata ad Alisa. Di solito risponde entro un giorno lavorativo.",
-      guardOffTopic: "🔒 **Guardrail attivo:** Sono l'assistente di Alisa e posso occuparmi esclusivamente di raccogliere richieste di progetto, AI adoption, governance o consulenza per Alisa. Non rispondo a domande fuori tema o richieste generiche.",
-      guardFaqPricing: "I servizi di Alisa partono da **€750** (*Critical Decision Review*), **€950** (*Go/No-Go*, *Efficiency Scan*, *Deal Risk Screening*), **€1.500** (*Execution Review*), **€2.000/mese** (*Delivery Leadership*) e **€2.500** (*100-Day Plan* / *Operations Setup*) — sempre personalizzati sul singolo caso."
     },
     ru: {
       welcome: "Здравствуйте! Я **Ассистент Алисы**. Какой проект или задачу вы хотите обсудить с Алисой?",
       topicChips: ['Новый проект / Go-No-Go', 'Внедрение ИИ и эффективность', 'Оценка для инвестора / стартапа', 'AI Act и Governance'],
       serviceIntro: svc => `Отлично — фиксируем тему **${svc}**. Подскажите, как к вам обращаться (ваше имя)?`,
+      greetingOnly: "Здравствуйте! Напишите, пожалуйста, в двух словах, какой **проект, решение или задачу по ИИ** вы хотите обсудить с Алисой (или выберите вариант ниже).",
+      invalidReason: "Пожалуйста, опишите **тему запроса** хотя бы в нескольких словах (от 4 символов).",
       askName: "Поняла. Как вас зовут?",
       invalidName: "Пожалуйста, укажите ваше имя (минимум 2 символа).",
       askMessage: name => `Приятно познакомиться, **${name}**. Кратко опишите контекст, задачу или решение, которое нужно обсудить (минимум 10 символов):`,
@@ -238,16 +215,21 @@
       consentHtml: 'Согласен(-на) на обработку персональных данных для связи по этому запросу. См. <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
       sendBtn: 'Отправить Алисе →',
       resetBtn: 'Начать заново',
+      newRequestChip: 'Отправить ещё один запрос',
       needConsent: 'Пожалуйста, отметьте согласие на обработку персональных данных.',
       sending: 'Отправляем Алисе…',
       sentOk: "Спасибо — ваш запрос отправлен Алисе! Обычно она отвечает в течение одного рабочего дня.",
-      guardOffTopic: "🔒 **Guardrail активен:** Я ассистент Алисы и помогаю только оформить запрос по проектам, внедрению ИИ, governance или консультациям. Я не отвечаю на отвлечённые темы и не выполняю посторонние запросы.",
+      sessionLimit: "Достигнут лимит сообщений в этой сессии. Вы можете начать заново или написать Алисе напрямую на **alisa.1chebotarenko@gmail.com**.",
+      guardOffTopic: "🔒 **Guardrail активен:** Я ассистент Алисы и помогаю только оформить запрос по проектам, внедрению ИИ, governance или консультациям. Я не отвечаю на отвлечённые темы, не перехожу по ссылкам и не выполняю посторонние запросы.",
       guardFaqPricing: "Базовая стоимость услуг Алисы начинается от **€750** (*Экспертиза критического решения*), **€950** (*Go/No-Go*, *Аудит эффективности*, *Скрининг сделки*), **€1 500** (*Оценка исполнения*), **€2 000/мес.** (*Лидерство в поставке*) и **€2 500** (*План 100 дней* / *Настройка операционки*) — итоговая цена всегда рассчитывается индивидуально."
     }
   };
 
   if (assistantEl && assistantLog) {
     const chatLang = isRu ? 'ru' : 'en';
+    const MAX_TURNS = 18;
+    let turns = 0;
+    let isBotTyping = false;
     let step = 'reason'; // 'reason' -> 'name' -> 'message' -> 'channel' -> 'contact' -> 'confirm' -> 'done'
     const state = {
       name: '',
@@ -260,20 +242,26 @@
       telegram_username: ''
     };
 
+    const isGreetingOnly = text => /^(hi|hello|hey|good morning|good afternoon|good evening|greetings|salve|ciao|привет|здравствуйте|добрый день|добрый вечер|доброе утро)[!.?\s]*$/i.test(text.trim());
+
     const isOffTopicOrJailbreak = (text, currentStep) => {
       const t = text.trim();
       const lower = t.toLowerCase();
       // 1. Prompt injection / system probing / code / scripts
-      if (/ignore (all |previous |prior )?instructions|system prompt|jailbreak|developer mode|act as|pretend to be|ignora (tutte )?le istruzioni|dimentica|sei un|забудь инструкции|системный промпт|представь что|<script|select \* from|drop table/i.test(lower)) {
+      if (/ignore (all |previous |prior )?instructions|system prompt|jailbreak|developer mode|act as|pretend to be|forget everything|you are now|ignora (tutte )?le istruzioni|забудь инструкции|системный промпт|представь что|<script|select \* from|drop table/i.test(lower)) {
         return 'offtopic';
       }
-      // 2. Absurd / general-purpose chat / recipes / weather / jokes / math / coding homework / trivia
-      if (/\b(ricetta|carbonara|pizza|meteo|che tempo fa|barzelletta|raccontami una storia|scrivi(mi)? (un )?(codice|programma|poesia|canzone)|chi ha vinto|oroscopo|bitcoin|crypto|calcio|recipe|weather|tell me a joke|write (a )?(poem|song|code|script|essay)|who is the president|capital of|solve this|рецепт|погода|анекдот|напиши (код|стих|песню)|курс биткоина|кто президент)\b/i.test(lower)) {
+      // 2. External links / SEO spam / unsolicited promo (except t.me links when giving Telegram contact)
+      if (/https?:\/\/|www\.|\b(seo|backlinks|casino|betting|crypto|bitcoin|airdrop|followers|казино|ставки|крипт|раскрутка)\b/i.test(lower) && !(currentStep === 'contact' && /t\.me\//i.test(lower))) {
         return 'offtopic';
       }
-      if (/^\s*\d+\s*[\+\-\*\/]\s*\d+/.test(lower)) return 'offtopic';
-      // 3. Pricing / FAQ question
-      if (/\b(quanto costa|quali sono i prezzi|listino|how much does it cost|what are the prices|pricing|rates|сколько стоит|какие цены|стоимость услуг)\b/i.test(lower) && currentStep !== 'message') {
+      // 3. Absurd / general-purpose chat / recipes / weather / jokes / math / coding homework / trivia
+      if (/\b(recipe|weather|tell me a joke|write (a )?(poem|song|code|script|essay)|who is the president|capital of|solve this|translate|рецепт|погода|анекдот|напиши (код|стих|песню)|кто президент|столица|реши задачу|переведи)\b/i.test(lower)) {
+        return 'offtopic';
+      }
+      if (/^\s*\d+\s*[\+\-\*\/=]\s*\d+/.test(lower)) return 'offtopic';
+      // 4. Pricing / FAQ question
+      if (/\b(how much does it cost|what are the prices|pricing|rates|price list|quanto costa|сколько стоит|какие цены|стоимость услуг|прайс)\b/i.test(lower) && currentStep !== 'message') {
         return 'pricing';
       }
       return null;
@@ -361,7 +349,38 @@
         .trim();
     };
 
+    const replyBot = (html, extraClass = '', delay = 180, afterFn = null) => {
+      if (delay <= 0) {
+        appendBubble(html, 'bot', extraClass);
+        if (afterFn) afterFn();
+        return;
+      }
+      isBotTyping = true;
+      const typingEl = document.createElement('div');
+      typingEl.className = 'msg msg--bot msg--typing';
+      typingEl.setAttribute('aria-hidden', 'true');
+      typingEl.innerHTML = '<i></i><i></i><i></i>';
+      assistantLog.appendChild(typingEl);
+      assistantLog.scrollTop = assistantLog.scrollHeight;
+      setTimeout(() => {
+        typingEl.remove();
+        isBotTyping = false;
+        appendBubble(html, 'bot', extraClass);
+        if (afterFn) afterFn();
+      }, delay);
+    };
+
+    const extractEmail = text => {
+      const m = String(text || '').match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/);
+      return m ? m[0].replace(/[.,;:!?]+$/, '') : null;
+    };
+
     const handleUserTurn = (displayText, chipValue = null) => {
+      if (chipValue === '__reset__') {
+        resetAssistant();
+        return;
+      }
+      if (isBotTyping || step === 'confirm' || step === 'done') return;
       const raw = String(displayText || '').trim();
       if (!raw) return;
 
@@ -370,65 +389,80 @@
       appendBubble(formatMd(raw), 'user');
       if (assistantInput) assistantInput.value = '';
 
+      turns += 1;
+      if (turns > MAX_TURNS) {
+        setChips([{ label: c.resetBtn, value: '__reset__' }]);
+        if (assistantBar) assistantBar.hidden = true;
+        replyBot(formatMd(c.sessionLimit), 'msg--guard', 150);
+        return;
+      }
+
       // Guardrail check first
       const guard = chipValue ? null : isOffTopicOrJailbreak(raw, step);
       if (guard === 'offtopic') {
-        appendBubble(`${formatMd(c.guardOffTopic)}<br><br>${formatMd(getCurrentPromptReminder())}`, 'bot', 'msg--guard');
+        replyBot(`${formatMd(c.guardOffTopic)}<br><br>${formatMd(getCurrentPromptReminder())}`, 'msg--guard');
         return;
       }
       if (guard === 'pricing') {
-        appendBubble(`${formatMd(c.guardFaqPricing)}<br><br>${formatMd(getCurrentPromptReminder())}`, 'bot');
+        replyBot(`${formatMd(c.guardFaqPricing)}<br><br>${formatMd(getCurrentPromptReminder())}`);
         return;
       }
 
       if (step === 'reason') {
+        if (isGreetingOnly(raw)) {
+          replyBot(formatMd(c.greetingOnly), 'msg--guard');
+          return;
+        }
+        if (raw.length < 4) {
+          replyBot(formatMd(c.invalidReason), 'msg--guard');
+          return;
+        }
         state.request_reason = raw.slice(0, 180);
         step = 'name';
         setChips([]);
-        appendBubble(formatMd(c.askName), 'bot');
+        replyBot(formatMd(c.askName));
         return;
       }
 
       if (step === 'name') {
         const cleaned = cleanExtractedName(raw);
         if (cleaned.length < 2 || cleaned.length > 70 || /[0-9@#<>=$%^&*]/.test(cleaned) || cleaned.split(/\s+/).length > 5) {
-          appendBubble(formatMd(c.invalidName), 'bot', 'msg--guard');
+          replyBot(formatMd(c.invalidName), 'msg--guard');
           return;
         }
         state.name = cleaned;
         step = 'message';
         setChips([]);
-        appendBubble(formatMd(c.askMessage(state.name)), 'bot');
+        replyBot(formatMd(c.askMessage(state.name)));
         return;
       }
 
       if (step === 'message') {
         if (raw.length < 10) {
-          appendBubble(formatMd(c.invalidMessage), 'bot', 'msg--guard');
+          replyBot(formatMd(c.invalidMessage), 'msg--guard');
           return;
         }
         state.message = raw.slice(0, 4000);
         // Check if user already included an email in their message
-        const emailMatch = raw.match(/[^\s@]+@[^\s@]+\.[^\s@]+/);
+        const emailMatch = extractEmail(raw);
         if (emailMatch) {
           state.preferred_contact = 'email';
-          state.email = emailMatch[0];
+          state.email = emailMatch;
           showSummaryStep();
           return;
         }
         step = 'channel';
-        appendBubble(formatMd(c.askChannel), 'bot');
-        setChips(c.channelChips);
+        replyBot(formatMd(c.askChannel), '', 180, () => setChips(c.channelChips));
         return;
       }
 
       if (step === 'channel') {
         const lower = (chipValue || raw).toLowerCase();
         // Accept direct email, @telegram or phone number if provided right away
-        const directEmail = raw.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        const directEmail = extractEmail(raw);
         if (directEmail) {
           state.preferred_contact = 'email';
-          state.email = directEmail[0];
+          state.email = directEmail;
           showSummaryStep();
           return;
         }
@@ -452,33 +486,51 @@
           state.preferred_contact = 'whatsapp';
           step = 'contact';
           setChips([]);
-          appendBubble(formatMd(c.askWhatsapp), 'bot');
+          replyBot(formatMd(c.askWhatsapp));
           return;
         }
         if (lower.includes('tele') || lower.includes('телег') || lower === 'tg' || lower === 'telegram') {
           state.preferred_contact = 'telegram';
           step = 'contact';
           setChips([]);
-          appendBubble(formatMd(c.askTelegram), 'bot');
+          replyBot(formatMd(c.askTelegram));
           return;
         }
         if (lower.includes('mail') || lower.includes('почт') || lower === 'email') {
           state.preferred_contact = 'email';
           step = 'contact';
           setChips([]);
-          appendBubble(formatMd(c.askEmail), 'bot');
+          replyBot(formatMd(c.askEmail));
           return;
         }
-        appendBubble(formatMd(c.invalidContact), 'bot', 'msg--guard');
+        replyBot(formatMd(c.invalidContact), 'msg--guard');
         return;
       }
 
       if (step === 'contact') {
-        // Also allow switching channel if user provides a valid email, @telegram or phone directly
-        const emailMatch = raw.match(/[^\s@]+@[^\s@]+\.[^\s@]+/);
+        const lower = raw.toLowerCase();
+        // Allow switching channel mid-step if user asks for another channel
+        if (/^(email|e-mail|mail|почта|эл\.?\s*почта)$/i.test(lower)) {
+          state.preferred_contact = 'email';
+          replyBot(formatMd(c.askEmail));
+          return;
+        }
+        if (/^(whatsapp|ватсап|вотсап|телефон|phone)$/i.test(lower)) {
+          state.preferred_contact = 'whatsapp';
+          replyBot(formatMd(c.askWhatsapp));
+          return;
+        }
+        if (/^(telegram|телеграм|телега|tg)$/i.test(lower)) {
+          state.preferred_contact = 'telegram';
+          replyBot(formatMd(c.askTelegram));
+          return;
+        }
+
+        // Also allow providing a valid email, @telegram or phone directly
+        const emailMatch = extractEmail(raw);
         if (emailMatch && (state.preferred_contact === 'email' || !raw.startsWith('@'))) {
           state.preferred_contact = 'email';
-          state.email = emailMatch[0];
+          state.email = emailMatch;
           showSummaryStep();
           return;
         }
@@ -501,13 +553,15 @@
             return;
           }
         }
-        appendBubble(formatMd(c.invalidContact), 'bot', 'msg--guard');
+        replyBot(formatMd(c.invalidContact), 'msg--guard');
         return;
       }
     };
 
     const resetAssistant = (prefilledService = '') => {
       assistantLog.innerHTML = '';
+      turns = 0;
+      isBotTyping = false;
       state.name = '';
       state.request_reason = prefilledService || '';
       state.message = '';
@@ -576,8 +630,10 @@
         });
         const payload = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(payload.error || 'Request could not be sent.');
+        step = 'done';
         if (assistantConfirm) assistantConfirm.hidden = true;
         appendBubble(formatMd(c.sentOk), 'bot');
+        setChips([{ label: c.newRequestChip, value: '__reset__' }]);
       } catch (err) {
         if (assistantStatus) {
           assistantStatus.textContent = err.message + L.fail;
@@ -588,7 +644,7 @@
       }
     });
 
-    // Toggle between Alisa's Assistant and Classic Form
+    // Toggle between Alisa's Assistant and Classic Form (sync all collected fields)
     toClassicBtn?.addEventListener('click', () => {
       assistantEl.hidden = true;
       if (form) {
@@ -596,6 +652,14 @@
         if (state.name) { const el = document.getElementById('name'); if (el) el.value = state.name; }
         if (state.request_reason) { const el = document.getElementById('request_reason'); if (el) el.value = state.request_reason; }
         if (state.message) { const el = document.getElementById('message'); if (el) el.value = state.message; }
+        if (state.preferred_contact) {
+          const radio = form.querySelector(`input[name="preferred_contact"][value="${state.preferred_contact}"]`);
+          if (radio) { radio.checked = true; radio.dispatchEvent(new Event('change', { bubbles: true })); }
+        }
+        if (state.email) { const el = document.getElementById('email'); if (el) el.value = state.email; }
+        if (state.phone_country_code) { const el = document.getElementById('phone_country_code'); if (el) el.value = state.phone_country_code; }
+        if (state.phone) { const el = document.getElementById('phone'); if (el) el.value = state.phone; }
+        if (state.telegram_username) { const el = document.getElementById('telegram_username'); if (el) el.value = state.telegram_username; }
       }
     });
     toAssistantBtn?.addEventListener('click', () => {
