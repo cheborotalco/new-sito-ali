@@ -172,11 +172,9 @@
         { label: 'Telegram', value: 'telegram' }
       ],
       askEmail: "What is your **email address**?",
-      invalidEmail: "That doesn't look like a valid email address. Please enter an email like name@company.com.",
+      invalidContact: "To forward your request to Alisa, I need a valid **email address**, **Telegram username** (@username) or **phone number** (e.g. +39 333 1234567).",
       askWhatsapp: "What is your **WhatsApp number** (including country code, e.g. +39 333 1234567)?",
-      invalidWhatsapp: "Please enter a valid phone number with country code (e.g. +39 333 1234567).",
       askTelegram: "What is your **Telegram username** (e.g. @username)?",
-      invalidTelegram: "Please enter a valid Telegram username (5–32 characters, e.g. @username).",
       summaryIntro: "Thank you. Here is the summary of your request for Alisa — please tick the privacy consent below and click **Send to Alisa**:",
       labels: { name: 'Name', reason: 'Topic', message: 'Context', channel: 'Channel', contact: 'Contact' },
       consentHtml: 'I agree to the processing of my personal data for the purpose of being contacted about this request. See the <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
@@ -203,11 +201,9 @@
         { label: 'Telegram', value: 'telegram' }
       ],
       askEmail: "Qual è il tuo **indirizzo email**?",
-      invalidEmail: "L'indirizzo email non sembra valido. Inserisci un formato come nome@azienda.it.",
+      invalidContact: "Per inoltrare la richiesta ad Alisa mi serve un **indirizzo email**, un **nickname Telegram** (@username) o un **numero di telefono** valido (es. +39 333 1234567).",
       askWhatsapp: "Qual è il tuo **numero WhatsApp** (con prefisso internazionale, es. +39 333 1234567)?",
-      invalidWhatsapp: "Inserisci un numero WhatsApp valido (es. +39 333 1234567).",
       askTelegram: "Qual è il tuo **username Telegram** (es. @username)?",
-      invalidTelegram: "Inserisci uno username Telegram valido (5–32 caratteri, es. @username).",
       summaryIntro: "Grazie! Ecco il riepilogo della richiesta per Alisa — spunta il consenso privacy qui sotto e clicca **Invia ad Alisa**:",
       labels: { name: 'Nome', reason: 'Oggetto', message: 'Contesto', channel: 'Canale', contact: 'Recapito' },
       consentHtml: 'Acconsento al trattamento dei miei dati personali per essere ricontattato/a in merito a questa richiesta. Vedi la <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
@@ -234,11 +230,9 @@
         { label: 'Telegram', value: 'telegram' }
       ],
       askEmail: "Укажите ваш **e-mail**:",
-      invalidEmail: "Похоже, адрес эл. почты введён некорректно. Укажите адрес в формате you@company.com.",
+      invalidContact: "Чтобы передать запрос Алисе, мне нужен корректный **e-mail**, **ник в Telegram** (@username) или **номер телефона** (например, +39 333 1234567).",
       askWhatsapp: "Укажите ваш **номер WhatsApp** (с кодом страны, например +39 333 1234567):",
-      invalidWhatsapp: "Пожалуйста, введите корректный номер WhatsApp (например, +39 333 1234567).",
       askTelegram: "Укажите ваш **ник в Telegram** (например, @username):",
-      invalidTelegram: "Введите корректный ник в Telegram (от 5 до 32 символов, например @username).",
       summaryIntro: "Спасибо! Вот сводка вашего запроса для Алисы — отметьте согласие ниже и нажмите **Отправить Алисе**:",
       labels: { name: 'Имя', reason: 'Тема', message: 'Сообщение', channel: 'Канал связи', contact: 'Контакт' },
       consentHtml: 'Согласен(-на) на обработку персональных данных для связи по этому запросу. См. <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
@@ -430,67 +424,85 @@
 
       if (step === 'channel') {
         const lower = (chipValue || raw).toLowerCase();
-        // If user typed their email directly at the channel prompt
-        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(raw)) {
+        // Accept direct email, @telegram or phone number if provided right away
+        const directEmail = raw.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        if (directEmail) {
           state.preferred_contact = 'email';
-          state.email = raw;
+          state.email = directEmail[0];
           showSummaryStep();
           return;
         }
-        if (lower.includes('whats') || lower === 'whatsapp') {
+        if (/^@[A-Za-z0-9_]{5,32}$/.test(raw)) {
+          state.preferred_contact = 'telegram';
+          state.telegram_username = raw;
+          showSummaryStep();
+          return;
+        }
+        if (/^\+?[0-9\s()-]{7,20}$/.test(raw)) {
+          const m = raw.replace(/[^\d+()\s-]/g, '').trim().match(/^(\+\d{1,4})?\s*(.+)$/);
+          if (m && /^[0-9\s()+-]{6,20}$/.test(m[2] || '')) {
+            state.preferred_contact = 'whatsapp';
+            state.phone_country_code = m[1] || '+39';
+            state.phone = m[2].trim();
+            showSummaryStep();
+            return;
+          }
+        }
+        if (lower.includes('whats') || lower.includes('ватсап') || lower === 'whatsapp') {
           state.preferred_contact = 'whatsapp';
           step = 'contact';
           setChips([]);
           appendBubble(formatMd(c.askWhatsapp), 'bot');
           return;
         }
-        if (lower.includes('tele') || lower === 'telegram') {
+        if (lower.includes('tele') || lower.includes('телег') || lower === 'tg' || lower === 'telegram') {
           state.preferred_contact = 'telegram';
           step = 'contact';
           setChips([]);
           appendBubble(formatMd(c.askTelegram), 'bot');
           return;
         }
-        state.preferred_contact = 'email';
-        step = 'contact';
-        setChips([]);
-        appendBubble(formatMd(c.askEmail), 'bot');
+        if (lower.includes('mail') || lower.includes('почт') || lower === 'email') {
+          state.preferred_contact = 'email';
+          step = 'contact';
+          setChips([]);
+          appendBubble(formatMd(c.askEmail), 'bot');
+          return;
+        }
+        appendBubble(formatMd(c.invalidContact), 'bot', 'msg--guard');
         return;
       }
 
       if (step === 'contact') {
-        if (state.preferred_contact === 'email') {
-          const emailMatch = raw.match(/[^\s@]+@[^\s@]+\.[^\s@]+/);
-          if (!emailMatch) {
-            appendBubble(formatMd(c.invalidEmail), 'bot', 'msg--guard');
-            return;
-          }
+        // Also allow switching channel if user provides a valid email, @telegram or phone directly
+        const emailMatch = raw.match(/[^\s@]+@[^\s@]+\.[^\s@]+/);
+        if (emailMatch && (state.preferred_contact === 'email' || !raw.startsWith('@'))) {
+          state.preferred_contact = 'email';
           state.email = emailMatch[0];
           showSummaryStep();
           return;
         }
-        if (state.preferred_contact === 'whatsapp') {
+        const tgClean = raw.trim().replace(/^https?:\/\/t\.me\//i, '@');
+        if ((state.preferred_contact === 'telegram' && /^@?[A-Za-z0-9_]{5,32}$/.test(tgClean)) || /^@[A-Za-z0-9_]{5,32}$/.test(tgClean)) {
+          state.preferred_contact = 'telegram';
+          state.telegram_username = tgClean.startsWith('@') ? tgClean : '@' + tgClean;
+          showSummaryStep();
+          return;
+        }
+        const phoneDigits = raw.replace(/[^\d]/g, '');
+        if ((state.preferred_contact === 'whatsapp' || /^\+?\d[\d\s()-]{6,19}$/.test(raw)) && phoneDigits.length >= 6 && phoneDigits.length <= 16) {
           const cleanedPhone = raw.replace(/[^\d+()\s-]/g, '').trim();
           const m = cleanedPhone.match(/^(\+\d{1,4})?\s*(.+)$/);
-          if (!m || !/^[0-9\s()+-]{6,20}$/.test(m[2] || '')) {
-            appendBubble(formatMd(c.invalidWhatsapp), 'bot', 'msg--guard');
+          if (m && /^[0-9\s()+-]{6,20}$/.test(m[2] || '')) {
+            state.preferred_contact = 'whatsapp';
+            state.phone_country_code = m[1] || '+39';
+            state.phone = m[2].trim();
+            showSummaryStep();
             return;
           }
-          state.phone_country_code = m[1] || '+39';
-          state.phone = m[2].trim();
-          showSummaryStep();
-          return;
         }
-        if (state.preferred_contact === 'telegram') {
-          const tg = raw.trim().replace(/^https?:\/\/t\.me\//i, '@');
-          if (!/^@?[A-Za-z0-9_]{5,32}$/.test(tg)) {
-            appendBubble(formatMd(c.invalidTelegram), 'bot', 'msg--guard');
-            return;
-          }
-          state.telegram_username = tg.startsWith('@') ? tg : '@' + tg;
-          showSummaryStep();
-          return;
-        }
+        appendBubble(formatMd(c.invalidContact), 'bot', 'msg--guard');
+        return;
       }
     };
 
