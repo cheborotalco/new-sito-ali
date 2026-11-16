@@ -259,7 +259,8 @@
     });
   });
 
-  /* ---------- mindset: word-by-word reveal ---------- */
+  /* ---------- mindset: word-by-word scroll-scrubbed reveal ---------- */
+  const mindsetWords = [];
   document.querySelectorAll('[data-words]').forEach(el => {
     if (reduce) { el.classList.add('is-in'); return; }
     let i = 0;
@@ -273,6 +274,10 @@
             span.className = 'w';
             span.textContent = tok;
             span.style.setProperty('--d', (i++ * 18) + 'ms');
+            span.style.setProperty('--w-op', '0.18');
+            span.style.setProperty('--w-y', '8px');
+            span.style.setProperty('--w-blur', '2.5px');
+            mindsetWords.push(span);
             frag.appendChild(span);
             frag.appendChild(document.createTextNode(' '));
           });
@@ -283,9 +288,145 @@
       });
     };
     wrapWords(el);
-
-
   });
+
+  /* ---------- fluid inertial scroll + parallax + scroll-scrubbing ---------- */
+  if (!reduce) {
+    const heroPhoto = document.querySelector('.hero__photo img');
+    const heroGlow = document.querySelector('.hero__glow');
+    const mindsetBox = document.querySelector('.mindset');
+    const mindsetLine = document.querySelector('.mindset__line');
+
+    const updateScrollScene = () => {
+      const y = window.scrollY || window.pageYOffset || 0;
+      const vh = window.innerHeight || 800;
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
+      const progress = Math.min(1, Math.max(0, y / maxScroll));
+      document.documentElement.style.setProperty('--scroll-progress', progress.toFixed(4));
+
+      // Hero parallax
+      if (y < vh * 1.4) {
+        if (heroPhoto && window.innerWidth >= 900) {
+          heroPhoto.style.transform = `translate3d(0, ${(y * 0.08).toFixed(1)}px, 0) scale(1.04)`;
+        } else if (heroPhoto) {
+          heroPhoto.style.transform = '';
+        }
+        if (heroGlow) {
+          heroGlow.style.transform = `translate3d(0, ${(y * -0.12).toFixed(1)}px, 0)`;
+        }
+      }
+
+      // Mindset word-by-word scroll-scrubbing + subtle scale
+      if (mindsetBox && mindsetWords.length) {
+        const rect = mindsetBox.getBoundingClientRect();
+        // Progress from when top enters at 88% vh to when it reaches 32% vh
+        const start = vh * 0.88;
+        const end = vh * 0.28;
+        const raw = (start - rect.top) / Math.max(1, start - end);
+        const p = Math.min(1, Math.max(0, raw));
+        const total = mindsetWords.length;
+
+        mindsetWords.forEach((w, idx) => {
+          const threshold = idx / total;
+          const local = Math.min(1, Math.max(0, (p - threshold * 0.78) / 0.22));
+          const op = 0.16 + local * 0.84;
+          const wy = (1 - local) * 8;
+          const blur = (1 - local) * 2.5;
+          w.style.setProperty('--w-op', op.toFixed(3));
+          w.style.setProperty('--w-y', `${wy.toFixed(1)}px`);
+          w.style.setProperty('--w-blur', `${blur.toFixed(2)}px`);
+        });
+
+        const boxScale = 0.965 + Math.min(1, p * 1.15) * 0.035;
+        mindsetBox.style.transform = `scale(${boxScale.toFixed(4)})`;
+        if (mindsetLine) {
+          mindsetLine.style.setProperty('--mindset-line', Math.min(1, Math.max(0.15, p)).toFixed(3));
+        }
+      }
+    };
+
+    // Inertial smooth scroll engine (Lenis-style momentum on fine pointers)
+    const finePointer = window.matchMedia('(pointer: fine)').matches;
+    if (finePointer) {
+      document.documentElement.classList.add('has-smooth-scroll');
+      let targetY = window.scrollY || 0;
+      let currentY = targetY;
+      let rafId = null;
+
+      const clampY = val => {
+        const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        return Math.min(max, Math.max(0, val));
+      };
+
+      const step = () => {
+        const diff = targetY - currentY;
+        if (Math.abs(diff) > 0.35) {
+          currentY += diff * 0.105;
+          window.scrollTo(0, currentY);
+          updateScrollScene();
+          rafId = requestAnimationFrame(step);
+        } else {
+          currentY = targetY;
+          window.scrollTo(0, currentY);
+          updateScrollScene();
+          rafId = null;
+        }
+      };
+
+      const kick = () => {
+        if (!rafId) rafId = requestAnimationFrame(step);
+      };
+
+      window.addEventListener('wheel', e => {
+        if (document.body.classList.contains('is-locked')) return;
+        if (e.ctrlKey || e.metaKey) return;
+        const ta = e.target.closest('textarea');
+        if (ta && ta.scrollHeight > ta.clientHeight) return;
+        e.preventDefault();
+        const delta = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
+        targetY = clampY(targetY + delta * 0.95);
+        kick();
+      }, { passive: false });
+
+      window.addEventListener('scroll', () => {
+        if (!rafId) {
+          currentY = window.scrollY || 0;
+          targetY = currentY;
+          updateScrollScene();
+        }
+      }, { passive: true });
+
+      // Smooth inertial anchor navigation
+      document.addEventListener('click', e => {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        const hash = link.getAttribute('href');
+        if (!hash || hash === '#') return;
+        const dest = hash === '#top' ? document.body : document.querySelector(hash);
+        if (!dest) return;
+        e.preventDefault();
+        const navH = nav ? nav.offsetHeight : 72;
+        const top = hash === '#top' ? 0 : dest.getBoundingClientRect().top + (window.scrollY || 0) - navH + 8;
+        targetY = clampY(top);
+        kick();
+        history.pushState(null, '', hash);
+      });
+    } else {
+      window.addEventListener('scroll', () => requestAnimationFrame(updateScrollScene), { passive: true });
+    }
+
+    window.addEventListener('resize', updateScrollScene);
+    requestAnimationFrame(updateScrollScene);
+
+    // Interactive card spotlight on pointer move
+    document.querySelectorAll('.focus__card, .case, .svc').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${(e.clientX - r.left).toFixed(0)}px`);
+        card.style.setProperty('--my', `${(e.clientY - r.top).toFixed(0)}px`);
+      });
+    });
+  }
 
   /* ---------- tier switch (Standard / Growth) ---------- */
   document.querySelectorAll('.svc').forEach(card => {
