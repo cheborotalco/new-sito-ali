@@ -530,7 +530,52 @@
       </ol>
     </div>
 
-    <form class="form" id="contactForm" novalidate>
+    <div class="contact__panel">
+      <div class="assistant" id="alisaAssistant" aria-label="Ассистент Алисы">
+        <div class="assistant__head">
+          <div class="assistant__id">
+            <span class="assistant__avatar" aria-hidden="true">AC<i></i></span>
+            <div>
+              <strong class="assistant__title">Ассистент Алисы</strong>
+              <span class="assistant__sub">ИИ-ассистент · Защита от спама и офтопа</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="assistant__log" id="assistantLog" role="log" aria-live="polite"></div>
+
+        <div class="assistant__chips" id="assistantChips" aria-label="Быстрые ответы"></div>
+
+        <div class="assistant__confirm" id="assistantConfirm" hidden>
+          <label class="consent assistant__consent">
+            <input type="checkbox" id="assistantConsent" />
+            <span id="assistantConsentText">Согласен(-на) на обработку персональных данных для связи по этому запросу. См. <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span>
+          </label>
+          <div class="assistant__confirm-actions">
+            <button type="button" class="btn btn--primary" id="assistantSendBtn">Отправить Алисе <span class="btn__arrow" aria-hidden="true">→</span></button>
+            <button type="button" class="btn btn--ghost" id="assistantResetBtn">Начать заново</button>
+          </div>
+          <p class="form__status" id="assistantStatus" role="status" aria-live="polite"></p>
+        </div>
+
+        <form class="assistant__bar" id="assistantBar" novalidate>
+          <input id="assistantInput" type="text" autocomplete="off" maxlength="600" placeholder="Введите ваш ответ…" aria-label="Сообщение для Ассистента Алисы" />
+          <button type="submit" class="assistant__send" id="assistantReplyBtn" aria-label="Отправить">
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <p class="assistant__foot">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.6c0 4.2 3.1 7.6 7.5 9.4 4.4-1.8 7.5-5.2 7.5-9.4V6L12 3Z"/><path d="m8.8 12 2.1 2.1 4.3-4.3"/></svg>
+          <span>Строгие ограничения: только запросы по проектам и консультациям</span>
+        </p>
+
+        <p class="assistant__alt">
+          Предпочитаете классическую форму? <button type="button" class="assistant__link" id="toClassicForm">Нажмите здесь</button>
+        </p>
+      </div>
+
+    <form class="form" id="contactForm" novalidate hidden>
       <div class="field">
         <label for="name">Имя</label>
         <input id="name" name="name" type="text" autocomplete="name" placeholder="Ваше имя" required />
@@ -585,8 +630,12 @@
           Без спама и рассылок — только мой ответ.
         </p>
         <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="assistant__alt">
+          Предпочитаете диалог с ассистентом? <button type="button" class="assistant__link" id="toAssistant">Нажмите здесь</button>
+        </p>
       </div>
     </form>
+    </div>
   </div>
 </section>
 </main>
