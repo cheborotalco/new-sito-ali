@@ -1,5 +1,40 @@
 const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'alisa.1chebotarenko@gmail.com';
 
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const RATE_MAX_REQUESTS = 5;
+const rateBuckets = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  for (const [k, v] of rateBuckets.entries()) {
+    if (now - v.start > RATE_WINDOW_MS) rateBuckets.delete(k);
+  }
+  const entry = rateBuckets.get(ip);
+  if (!entry || now - entry.start > RATE_WINDOW_MS) {
+    rateBuckets.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > RATE_MAX_REQUESTS;
+}
+
+function isAllowedOrigin(req) {
+  const origin = req.headers?.origin;
+  if (!origin) return true;
+  try {
+    const { hostname } = new URL(origin);
+    return (
+      hostname === 'alisac.it' ||
+      hostname === 'www.alisac.it' ||
+      hostname.endsWith('.vercel.app') ||
+      hostname === 'localhost' ||
+      hostname === '127.0.0.1'
+    );
+  } catch {
+    return false;
+  }
+}
+
 const escapeHtml = (value = '') => String(value)
   .replace(/&/g, '&amp;')
   .replace(/</g, '&lt;')
@@ -7,7 +42,7 @@ const escapeHtml = (value = '') => String(value)
   .replace(/"/g, '&quot;')
   .replace(/'/g, '&#39;');
 
-const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value || '');
+const isEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value || '') && String(value).length <= 254;
 const isPhone = value => /^[0-9\s()+-]{6,20}$/.test(value || '');
 const isTelegram = value => /^@?[A-Za-z0-9_]{5,32}$/.test(value || '');
 
@@ -22,16 +57,20 @@ function normalizeBody(req) {
 function validate(body) {
   const errors = [];
   const preferred = body.preferred_contact;
+  const name = String(body.name || '').trim();
+  const reason = String(body.request_reason || '').trim();
+  const message = String(body.message || '').trim();
 
-  if (!body.name || String(body.name).trim().length < 2) errors.push('Name is required.');
+  if (name.length < 2 || name.length > 120) errors.push('Name must be between 2 and 120 characters.');
   if (!['email', 'whatsapp', 'telegram'].includes(preferred)) errors.push('Preferred contact method is required.');
-  if (!body.request_reason) errors.push('Reason for your request is required.');
-  if (!body.message || String(body.message).trim().length < 10) errors.push('Message must be at least 10 characters.');
+  if (!reason || reason.length > 200) errors.push('Reason for your request is required (max 200 characters).');
+  if (message.length < 10 || message.length > 5000) errors.push('Message must be between 10 and 5000 characters.');
   if (!body.privacy_consent) errors.push('Privacy consent is required.');
 
   if (preferred === 'email' && !isEmail(body.email)) errors.push('A valid email address is required.');
   if (preferred === 'whatsapp') {
-    if (!body.phone_country_code || !String(body.phone_country_code).startsWith('+')) errors.push('A valid phone country code is required.');
+    const code = String(body.phone_country_code || '');
+    if (!code.startsWith('+') || code.length > 10) errors.push('A valid phone country code is required.');
     if (!isPhone(body.phone)) errors.push('A valid WhatsApp phone number is required.');
   }
   if (preferred === 'telegram' && !isTelegram(body.telegram_username)) errors.push('A valid Telegram username is required.');
@@ -77,13 +116,26 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed.' });
   }
 
+  if (!isAllowedOrigin(req)) {
+    return res.status(403).json({ error: 'Forbidden origin.' });
+  }
+
+  const clientIp = String(req.headers?.['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown').split(',')[0].trim();
+  if (isRateLimited(clientIp)) {
+    return res.status(429).json({ error: 'Too many requests. Please try again in a few minutes.' });
+  }
+
+  const body = normalizeBody(req);
+  if (body.company_website && String(body.company_website).trim() !== '') {
+    return res.status(200).json({ ok: true });
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.CONTACT_FROM_EMAIL;
   if (!apiKey || !from) {
     return res.status(500).json({ error: 'Email service is not configured.' });
   }
 
-  const body = normalizeBody(req);
   const errors = validate(body);
   if (errors.length) return res.status(400).json({ error: errors.join(' ') });
 

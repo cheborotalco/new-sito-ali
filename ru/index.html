@@ -43,7 +43,7 @@
       "hasCredential":[
         {"@type":"EducationalOccupationalCredential","name":"PMP - Project Management Professional","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Project Management Institute"}},
         {"@type":"EducationalOccupationalCredential","name":"Professional Scrum Product Owner I","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Scrum.org"}},
-        {"@type":"EducationalOccupationalCredential","name":"AWS Certified AI Practitioner","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Amazon Web Услуги"}}
+        {"@type":"EducationalOccupationalCredential","name":"AWS Certified AI Practitioner","credentialCategory":"certification","recognizedBy":{"@type":"Organization","name":"Amazon Web Services"}}
       ],
       "sameAs":["https://linkedin.com/in/alisachebotarenko","https://t.me/alichebo"]
     },
@@ -64,14 +64,14 @@
 </head>
 <body>
 
-<a class="skip" href="#main" style="position:absolute;left:-9999px">Перейти к содержимому</a>
+<a class="skip" href="#main">Перейти к содержимому</a>
 
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="nav__inner">
-    <a class="logo" href="#top" aria-label="Алиса Чеботаренко — home">ALISA<span>.</span>C<i>_</i></a>
+    <a class="logo" href="#top" aria-label="Алиса Чеботаренко — на главную">ALISA<span>.</span>C<i>_</i></a>
 
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" aria-label="Основная навигация">
       <a class="nav__link" href="#approach">Подход</a>
       <a class="nav__link" href="#focus">Компетенции</a>
       <a class="nav__link" href="#work">Проекты</a>
@@ -91,7 +91,7 @@
 
 <!-- mobile sheet -->
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Меню">
-  <nav class="sheet__nav" aria-label="Mobile">
+  <nav class="sheet__nav" aria-label="Мобильное меню">
     <a class="sheet__link" href="#approach">Подход <span>01</span></a>
     <a class="sheet__link" href="#focus">Компетенции <span>02</span></a>
     <a class="sheet__link" href="#work">Проекты <span>03</span></a>
@@ -130,20 +130,20 @@
         <a class="btn btn--ghost" href="#focus">Как я работаю</a>
       </div>
       <div class="hero__facts">
-      <div class="hero__creds" data-reveal style="--i:4" aria-label="Certifications">
+      <div class="hero__creds" data-reveal style="--i:4" aria-label="Сертификации">
         <span class="hero__creds-label">Мои сертификации:</span>
         <div class="hero__creds-row">
           <span class="cred-badge">
             <span class="cred-badge__text"><b>PMP<sup>®</sup></b></span>
-            <img src="/assets/img/cert-pmp.png" alt="PMP certification badge" width="34" height="34" loading="lazy" />
+            <img src="/assets/img/cert-pmp.png" alt="Значок сертификации PMP" width="34" height="34" loading="lazy" />
           </span>
           <span class="cred-badge">
             <span class="cred-badge__text"><b>PSPO I</b></span>
-            <img src="/assets/img/cert-pspo.png" alt="Professional Scrum Product Owner I badge" width="34" height="34" loading="lazy" />
+            <img src="/assets/img/cert-pspo.png" alt="Значок сертификации Professional Scrum Product Owner I" width="34" height="34" loading="lazy" />
           </span>
           <span class="cred-badge">
             <span class="cred-badge__text"><b>AWS AI Practitioner</b></span>
-            <img src="/assets/img/cert-aws.png" alt="AWS Certified AI Practitioner badge" width="34" height="34" loading="lazy" />
+            <img src="/assets/img/cert-aws.png" alt="Значок сертификации AWS Certified AI Practitioner" width="34" height="34" loading="lazy" />
           </span>
         </div>
       </div>
@@ -156,7 +156,7 @@
 
     <figure class="hero__figure" data-reveal style="--i:2">
       <div class="hero__photo">
-        <img src="/assets/img/alisa.jpg" alt="Portrait of Алиса Чеботаренко" width="640" height="800" fetchpriority="high" />
+        <img src="/assets/img/alisa.jpg" alt="Портрет Алисы Чеботаренко" width="768" height="1024" fetchpriority="high" />
       </div>
       <span class="hero__status"><i aria-hidden="true"></i> Открыта для новых проектов</span>
     </figure>
@@ -169,7 +169,7 @@
     <div>
       <span class="eyebrow" data-reveal>01 — Подход</span>
       <h2 class="about__quote" data-reveal style="--i:1;margin-top:18px">
-        Успешные проекты редко бывают <span class="grad-dark">только о технологиях</span> .
+        Успешные проекты редко бывают <span class="grad-dark">только о технологиях</span>.
       </h2>
       <p class="lead" data-reveal style="--i:2;margin-top:20px;max-width:38ch">Исход определяет качество решений вокруг: объём, который вы берёте на себя, риски, которые называете заранее, и люди, которые отвечают за результат.</p>
     </div>
@@ -302,8 +302,9 @@
         </article>
       </div>
       <div class="work-controls">
-        <button class="circle-btn" type="button" data-prev aria-label="Previous project"><span aria-hidden="true">←</span></button>
-        <button class="circle-btn" type="button" data-next aria-label="Next project"><span aria-hidden="true">→</span></button>
+        <button class="circle-btn" type="button" data-prev aria-label="Предыдущий проект"><span aria-hidden="true">←</span></button>
+        <span class="work-count" aria-live="polite"><b data-current>1</b> / 3</span>
+        <button class="circle-btn" type="button" data-next aria-label="Следующий проект"><span aria-hidden="true">→</span></button>
       </div>
     </div>
 
@@ -319,7 +320,7 @@
       <p class="lead" data-reveal style="--i:2">Короткая работа, ориентированная на решения, для трёх разных ситуаций. Каждый проект заканчивается письменным резюме, с которым можно действовать; объём и стоимость согласуем после первого разговора.</p>
     </div>
 
-    <div class="svc-tabs" role="tablist" aria-label="Service categories" data-reveal>
+    <div class="svc-tabs" role="tablist" aria-label="Категории услуг" data-reveal>
       <button class="svc-tab is-active" role="tab" id="tab-private" aria-controls="panel-private" aria-selected="true"><span>01</span>Частный клиент</button>
       <button class="svc-tab" role="tab" id="tab-investor" aria-controls="panel-investor" aria-selected="false"><span>02</span>Инвестор</button>
       <button class="svc-tab" role="tab" id="tab-startup" aria-controls="panel-startup" aria-selected="false"><span>03</span>Стартап</button>
@@ -357,7 +358,7 @@
           <div class="svc__head"><h3 class="svc__title">Аудит операционной эффективности</h3></div>
           <p class="svc__desc">Сфокусированная оценка процессов: где есть потери, узкие места и реалистичные возможности автоматизации — и где ИИ действительно создаст измеримую ценность, если она вообще есть.</p>
 
-          <div class="tier-switch" role="tablist" aria-label="Package">
+          <div class="tier-switch" role="tablist" aria-label="Пакет">
             <button class="tier-tab is-active" role="tab" aria-selected="true" data-tier="standard">Standard</button>
             <button class="tier-tab" role="tab" aria-selected="false" data-tier="growth">Growth</button>
           </div>
@@ -529,7 +530,7 @@
         <input id="request_reason" name="request_reason" type="text" placeholder="Проект, решение, внедрение ИИ…" required />
       </div>
 
-      <fieldset class="field field--full radio-group" aria-label="Preferred contact method">
+      <fieldset class="field field--full radio-group" aria-label="Предпочтительный способ связи">
         <legend>Как вам удобнее связаться?</legend>
         <label class="radio"><input type="radio" name="preferred_contact" value="email" checked /><span>Эл. почта</span></label>
         <label class="radio"><input type="radio" name="preferred_contact" value="whatsapp" /><span>WhatsApp</span></label>
@@ -544,7 +545,7 @@
       <div class="field field--full" data-channel="whatsapp" hidden>
         <label for="phone">Номер WhatsApp</label>
         <div style="display:grid;grid-template-columns:110px 1fr;gap:8px">
-          <input id="phone_country_code" name="phone_country_code" type="tel" value="+39" aria-label="Country code" />
+          <input id="phone_country_code" name="phone_country_code" type="tel" value="+39" aria-label="Код страны" />
           <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="333 123 4567" />
         </div>
       </div>
@@ -591,7 +592,7 @@
       </div>
 
       <div class="footer__cols">
-        <nav class="footer__col" aria-label="Sections">
+        <nav class="footer__col" aria-label="Разделы">
           <h3>Навигация</h3>
           <a href="#approach">Подход</a>
           <a href="#focus">Компетенции</a>

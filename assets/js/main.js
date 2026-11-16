@@ -294,6 +294,7 @@
     if (!tabs.length) return;
     const cta = card.querySelector('[data-service]');
     const pill = card.querySelector('[data-tier-pill]');
+    const title = card.querySelector('.svc__title')?.textContent?.trim() || (isRu ? 'Аудит операционной эффективности' : 'Operational Efficiency Scan');
     const activate = tab => {
       const tier = tab.dataset.tier;
       tabs.forEach(t => {
@@ -304,9 +305,13 @@
       panels.forEach(p => p.classList.toggle('is-active', p.dataset.tierPanel === tier));
       if (cta) {
         const label = tier === 'growth' ? 'Growth' : 'Standard';
-        cta.dataset.service = 'Operational efficiency scan — ' + label;
+        cta.dataset.service = title + ' — ' + label;
       }
-      if (pill) pill.textContent = tier === 'growth' ? 'Up to 20 business days' : 'Up to 10 business days';
+      if (pill) {
+        pill.textContent = isRu
+          ? (tier === 'growth' ? 'До 20 рабочих дней' : 'До 10 рабочих дней')
+          : (tier === 'growth' ? 'Up to 20 business days' : 'Up to 10 business days');
+      }
     };
     tabs.forEach(tab => tab.addEventListener('click', () => activate(tab)));
   });
