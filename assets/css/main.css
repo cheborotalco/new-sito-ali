@@ -290,7 +290,7 @@ body.is-locked{overflow:hidden}
 .cred-badge b{font-size:.8125rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap;display:block}
 
 /* ---------- next steps ---------- */
-.steps{display:grid;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.steps{display:grid;gap:10px;margin-top:8px}
 .steps li{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:.875rem;line-height:1.5;color:var(--ink-soft)}
 .steps li span{font-size:.6875rem;font-weight:700;letter-spacing:.1em;color:#9a93b5;padding-top:.35em;font-variant-numeric:tabular-nums}
 
@@ -469,15 +469,15 @@ body.is-locked{overflow:hidden}
 .work-count b{font-weight:600;color:var(--ink)}
 
 .case{
-  display:grid;gap:16px;padding:clamp(22px,3vw,34px);height:100%;
+  display:flex;flex-direction:column;gap:14px;padding:clamp(22px,3vw,34px);height:100%;
   border:1px solid var(--line);border-radius:var(--radius-l);background:var(--paper);
   transition:transform .45s var(--ease-out),border-color .3s ease,box-shadow .45s var(--ease-out);
 }
-.case__kicker{display:flex;align-items:center;gap:10px;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.case__kicker i{width:22px;height:1.5px;background:var(--orange);display:block}
-.case__title{font-size:clamp(1.2rem,2vw,1.5rem);letter-spacing:-.02em;font-weight:600;line-height:1.2}
+.case__kicker{display:flex;align-items:center;gap:10px;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
+.case__kicker i{width:22px;height:1.5px;background:var(--orange);display:block;flex:0 0 auto}
+.case__title{font-size:clamp(1.2rem,1.85vw,1.45rem);letter-spacing:-.02em;font-weight:600;line-height:1.22;text-wrap:balance}
 .case__text{color:var(--ink-soft);font-size:.9375rem;line-height:1.6}
-.case__tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.case__tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
 
 /* ---------- mindset ---------- */
 .mindset{
