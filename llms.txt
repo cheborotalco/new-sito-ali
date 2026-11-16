@@ -1,0 +1,51 @@
+# Alisa Chebotarenko — Independent AI & IT Specialist
+
+> Practical map of expert business solutions: project diagnostics, Agile delivery, AI adoption, Cloud foundations, and EU AI Act & governance. Based in Bordighera (Italy), working across Europe in English, Russian, and Italian.
+
+- Website (EN): https://alisac.it/
+- Website (RU): https://alisac.it/ru/
+- Full AI-readable catalog: https://alisac.it/llms-full.txt
+- MCP Server Endpoint (JSON-RPC 2.0): https://alisac.it/api/mcp
+- Contact Email: alisa.1chebotarenko@gmail.com
+- Telegram: https://t.me/alichebo
+- LinkedIn: https://linkedin.com/in/alisachebotarenko
+
+## Credentials & Background
+- **PMP® (Project Management Professional)** — PMI
+- **PSPO I (Professional Scrum Product Owner I)** — Scrum.org
+- **AWS Certified AI Practitioner** — Amazon Web Services
+- Education: Computer Science background + Master's degree in Project Management
+- Experience: 5+ years end-to-end IT & AI delivery across Italy, Switzerland, France, China, and Russia (10+ projects, €550K+ budget managed, 6 markets)
+- Languages: Russian (native), Italian (fluent), English (fluent)
+
+## Core Focus Areas
+1. **Agile delivery & product ownership** — Scrum, Kanban, backlog prioritisation, flow metrics, hybrid models.
+2. **AI fundamentals** — ML paradigms, LLMs, RAG vs fine-tuning, prompt design, evaluation, cost & latency trade-offs.
+3. **Cloud foundations (AWS)** — Compute, storage, networking, IAM, shared responsibility, billing & migration patterns.
+4. **AI ACT & Governance** — EU AI Act risk tiers, human oversight, transparency, audit readiness, PMP-grade delivery & risk control.
+
+## Advisory Services (Starting Base Prices, Tailored Individually)
+### Private Client
+- **Critical Decision Review** — up to 5 business days · Starting from €750
+- **Project Go / No-Go** — up to 7 business days · Starting from €950
+- **Operational Efficiency Scan (Standard / Growth)** — up to 10 / 20 business days · Starting from €950 / €1,900
+
+### Investor
+- **Deal Risk Screening** — up to 5 business days · Starting from €950
+- **Execution Risk Review** — up to 7 business days · Starting from €1,500
+- **Post-Investment 100-Day Plan** — up to 10 business days · Starting from €2,500
+
+### Startup
+- **Founder & Team Execution Review** — up to 7 business days · Starting from €1,500
+- **Delivery & Execution Leadership** — monthly (min 1 month) · Starting from €2,000/month
+- **Startup Operations Setup** — up to 10 business days · Starting from €2,500
+
+---
+
+## Кратко на русском (Russian Summary)
+Алиса Чеботаренко — независимый AI и IT-специалист (PMP®, PSPO I, AWS Certified AI Practitioner). Живёт в Италии (Бордигера), работает по всей Европе на русском, английском и итальянском языках.
+
+- **Направления:** Agile и продуктовая поставка, основы ИИ (RAG, LLM, оценка качества), облачная база AWS, **EU AI Act и управление (Governance)**.
+- **Кейсы:** внутренняя RAG-модель для производства (Китай/Россия), умное приложение и адаптивная санификация для премиального очистителя воздуха (Италия/Швейцария), ИИ-решение для отелей с активным шумоподавлением (Франция).
+- **Услуги для частных клиентов, инвесторов и стартапов:** от **€750** до **€2 500** (индивидуальный расчёт под задачу).
+- **Контакты:** alisa.1chebotarenko@gmail.com · Telegram @alichebo · MCP: https://alisac.it/api/mcp

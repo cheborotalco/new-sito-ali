@@ -159,10 +159,17 @@
   const COPY = {
     en: {
       welcome: "Hi — I'm **Alisa's Assistant**. What would you like to discuss with Alisa?",
-      topicChips: ['New project / Go-No-Go', 'AI Adoption & Efficiency', 'Investor / Startup Review', 'AI Act & Governance'],
+      topicChips: ['New project / Go-No-Go', 'AI Adoption & Efficiency', 'Investor / Startup Review', 'AI Act & Governance', 'Partnership'],
       serviceIntro: svc => `Got it — we'll focus on **${svc}**. How may I address you (your name)?`,
       greetingOnly: "Hi! Please tell me briefly what **project, decision or AI topic** you'd like to discuss with Alisa (or pick one of the options below).",
       invalidReason: "Please describe your **project or topic** in a few words (at least 4 characters) so Alisa knows what this is about.",
+      askClientType: "Who are you reaching out as?",
+      clientTypeChips: [
+        { label: 'Private client', value: 'Private client' },
+        { label: 'Investor', value: 'Investor' },
+        { label: 'Startup', value: 'Startup' }
+      ],
+      invalidClientType: "Please select or type whether you are a **Private client**, **Investor** or **Startup**.",
       askName: "Understood. What is your **name**?",
       invalidName: "Please share your first name (or full name) so Alisa knows who is writing.",
       askMessage: name => `Nice to meet you, **${name}**. Briefly describe your context, goal or the decision on the table (at least 10 characters):`,
@@ -178,7 +185,7 @@
       askWhatsapp: "What is your **WhatsApp number** (including country code, e.g. +39 333 1234567)?",
       askTelegram: "What is your **Telegram username** (e.g. @username)?",
       summaryIntro: "Thank you. Here is the summary of your request for Alisa — please tick the privacy consent below and click **Send to Alisa**:",
-      labels: { name: 'Name', reason: 'Topic', message: 'Context', channel: 'Channel', contact: 'Contact' },
+      labels: { name: 'Name', clientType: 'Profile', reason: 'Topic', message: 'Context', channel: 'Channel', contact: 'Contact' },
       consentHtml: 'I agree to the processing of my personal data for the purpose of being contacted about this request. See the <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
       sendBtn: 'Send to Alisa →',
       resetBtn: 'Start over',
@@ -192,10 +199,17 @@
     },
     ru: {
       welcome: "Здравствуйте! Я **Ассистент Алисы**. Какой проект или задачу вы хотите обсудить с Алисой?",
-      topicChips: ['Новый проект / Go-No-Go', 'Внедрение ИИ и эффективность', 'Оценка для инвестора / стартапа', 'AI Act и Governance'],
+      topicChips: ['Новый проект / Go-No-Go', 'Внедрение ИИ и эффективность', 'Оценка для инвестора / стартапа', 'AI Act и Governance', 'Партнёрство'],
       serviceIntro: svc => `Отлично — фиксируем тему **${svc}**. Подскажите, как к вам обращаться (ваше имя)?`,
       greetingOnly: "Здравствуйте! Напишите, пожалуйста, в двух словах, какой **проект, решение или задачу по ИИ** вы хотите обсудить с Алисой (или выберите вариант ниже).",
       invalidReason: "Пожалуйста, опишите **тему запроса** хотя бы в нескольких словах (от 4 символов).",
+      askClientType: "К какой категории относится ваш запрос?",
+      clientTypeChips: [
+        { label: 'Частный клиент', value: 'Частный клиент' },
+        { label: 'Инвестор', value: 'Инвестор' },
+        { label: 'Стартап', value: 'Стартап' }
+      ],
+      invalidClientType: "Пожалуйста, выберите или укажите: **Частный клиент**, **Инвестор** или **Стартап**.",
       askName: "Поняла. Как вас зовут?",
       invalidName: "Пожалуйста, укажите ваше имя (минимум 2 символа).",
       askMessage: name => `Приятно познакомиться, **${name}**. Кратко опишите контекст, задачу или решение, которое нужно обсудить (минимум 10 символов):`,
@@ -211,7 +225,7 @@
       askWhatsapp: "Укажите ваш **номер WhatsApp** (с кодом страны, например +39 333 1234567):",
       askTelegram: "Укажите ваш **ник в Telegram** (например, @username):",
       summaryIntro: "Спасибо! Вот сводка вашего запроса для Алисы — отметьте согласие ниже и нажмите **Отправить Алисе**:",
-      labels: { name: 'Имя', reason: 'Тема', message: 'Сообщение', channel: 'Канал связи', contact: 'Контакт' },
+      labels: { name: 'Имя', clientType: 'Профиль', reason: 'Тема', message: 'Сообщение', channel: 'Канал связи', contact: 'Контакт' },
       consentHtml: 'Согласен(-на) на обработку персональных данных для связи по этому запросу. См. <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a>.',
       sendBtn: 'Отправить Алисе →',
       resetBtn: 'Начать заново',
@@ -230,9 +244,10 @@
     const MAX_TURNS = 18;
     let turns = 0;
     let isBotTyping = false;
-    let step = 'reason'; // 'reason' -> 'name' -> 'message' -> 'channel' -> 'contact' -> 'confirm' -> 'done'
+    let step = 'reason'; // 'reason' -> 'clientType' -> 'name' -> 'message' -> 'channel' -> 'contact' -> 'confirm' -> 'done'
     const state = {
       name: '',
+      client_type: '',
       request_reason: '',
       message: '',
       preferred_contact: 'email',
@@ -307,6 +322,7 @@
     const getCurrentPromptReminder = () => {
       const c = COPY[chatLang];
       if (step === 'reason') return c.welcome;
+      if (step === 'clientType') return c.askClientType;
       if (step === 'name') return c.askName;
       if (step === 'message') return c.askMessage(state.name || '');
       if (step === 'channel') return c.askChannel;
@@ -334,6 +350,7 @@
         `<div>${formatMd(c.summaryIntro)}</div>` +
         `<div class="msg__summary">` +
         `<div><span>${c.labels.name}</span><b>${formatMd(state.name)}</b></div>` +
+        (state.client_type ? `<div><span>${c.labels.clientType}</span><b>${formatMd(state.client_type)}</b></div>` : '') +
         `<div><span>${c.labels.reason}</span><b>${formatMd(state.request_reason)}</b></div>` +
         `<div><span>${c.labels.channel}</span><b>${formatMd(state.preferred_contact)} (${formatMd(contactVal)})</b></div>` +
         `<div><span>${c.labels.message}</span><b>${formatMd(state.message)}</b></div>` +
@@ -418,6 +435,28 @@
           return;
         }
         state.request_reason = raw.slice(0, 180);
+        step = 'clientType';
+        setChips([]);
+        replyBot(formatMd(c.askClientType), '', 180, () => setChips(c.clientTypeChips));
+        return;
+      }
+
+      if (step === 'clientType') {
+        const lower = (chipValue || raw).toLowerCase();
+        if (chipValue) {
+          state.client_type = chipValue;
+        } else if (/private|частн|физ|бизнес|company|компани|предприним/i.test(lower)) {
+          state.client_type = c.clientTypeChips[0].value;
+        } else if (/invest|инвест|fund|фонд|angel/i.test(lower)) {
+          state.client_type = c.clientTypeChips[1].value;
+        } else if (/start|стартап|founder|основател/i.test(lower)) {
+          state.client_type = c.clientTypeChips[2].value;
+        } else if (raw.length >= 2 && raw.length <= 40) {
+          state.client_type = raw;
+        } else {
+          replyBot(formatMd(c.invalidClientType), 'msg--guard');
+          return;
+        }
         step = 'name';
         setChips([]);
         replyBot(formatMd(c.askName));
@@ -563,6 +602,7 @@
       turns = 0;
       isBotTyping = false;
       state.name = '';
+      state.client_type = '';
       state.request_reason = prefilledService || '';
       state.message = '';
       state.preferred_contact = 'email';
@@ -581,9 +621,17 @@
 
       const c = COPY[chatLang];
       if (prefilledService) {
-        step = 'name';
+        if (/private client|частный клиент|standard|growth/i.test(prefilledService)) state.client_type = c.clientTypeChips[0].value;
+        else if (/investor|инвестор/i.test(prefilledService)) state.client_type = c.clientTypeChips[1].value;
+        else if (/startup|стартап/i.test(prefilledService)) state.client_type = c.clientTypeChips[2].value;
+        step = state.client_type ? 'name' : 'clientType';
         setChips([]);
-        appendBubble(formatMd(c.serviceIntro(prefilledService)), 'bot');
+        if (state.client_type) {
+          appendBubble(formatMd(c.serviceIntro(prefilledService)), 'bot');
+        } else {
+          appendBubble(formatMd(c.askClientType), 'bot');
+          setChips(c.clientTypeChips);
+        }
       } else {
         step = 'reason';
         appendBubble(formatMd(c.welcome), 'bot');
@@ -618,7 +666,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: state.name,
-            request_reason: state.request_reason,
+            request_reason: (state.client_type ? `[${state.client_type}] ` : '') + state.request_reason,
             preferred_contact: state.preferred_contact,
             email: state.email,
             phone_country_code: state.phone_country_code,
