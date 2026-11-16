@@ -266,8 +266,11 @@
       if (/ignore (all |previous |prior )?instructions|system prompt|jailbreak|developer mode|act as|pretend to be|forget everything|you are now|ignora (tutte )?le istruzioni|забудь инструкции|системный промпт|представь что|<script|select \* from|drop table/i.test(lower)) {
         return 'offtopic';
       }
-      // 2. External links / SEO spam / unsolicited promo (except t.me links when giving Telegram contact)
-      if (/https?:\/\/|www\.|\b(seo|backlinks|casino|betting|crypto|bitcoin|airdrop|followers|казино|ставки|крипт|раскрутка)\b/i.test(lower) && !(currentStep === 'contact' && /t\.me\//i.test(lower))) {
+      // 2. External links / unsolicited promo (allow legitimate business URLs or industry context inside 'message', and t.me links in 'contact')
+      if (/\b(casino|betting|airdrop|followers|backlinks|казино|ставки|раскрутка)\b/i.test(lower)) {
+        return 'offtopic';
+      }
+      if (currentStep !== 'message' && (/https?:\/\/|www\.|\b(seo|crypto|bitcoin|крипт)\b/i.test(lower)) && !(currentStep === 'contact' && /t\.me\//i.test(lower))) {
         return 'offtopic';
       }
       // 3. Absurd / general-purpose chat / recipes / weather / jokes / math / coding homework / trivia
@@ -924,8 +927,6 @@
           w.style.setProperty('--w-blur', `${blur.toFixed(2)}px`);
         });
 
-        const boxScale = 0.965 + Math.min(1, p * 1.15) * 0.035;
-        mindsetBox.style.transform = `scale(${boxScale.toFixed(4)})`;
         if (mindsetLine) {
           mindsetLine.style.setProperty('--mindset-line', Math.min(1, Math.max(0.15, p)).toFixed(3));
         }

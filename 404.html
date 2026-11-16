@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>404 — Page not found | Alisa Chebotarenko</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+<style>
+  .notfound{
+    min-height:calc(100svh - var(--nav-h));
+    display:grid;place-items:center;
+    padding-top:calc(var(--nav-h) + 40px);padding-bottom:64px;
+    position:relative;overflow:hidden;
+  }
+  .notfound__card{
+    position:relative;max-width:560px;width:100%;
+    padding:clamp(28px,5vw,48px);border-radius:var(--radius-xl);
+    background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-m);
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .notfound__code{
+    font-size:clamp(3rem,8vw,4.5rem);line-height:1;font-weight:700;letter-spacing:-.05em;
+    background:linear-gradient(96deg,var(--ink) 0%,#3a2a72 52%,var(--violet) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .notfound__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+</style>
+</head>
+<body>
+<header class="nav is-stuck">
+  <div class="nav__inner">
+    <a class="logo" href="/" aria-label="Alisa Chebotarenko — home">ALISA<span>.</span>C<i>_</i></a>
+    <div class="nav__actions">
+      <div class="lang" role="group" aria-label="Language"><a href="/">EN</a><a href="/ru/">RU</a></div>
+    </div>
+  </div>
+</header>
+
+<main class="notfound">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="wrap" style="display:grid;place-items:center">
+    <div class="notfound__card">
+      <span class="eyebrow">404 Error</span>
+      <div class="notfound__code">404</div>
+      <h1 class="h2" style="font-size:clamp(1.6rem,3vw,2.2rem)">Page not found</h1>
+      <p class="lead">The page you are looking for may have been moved or does not exist. Choose a language below to return to the site.</p>
+      <div class="notfound__actions">
+        <a class="btn btn--primary" href="/">Go to English home <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href="/ru/">Вернуться на русском <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
