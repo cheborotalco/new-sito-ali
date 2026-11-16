@@ -359,11 +359,12 @@
     };
 
     const cleanExtractedName = raw => {
-      return raw
+      const base = raw
         .replace(/^(hi|hello|hey|ciao|salve|buongiorno|buonasera|привет|здравствуйте)[,\s!]*/i, '')
         .replace(/^(my name is|i am|i'm|mi chiamo|sono|меня зовут|я)\s+/i, '')
         .replace(/[.,!?;:]+$/, '')
         .trim();
+      return base.replace(/(^|[\s-])(\S)/g, (_, sep, ch) => sep + ch.toLocaleUpperCase());
     };
 
     const replyBot = (html, extraClass = '', delay = 180, afterFn = null) => {
