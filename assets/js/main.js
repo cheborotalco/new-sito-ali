@@ -325,13 +325,19 @@
     let active = 0;
 
     const render = () => {
+      const isDesktop = window.innerWidth >= 900;
       cards.forEach((card, i) => {
         let d = i - active;
         if (d > n / 2) d -= n;
         if (d < -n / 2) d += n;
         card.dataset.pos = String(d);
-        card.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
-        card.tabIndex = d === 0 ? 0 : -1;
+        if (isDesktop) {
+          card.removeAttribute('aria-hidden');
+          card.removeAttribute('tabindex');
+        } else {
+          card.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+          card.tabIndex = d === 0 ? 0 : -1;
+        }
       });
       if (current) current.textContent = String(active + 1);
     };
@@ -343,17 +349,19 @@
 
     cards.forEach((card, i) => {
       card.addEventListener('click', () => {
-        if (i !== active) { active = i; render(); }
+        if (window.innerWidth < 900 && i !== active) { active = i; render(); }
       });
       card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); active = i; render(); }
+        if (window.innerWidth < 900 && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); active = i; render(); }
       });
     });
 
     carousel.addEventListener('keydown', e => {
+      if (window.innerWidth >= 900) return;
       if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
     });
+    window.addEventListener('resize', render);
 
     // touch swipe
     let startX = null;
