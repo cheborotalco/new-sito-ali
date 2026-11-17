@@ -520,10 +520,12 @@ body.is-locked{overflow:hidden}
 }
 .mindset__inner{position:relative;display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
 .mindset__quote{
-  font-size:clamp(1.32rem,2.75vw,2.35rem);
-  line-height:1.22;letter-spacing:-.03em;font-weight:600;
-  max-width:none;width:100%;margin:0;text-wrap:pretty;
+  display:flex;flex-direction:column;gap:.6em;
+  font-size:clamp(1.25rem,2.35vw,2.08rem);
+  line-height:1.25;letter-spacing:-.028em;font-weight:600;
+  max-width:none;width:100%;margin:0;
 }
+.mindset__p{display:block;text-wrap:balance}
 .mindset__quote .grad .w,
 .mindset__quote .grad{
   background:linear-gradient(96deg,#c98bff 0%,#8fe0ff 55%,#33d3f0 100%);

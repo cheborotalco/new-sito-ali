@@ -859,7 +859,8 @@
         if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
           const frag = document.createDocumentFragment();
           node.textContent.split(/(\s+)/).forEach(tok => {
-            if (!tok.trim()) { frag.appendChild(document.createTextNode(' ')); return; }
+            if (!tok) return;
+            if (!tok.trim()) { frag.appendChild(document.createTextNode(tok)); return; }
             const span = document.createElement('span');
             span.className = 'w';
             span.textContent = tok;
@@ -869,7 +870,6 @@
             span.style.setProperty('--w-blur', '2.5px');
             mindsetWords.push(span);
             frag.appendChild(span);
-            frag.appendChild(document.createTextNode(' '));
           });
           parent.replaceChild(frag, node);
         } else if (node.nodeType === Node.ELEMENT_NODE) {
