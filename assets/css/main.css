@@ -293,7 +293,7 @@ body.is-locked{overflow:hidden}
   padding:5px 5px 5px 14px;border-radius:999px;
   border:1px solid var(--line);background:rgba(255,255,255,.72);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  min-height:44px;
+  min-height:44px;cursor:pointer;
   transition:transform .35s var(--ease-out),border-color .25s ease,background .25s ease;
 }
 .cred-badge:hover{transform:translateY(-2px);border-color:rgba(182,101,255,.45);background:#fff}
@@ -537,6 +537,11 @@ body.is-locked{overflow:hidden}
 .case-modal__list{display:grid;gap:8px}
 .case-modal__list li{position:relative;padding-left:18px;font-size:.9125rem;line-height:1.55;color:var(--ink-soft)}
 .case-modal__list li::before{content:"";position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+.case-modal__panel--sm{width:min(580px,100%)}
+.cert-modal__id{display:flex;align-items:center;gap:16px}
+.cert-modal__id img{width:56px;height:56px;object-fit:contain;flex:0 0 auto}
+.cert-modal__foot{padding-top:6px;display:flex;justify-content:flex-start}
+.cert-modal__foot[hidden]{display:none}
 
 /* ---------- mindset ---------- */
 .mindset{

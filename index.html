@@ -147,18 +147,18 @@
       <div class="hero__creds" data-reveal style="--i:4" aria-label="Certifications">
         <span class="hero__creds-label">My certifications:</span>
         <div class="hero__creds-row">
-          <span class="cred-badge">
+          <button type="button" class="cred-badge" data-cert="pmp">
             <span class="cred-badge__text"><b>PMP<sup>®</sup></b></span>
             <img src="/assets/img/cert-pmp.png" alt="PMP certification badge" width="34" height="34" loading="lazy" />
-          </span>
-          <span class="cred-badge">
+          </button>
+          <button type="button" class="cred-badge" data-cert="pspo">
             <span class="cred-badge__text"><b>PSPO I</b></span>
             <img src="/assets/img/cert-pspo.png" alt="Professional Scrum Product Owner I badge" width="34" height="34" loading="lazy" />
-          </span>
-          <span class="cred-badge">
+          </button>
+          <button type="button" class="cred-badge" data-cert="aws">
             <span class="cred-badge__text"><b>AWS AI Practitioner</b></span>
             <img src="/assets/img/cert-aws.png" alt="AWS Certified AI Practitioner badge" width="34" height="34" loading="lazy" />
-          </span>
+          </button>
         </div>
       </div>
       <div class="hero__meta" data-reveal style="--i:5">
@@ -742,6 +742,34 @@
     </div>
   </div>
 </footer>
+
+<div class="case-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" hidden>
+  <div class="case-modal__panel case-modal__panel--sm">
+    <div class="case-modal__head">
+      <div class="cert-modal__id">
+        <img id="certModalImg" src="/assets/img/cert-pmp.png" alt="" width="56" height="56" />
+        <div>
+          <div class="case__kicker" id="certModalIssuer" style="margin-bottom:6px"><i aria-hidden="true"></i> <span></span></div>
+          <h3 class="case__title" id="certModalTitle"></h3>
+        </div>
+      </div>
+      <button type="button" class="case-modal__close" data-close-cert aria-label="Close">×</button>
+    </div>
+    <div class="case-modal__grid">
+      <div class="case-modal__block">
+        <h4>What it is</h4>
+        <p id="certModalWhat"></p>
+      </div>
+      <div class="case-modal__block">
+        <h4>Why it matters for your project</h4>
+        <p id="certModalWhy"></p>
+      </div>
+    </div>
+    <div class="cert-modal__foot" id="certModalFoot" hidden>
+      <a class="btn btn--ghost" id="certModalLink" href="#" target="_blank" rel="noopener noreferrer">Verify on Credly <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</div>
 
 <script src="/assets/js/main.js" defer></script>
 </body>

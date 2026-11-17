@@ -1132,6 +1132,97 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && caseModal.classList.contains('is-open')) closeCase(); });
   }
 
+  /* ---------- certification info modal ---------- */
+  const certModal = document.getElementById('certModal');
+  if (certModal) {
+    const CERTS = {
+      pmp: {
+        img: '/assets/img/cert-pmp.png',
+        issuer: 'Project Management Institute (PMI)',
+        url: 'https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url',
+        en: {
+          title: 'PMP® — Project Management Professional',
+          what: 'The world’s most recognised gold-standard certification in project management, issued by PMI. It requires years of verified project leadership experience and passing a rigorous exam covering predictive, agile and hybrid delivery, risk, budget and stakeholder governance.',
+          why: 'It guarantees structured, disciplined execution: clear scope boundaries, early risk mitigation, realistic timelines and transparent executive reporting — reducing costly surprises when stakes are high.'
+        },
+        ru: {
+          title: 'PMP® — Project Management Professional',
+          what: 'Международный «золотой стандарт» в управлении проектами от института PMI. Для получения требуется подтверждённый многолетний опыт руководства проектами и сдача сложного экзамена по классическому, гибкому и гибридному управлению.',
+          why: 'Для вашего проекта это гарантия системной работы без хаоса: чёткий контроль объёма, бюджета, сроков и рисков на раннем этапе, а также прозрачная отчётность для собственников и инвесторов.'
+        }
+      },
+      pspo: {
+        img: '/assets/img/cert-pspo.png',
+        issuer: 'Scrum.org',
+        url: 'https://www.credly.com/badges/5ab0bd35-0288-4f58-88f1-1152033aafde/public_url',
+        en: {
+          title: 'PSPO I — Professional Scrum Product Owner',
+          what: 'An official Scrum.org credential validating deep mastery of product ownership: turning business strategy into a prioritised backlog, managing value, stakeholders and Agile product delivery.',
+          why: 'Instead of building features for their own sake, every sprint and budget euro stays focused on measurable business value, faster validation and real user adoption.'
+        },
+        ru: {
+          title: 'PSPO I — Professional Scrum Product Owner',
+          what: 'Официальная сертификация Scrum.org, подтверждающая глубокое владение ролью владельца продукта: от продуктовой стратегии и управления бэклогом до максимизации бизнес-ценности в Agile-командах.',
+          why: 'Команда не тратит время и бюджет на лишние функции — каждый цикл разработки напрямую работает на измеримый бизнес-результат и быструю проверку гипотез.'
+        }
+      },
+      aws: {
+        img: '/assets/img/cert-aws.png',
+        issuer: 'Amazon Web Services (AWS)',
+        url: '',
+        en: {
+          title: 'AWS Certified AI Practitioner',
+          what: 'An official Amazon Web Services certification covering Artificial Intelligence, Machine Learning, Generative AI, foundation models, prompt engineering, RAG, responsible AI and cloud security on AWS.',
+          why: 'It bridges the gap between business goals and engineering reality — helping you choose the right AI approach, avoid hype-driven investments and ask technical vendors the right questions.'
+        },
+        ru: {
+          title: 'AWS Certified AI Practitioner',
+          what: 'Официальная сертификация Amazon Web Services в области искусственного интеллекта, машинного обучения, генеративного ИИ, LLM, RAG, ответственного ИИ и облачной безопасности на платформе AWS.',
+          why: 'Помогает отделить реальную бизнес-ценность от хайпа вокруг ИИ: выбрать подходящую технологию, оценить затраты и риски и говорить с технической командой и подрядчиками на одном языке.'
+        }
+      }
+    };
+
+    const mImg = document.getElementById('certModalImg');
+    const mIssuer = document.querySelector('#certModalIssuer span');
+    const mTitle = document.getElementById('certModalTitle');
+    const mWhat = document.getElementById('certModalWhat');
+    const mWhy = document.getElementById('certModalWhy');
+    const mFoot = document.getElementById('certModalFoot');
+    const mLink = document.getElementById('certModalLink');
+
+    const closeCert = () => {
+      certModal.classList.remove('is-open');
+      document.body.classList.remove('is-locked');
+      setTimeout(() => { if (!certModal.classList.contains('is-open')) certModal.hidden = true; }, 280);
+    };
+
+    document.querySelectorAll('[data-cert]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.cert;
+        const data = CERTS[key];
+        if (!data) return;
+        const copy = isRu ? data.ru : data.en;
+        if (mImg) { mImg.src = data.img; mImg.alt = copy.title; }
+        if (mIssuer) mIssuer.textContent = data.issuer;
+        if (mTitle) mTitle.textContent = copy.title;
+        if (mWhat) mWhat.textContent = copy.what;
+        if (mWhy) mWhy.textContent = copy.why;
+        if (mFoot && mLink) {
+          if (data.url) { mLink.href = data.url; mFoot.hidden = false; }
+          else { mFoot.hidden = true; }
+        }
+        certModal.hidden = false;
+        requestAnimationFrame(() => certModal.classList.add('is-open'));
+        document.body.classList.add('is-locked');
+      });
+    });
+
+    certModal.querySelectorAll('[data-close-cert]').forEach(btn => btn.addEventListener('click', closeCert));
+    certModal.addEventListener('click', e => { if (e.target === certModal) closeCert(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && certModal.classList.contains('is-open')) closeCert(); });
+  }
+
   /* ---------- copy email button ---------- */
   document.querySelectorAll('[data-copy]').forEach(btn => {
     let timer;
