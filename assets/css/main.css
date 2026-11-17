@@ -301,9 +301,9 @@ body.is-locked{overflow:hidden}
 .cred-badge b{font-size:.8125rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap;display:block}
 
 /* ---------- next steps ---------- */
-.steps{display:grid;gap:10px;margin-top:8px}
-.steps li{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:.875rem;line-height:1.5;color:var(--ink-soft)}
-.steps li span{font-size:.6875rem;font-weight:700;letter-spacing:.1em;color:#9a93b5;padding-top:.35em;font-variant-numeric:tabular-nums}
+.steps{display:grid;gap:10px;margin-top:6px}
+.steps li{position:relative;padding-left:18px;font-size:.875rem;line-height:1.5;color:var(--ink-soft)}
+.steps li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--cyan)}
 
 /* ---------- work stats ---------- */
 .work-stats{
