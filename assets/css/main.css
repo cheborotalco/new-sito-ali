@@ -496,6 +496,47 @@ body.is-locked{overflow:hidden}
 .case__title{font-size:clamp(1.2rem,1.85vw,1.45rem);letter-spacing:-.02em;font-weight:600;line-height:1.22;text-wrap:balance}
 .case__text{color:var(--ink-soft);font-size:.9375rem;line-height:1.6}
 .case__tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.case__more{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:6px;
+  padding:6px 0 2px;border:0;border-bottom:1px solid var(--line-strong);
+  background:transparent;color:var(--ink);font-size:.8125rem;font-weight:600;cursor:pointer;
+  transition:color .25s ease,border-color .25s ease,gap .25s var(--ease-out);
+}
+.case__more:hover{color:var(--violet);border-color:var(--violet);gap:10px}
+
+/* ---------- case study modal ---------- */
+.case-modal{
+  position:fixed;inset:0;z-index:180;
+  display:grid;place-items:center;padding:clamp(16px,4vw,32px);
+  background:rgba(24,16,66,.52);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;visibility:hidden;transition:opacity .28s var(--ease-out),visibility .28s;
+}
+.case-modal.is-open{opacity:1;visibility:visible}
+.case-modal[hidden]{display:none}
+.case-modal__panel{
+  position:relative;width:min(760px,100%);max-height:min(88svh,820px);overflow-y:auto;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-xl);
+  padding:clamp(24px,4vw,42px);box-shadow:var(--shadow-m);
+  display:flex;flex-direction:column;gap:22px;
+  transform:translateY(12px) scale(.985);transition:transform .32s var(--ease-out);
+}
+.case-modal.is-open .case-modal__panel{transform:none}
+.case-modal__head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.case-modal__close{
+  width:40px;height:40px;flex:0 0 auto;border-radius:50%;
+  border:1px solid var(--line-strong);background:var(--paper-soft);color:var(--ink);
+  font-size:1.25rem;line-height:1;cursor:pointer;display:grid;place-items:center;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.case-modal__close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.case-modal__grid{display:grid;gap:18px}
+.case-modal__block{padding-top:14px;border-top:1px solid var(--line);display:grid;gap:8px}
+.case-modal__block h4{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--violet);font-weight:700}
+.case-modal__block p{font-size:.9375rem;line-height:1.62;color:var(--ink-soft)}
+.case-modal__list{display:grid;gap:8px}
+.case-modal__list li{position:relative;padding-left:18px;font-size:.9125rem;line-height:1.55;color:var(--ink-soft)}
+.case-modal__list li::before{content:"";position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:var(--cyan)}
 
 /* ---------- mindset ---------- */
 .mindset{

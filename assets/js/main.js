@@ -1111,6 +1111,27 @@
     render();
   }
 
+  /* ---------- case study modal ---------- */
+  const caseModal = document.getElementById('caseModal');
+  if (caseModal) {
+    const closeCase = () => {
+      caseModal.classList.remove('is-open');
+      document.body.classList.remove('is-locked');
+      setTimeout(() => { if (!caseModal.classList.contains('is-open')) caseModal.hidden = true; }, 280);
+    };
+    document.querySelectorAll('[data-open-case]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        caseModal.hidden = false;
+        requestAnimationFrame(() => caseModal.classList.add('is-open'));
+        document.body.classList.add('is-locked');
+      });
+    });
+    caseModal.querySelectorAll('[data-close-case]').forEach(btn => btn.addEventListener('click', closeCase));
+    caseModal.addEventListener('click', e => { if (e.target === caseModal) closeCase(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && caseModal.classList.contains('is-open')) closeCase(); });
+  }
+
   /* ---------- copy email button ---------- */
   document.querySelectorAll('[data-copy]').forEach(btn => {
     let timer;
