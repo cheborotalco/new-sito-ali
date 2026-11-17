@@ -551,8 +551,22 @@ body.is-locked{overflow:hidden}
   transition:color .25s ease,padding .3s var(--ease-out);
 }
 .contact__link:hover{color:var(--violet);padding-left:6px}
-.contact__link span:first-child{flex:0 0 auto}
-.contact__link span:last-child{color:var(--muted);font-size:.8125rem;text-align:right;min-width:0;overflow-wrap:anywhere}
+.contact__link > span:first-child,.contact__link > a > span:first-child{flex:0 0 auto}
+.contact__link > span:last-child,.contact__link > a > span:last-child{color:var(--muted);font-size:.8125rem;text-align:right;min-width:0;overflow-wrap:anywhere}
+.contact__link--email{gap:10px}
+.contact__link--email > a{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:1;min-width:0}
+.copy-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;flex:0 0 auto;
+  min-width:30px;height:30px;padding:0 7px;border-radius:999px;
+  border:1px solid var(--line-strong);background:var(--paper);color:var(--muted);
+  font-size:.6875rem;font-weight:600;cursor:pointer;
+  transition:border-color .22s ease,color .22s ease,background .22s ease;
+}
+.copy-btn:hover{border-color:var(--violet);color:var(--ink);background:var(--violet-soft)}
+.copy-btn__label{display:none}
+.copy-btn.is-copied{border-color:rgba(0,191,224,.45);background:var(--cyan-soft);color:#0a6f81;padding:0 10px}
+.copy-btn.is-copied svg{display:none}
+.copy-btn.is-copied .copy-btn__label{display:inline}
 
 .form{display:grid;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-l);padding:clamp(20px,3vw,32px);box-shadow:var(--shadow-s)}
 .form[hidden],.assistant[hidden],.assistant__confirm[hidden],.assistant__bar[hidden]{display:none!important}

@@ -1111,6 +1111,31 @@
     render();
   }
 
+  /* ---------- copy email button ---------- */
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    let timer;
+    btn.addEventListener('click', async e => {
+      e.preventDefault();
+      const val = btn.dataset.copy || '';
+      if (!val) return;
+      try {
+        await navigator.clipboard.writeText(val);
+      } catch {
+        const tmp = document.createElement('textarea');
+        tmp.value = val;
+        tmp.style.position = 'fixed';
+        tmp.style.opacity = '0';
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand('copy');
+        tmp.remove();
+      }
+      btn.classList.add('is-copied');
+      clearTimeout(timer);
+      timer = setTimeout(() => btn.classList.remove('is-copied'), 2000);
+    });
+  });
+
   /* ---------- footer year ---------- */
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
