@@ -27,7 +27,7 @@ const PROFILE = {
     certifications: [
       { name: 'PMP® — Project Management Professional', issuer: 'PMI', verify: 'https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url' },
       { name: 'PSPO I — Professional Scrum Product Owner I', issuer: 'Scrum.org', verify: 'https://www.credly.com/badges/5ab0bd35-0288-4f58-88f1-1152033aafde/public_url' },
-      { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services' }
+      { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services', verify: 'https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url' }
     ],
     focusAreas: [
       'Agile delivery & product ownership (Scrum, Kanban, hybrid)',
@@ -51,7 +51,7 @@ const PROFILE = {
     certifications: [
       { name: 'PMP® — Project Management Professional', issuer: 'PMI', verify: 'https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url' },
       { name: 'PSPO I — Professional Scrum Product Owner I', issuer: 'Scrum.org', verify: 'https://www.credly.com/badges/5ab0bd35-0288-4f58-88f1-1152033aafde/public_url' },
-      { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services' }
+      { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services', verify: 'https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url' }
     ],
     focusAreas: [
       'Agile-поставка и продуктовая роль (Scrum, Kanban, гибридные модели)',

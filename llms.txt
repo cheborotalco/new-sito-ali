@@ -11,9 +11,9 @@
 - LinkedIn: https://linkedin.com/in/alisachebotarenko
 
 ## Credentials & Background
-- **PMP® (Project Management Professional)** — PMI
-- **PSPO I (Professional Scrum Product Owner I)** — Scrum.org
-- **AWS Certified AI Practitioner** — Amazon Web Services
+- **PMP® (Project Management Professional)** — PMI (verify: https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url)
+- **PSPO I (Professional Scrum Product Owner I)** — Scrum.org (verify: https://www.credly.com/badges/5ab0bd35-0288-4f58-88f1-1152033aafde/public_url)
+- **AWS Certified AI Practitioner** — Amazon Web Services (verify: https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url)
 - Education: Computer Science background + Master's degree in Project Management
 - Experience: 5+ years end-to-end IT & AI delivery across Italy, Switzerland, France, China, and Russia (10+ projects, €550K+ budget managed, 6 markets)
 - Languages: Russian (native), Italian (fluent), English (fluent)

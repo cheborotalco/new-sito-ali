@@ -1169,7 +1169,7 @@
       aws: {
         img: '/assets/img/cert-aws.png',
         issuer: 'Amazon Web Services (AWS)',
-        url: '',
+        url: 'https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url',
         en: {
           title: 'AWS Certified AI Practitioner',
           what: 'An official Amazon Web Services certification covering Artificial Intelligence, Machine Learning, Generative AI, foundation models, prompt engineering, RAG, responsible AI and cloud security on AWS.',
