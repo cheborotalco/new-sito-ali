@@ -520,8 +520,8 @@ body.is-locked{overflow:hidden}
 }
 .mindset__inner{position:relative;display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
 .mindset__quote{
-  font-size:clamp(1.65rem,4.5vw,3.5rem);
-  line-height:1.07;letter-spacing:-.042em;font-weight:600;
+  font-size:clamp(1.32rem,2.75vw,2.35rem);
+  line-height:1.22;letter-spacing:-.03em;font-weight:600;
   max-width:none;width:100%;margin:0;text-wrap:pretty;
 }
 .mindset__quote .grad .w,
