@@ -1111,25 +1111,35 @@
     render();
   }
 
-  /* ---------- case study modal ---------- */
-  const caseModal = document.getElementById('caseModal');
-  if (caseModal) {
-    const closeCase = () => {
-      caseModal.classList.remove('is-open');
+  /* ---------- case study modals ---------- */
+  const caseModals = Array.from(document.querySelectorAll('.case-modal'));
+  if (caseModals.length) {
+    const closeAllCases = () => {
+      caseModals.forEach(modal => {
+        if (!modal.classList.contains('is-open')) return;
+        modal.classList.remove('is-open');
+        setTimeout(() => { if (!modal.classList.contains('is-open')) modal.hidden = true; }, 280);
+      });
       document.body.classList.remove('is-locked');
-      setTimeout(() => { if (!caseModal.classList.contains('is-open')) caseModal.hidden = true; }, 280);
     };
     document.querySelectorAll('[data-open-case]').forEach(btn => {
       btn.addEventListener('click', e => {
         e.stopPropagation();
-        caseModal.hidden = false;
-        requestAnimationFrame(() => caseModal.classList.add('is-open'));
+        const targetId = btn.dataset.openCase;
+        const modal = (targetId && document.getElementById(targetId)) || caseModals[0];
+        if (!modal) return;
+        modal.hidden = false;
+        requestAnimationFrame(() => modal.classList.add('is-open'));
         document.body.classList.add('is-locked');
       });
     });
-    caseModal.querySelectorAll('[data-close-case]').forEach(btn => btn.addEventListener('click', closeCase));
-    caseModal.addEventListener('click', e => { if (e.target === caseModal) closeCase(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && caseModal.classList.contains('is-open')) closeCase(); });
+    caseModals.forEach(modal => {
+      modal.querySelectorAll('[data-close-case]').forEach(btn => btn.addEventListener('click', closeAllCases));
+      modal.addEventListener('click', e => { if (e.target === modal) closeAllCases(); });
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && caseModals.some(m => m.classList.contains('is-open'))) closeAllCases();
+    });
   }
 
   /* ---------- certification info modal ---------- */
