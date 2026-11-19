@@ -240,7 +240,7 @@ const CASE_STUDIES = [
     },
     summary: {
       en: 'Coordinated redesign and premium repositioning alongside the development of a remote-control mobile application featuring smart sanitization based on input parameters — which successfully attracted business angel interest.',
-      ru: 'Координировала редизайн и премиальное репозиционирование с разработкой мобильного приложения для удалённого управления и интеллектуальными функциями санификации по входным параметрам — что привлекло интерес бизнес-ангелов.'
+      ru: 'Координировала редизайн и премиальное репозиционирование с разработкой мобильного приложения для удалённого управления, интеллектуальными функциями и санификации по входным параметрам — что привлекло интерес бизнес-ангелов.'
     },
     details: {
       en: {
