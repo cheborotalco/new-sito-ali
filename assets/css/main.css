@@ -426,8 +426,9 @@ body.is-locked{overflow:hidden}
 @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 .svc{display:flex;flex-direction:column;gap:14px}
-.svc__excluded{order:8}
+.svc__excluded{order:8;margin-top:auto}
 .svc__foot{order:9;margin-top:auto}
+.svc:has(.svc__excluded) .svc__foot{margin-top:0}
 
 .btn--quote{background:var(--orange);color:#fff;min-height:44px;padding:0 18px;font-size:.875rem}
 .btn--quote:hover{background:#de5318;box-shadow:0 14px 28px -14px rgba(241,98,35,.7)}
