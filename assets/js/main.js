@@ -56,40 +56,38 @@
   if (!reduce) {
     revealEls.forEach(el => {
       const i = Number(el.style.getPropertyValue('--i') || 0);
-      el.style.transitionDelay = `${Math.min(i, 6) * 70}ms`;
+      el.style.transitionDelay = `${Math.min(i, 6) * 60}ms`;
     });
-    let ticking = false;
     const checkReveals = () => {
-      ticking = false;
       const vh = window.innerHeight || 800;
       for (const el of revealEls) {
         if (el.classList.contains('is-in')) continue;
         const r = el.getBoundingClientRect();
-        if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('is-in');
+        if (r.top < vh * 0.94 && r.bottom > 0) el.classList.add('is-in');
       }
     };
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(checkReveals);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    window.addEventListener('load', checkReveals);
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(es => {
-        es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+        es.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -3% 0px' });
       revealEls.forEach(el => io.observe(el));
+    } else {
+      let ticking = false;
+      const onRevealScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { ticking = false; checkReveals(); });
+      };
+      window.addEventListener('scroll', onRevealScroll, { passive: true });
+      window.addEventListener('resize', onRevealScroll, { passive: true });
     }
     requestAnimationFrame(checkReveals);
-    setTimeout(checkReveals, 400);
-
-    // safety net: keep checking until everything has been revealed
-    const poll = setInterval(() => {
-      checkReveals();
-      if (revealEls.every(el => el.classList.contains('is-in'))) clearInterval(poll);
-    }, 700);
+    window.addEventListener('load', checkReveals, { once: true });
   } else {
     revealEls.forEach(el => el.classList.add('is-in'));
   }
@@ -880,25 +878,36 @@
     wrapWords(el);
   });
 
-  /* ---------- fluid inertial scroll + parallax + scroll-scrubbing ---------- */
+  /* ---------- native scroll parallax + scroll-scrubbing ---------- */
   if (!reduce) {
     const heroPhoto = document.querySelector('.hero__photo img');
     const heroGlow = document.querySelector('.hero__glow');
     const mindsetBox = document.querySelector('.mindset');
     const mindsetLine = document.querySelector('.mindset__line');
 
-    const updateScrollScene = () => {
-      const y = window.scrollY || window.pageYOffset || 0;
-      const vh = window.innerHeight || 800;
-      const maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
-      const progress = Math.min(1, Math.max(0, y / maxScroll));
-      document.documentElement.style.setProperty('--scroll-progress', progress.toFixed(4));
+    let vh = window.innerHeight || 800;
+    let vw = window.innerWidth || 1200;
+    let maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
+    let lastMindsetP = -1;
+    let scrollRaf = 0;
 
-      // Hero parallax
-      if (y < vh * 1.4) {
-        if (heroPhoto && window.innerWidth >= 900) {
+    const refreshMetrics = () => {
+      vh = window.innerHeight || 800;
+      vw = window.innerWidth || 1200;
+      maxScroll = Math.max(1, document.documentElement.scrollHeight - vh);
+    };
+
+    const updateScrollScene = () => {
+      scrollRaf = 0;
+      const y = window.scrollY || window.pageYOffset || 0;
+      const progress = Math.min(1, Math.max(0, y / maxScroll));
+      if (nav) nav.style.setProperty('--scroll-progress', progress.toFixed(4));
+
+      // Hero parallax (only while hero is near viewport)
+      if (y < vh * 1.35) {
+        if (heroPhoto && vw >= 900) {
           heroPhoto.style.transform = `translate3d(0, ${(y * 0.08).toFixed(1)}px, 0) scale(1.04)`;
-        } else if (heroPhoto) {
+        } else if (heroPhoto && heroPhoto.style.transform) {
           heroPhoto.style.transform = '';
         }
         if (heroGlow) {
@@ -906,113 +915,72 @@
         }
       }
 
-      // Mindset word-by-word scroll-scrubbing + subtle scale
+      // Mindset word-by-word scroll-scrubbing (only when near/inside viewport)
       if (mindsetBox && mindsetWords.length) {
         const rect = mindsetBox.getBoundingClientRect();
-        // Progress from when top enters at 88% vh to when it reaches 32% vh
-        const start = vh * 0.88;
-        const end = vh * 0.28;
-        const raw = (start - rect.top) / Math.max(1, start - end);
-        const p = Math.min(1, Math.max(0, raw));
-        const total = mindsetWords.length;
-
-        mindsetWords.forEach((w, idx) => {
-          const threshold = idx / total;
-          const local = Math.min(1, Math.max(0, (p - threshold * 0.78) / 0.22));
-          const op = 0.16 + local * 0.84;
-          const wy = (1 - local) * 8;
-          const blur = (1 - local) * 2.5;
-          w.style.setProperty('--w-op', op.toFixed(3));
-          w.style.setProperty('--w-y', `${wy.toFixed(1)}px`);
-          w.style.setProperty('--w-blur', `${blur.toFixed(2)}px`);
-        });
-
-        if (mindsetLine) {
-          mindsetLine.style.setProperty('--mindset-line', Math.min(1, Math.max(0.15, p)).toFixed(3));
+        if (rect.bottom > -120 && rect.top < vh + 120) {
+          const start = vh * 0.88;
+          const end = vh * 0.28;
+          const raw = (start - rect.top) / Math.max(1, start - end);
+          const p = Math.min(1, Math.max(0, raw));
+          if (Math.abs(p - lastMindsetP) > 0.002) {
+            lastMindsetP = p;
+            const total = mindsetWords.length;
+            mindsetWords.forEach((w, idx) => {
+              const threshold = idx / total;
+              const local = Math.min(1, Math.max(0, (p - threshold * 0.78) / 0.22));
+              const op = 0.16 + local * 0.84;
+              const wy = (1 - local) * 8;
+              w.style.setProperty('--w-op', op.toFixed(3));
+              w.style.setProperty('--w-y', `${wy.toFixed(1)}px`);
+            });
+            if (mindsetLine) {
+              mindsetLine.style.setProperty('--mindset-line', Math.min(1, Math.max(0.15, p)).toFixed(3));
+            }
+          }
         }
       }
     };
 
-    // Inertial smooth scroll engine (Lenis-style momentum on fine pointers)
-    const finePointer = window.matchMedia('(pointer: fine)').matches;
-    if (finePointer) {
-      document.documentElement.classList.add('has-smooth-scroll');
-      let targetY = window.scrollY || 0;
-      let currentY = targetY;
-      let rafId = null;
+    const scheduleScene = () => {
+      if (!scrollRaf) scrollRaf = requestAnimationFrame(updateScrollScene);
+    };
 
-      const clampY = val => {
-        const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-        return Math.min(max, Math.max(0, val));
-      };
-
-      const step = () => {
-        const diff = targetY - currentY;
-        if (Math.abs(diff) > 0.35) {
-          currentY += diff * 0.105;
-          window.scrollTo(0, currentY);
-          updateScrollScene();
-          rafId = requestAnimationFrame(step);
-        } else {
-          currentY = targetY;
-          window.scrollTo(0, currentY);
-          updateScrollScene();
-          rafId = null;
-        }
-      };
-
-      const kick = () => {
-        if (!rafId) rafId = requestAnimationFrame(step);
-      };
-
-      window.addEventListener('wheel', e => {
-        if (document.body.classList.contains('is-locked')) return;
-        if (e.ctrlKey || e.metaKey) return;
-        const scrollable = e.target.closest('textarea, .assistant__log');
-        if (scrollable && scrollable.scrollHeight > scrollable.clientHeight) return;
-        e.preventDefault();
-        const delta = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
-        targetY = clampY(targetY + delta * 0.95);
-        kick();
-      }, { passive: false });
-
-      window.addEventListener('scroll', () => {
-        if (!rafId) {
-          currentY = window.scrollY || 0;
-          targetY = currentY;
-          updateScrollScene();
-        }
-      }, { passive: true });
-
-      // Smooth inertial anchor navigation
-      document.addEventListener('click', e => {
-        const link = e.target.closest('a[href^="#"]');
-        if (!link) return;
-        const hash = link.getAttribute('href');
-        if (!hash || hash === '#') return;
-        const dest = hash === '#top' ? document.body : document.querySelector(hash);
-        if (!dest) return;
-        e.preventDefault();
-        const navH = nav ? nav.offsetHeight : 72;
-        const top = hash === '#top' ? 0 : dest.getBoundingClientRect().top + (window.scrollY || 0) - navH + 8;
-        targetY = clampY(top);
-        kick();
-        history.pushState(null, '', hash);
-      });
-    } else {
-      window.addEventListener('scroll', () => requestAnimationFrame(updateScrollScene), { passive: true });
-    }
-
-    window.addEventListener('resize', updateScrollScene);
+    window.addEventListener('scroll', scheduleScene, { passive: true });
+    window.addEventListener('resize', () => { refreshMetrics(); scheduleScene(); }, { passive: true });
+    window.addEventListener('load', () => { refreshMetrics(); scheduleScene(); }, { once: true });
     requestAnimationFrame(updateScrollScene);
 
-    // Interactive card spotlight on pointer move
+    // Smooth anchor navigation with fixed-nav offset
+    document.addEventListener('click', e => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const dest = hash === '#top' ? document.body : document.querySelector(hash);
+      if (!dest) return;
+      e.preventDefault();
+      const navH = nav ? nav.offsetHeight : 72;
+      const top = hash === '#top' ? 0 : dest.getBoundingClientRect().top + (window.scrollY || 0) - navH + 8;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      history.pushState(null, '', hash);
+    });
+
+    // Interactive card spotlight on pointer move (rAF-throttled)
     document.querySelectorAll('.focus__card, .case, .svc').forEach(card => {
+      let cardRaf = 0;
+      let lastEvt = null;
       card.addEventListener('pointermove', e => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', `${(e.clientX - r.left).toFixed(0)}px`);
-        card.style.setProperty('--my', `${(e.clientY - r.top).toFixed(0)}px`);
-      });
+        lastEvt = e;
+        if (cardRaf) return;
+        cardRaf = requestAnimationFrame(() => {
+          cardRaf = 0;
+          if (!lastEvt) return;
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', `${(lastEvt.clientX - r.left).toFixed(0)}px`);
+          card.style.setProperty('--my', `${(lastEvt.clientY - r.top).toFixed(0)}px`);
+        });
+      }, { passive: true });
     });
   }
 
