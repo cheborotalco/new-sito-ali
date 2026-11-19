@@ -139,7 +139,7 @@ const SERVICES = [
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
       en: 'Independent evaluation of an investment opportunity: business model, team structure, operational risks and red flags.',
-      ru: 'Независимая оценка инвестиционной возможности: бизнес-модель, команда, операционные риски и тревожные сигналы.'
+      ru: 'Независимая оценка инвестиционной возможности: бизнес-модель, команда, операционные риски и red flags.'
     }
   },
   {
