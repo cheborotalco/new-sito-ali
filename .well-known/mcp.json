@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "2024-11-05",
+  "name": "alisac-it-mcp",
+  "displayName": "Alisa Chebotarenko — AI & IT Advisory MCP",
+  "description": "Public MCP (Model Context Protocol) endpoint for Alisa Chebotarenko (Independent AI & IT Specialist, PMP, PSPO I, AWS Certified AI Practitioner). Available across Europe and Asia in English, Russian, and Italian.",
+  "endpoint": "https://alisac.it/api/mcp",
+  "transport": "streamable-http",
+  "protocol": "json-rpc-2.0",
+  "website": "https://alisac.it/",
+  "documentation": "https://alisac.it/llms-full.txt",
+  "languages": ["en", "ru", "it"],
+  "serviceRegions": ["Europe", "Asia"],
+  "tools": [
+    "get_profile",
+    "list_services",
+    "list_case_studies",
+    "submit_inquiry"
+  ]
+}
