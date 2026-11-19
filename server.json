@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/registry/main/schema/server.schema.json",
+  "name": "io.github.cheborotalco/alisac-it-mcp",
+  "description": "Alisa Chebotarenko — Independent AI & IT Specialist (PMP, PSPO I, AWS AI Practitioner). Query profile, Europe & Asia advisory services, case studies, or submit a direct inquiry.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/cheborotalco/new-sito-ali",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://alisac.it/api/mcp"
+    }
+  ]
+}
