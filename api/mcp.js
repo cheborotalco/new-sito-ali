@@ -239,8 +239,8 @@ const CASE_STUDIES = [
       ru: 'Премиальный продукт для очистки воздуха: перезапуск'
     },
     summary: {
-      en: 'Coordinated redesign and premium repositioning alongside the development of a remote-control mobile application featuring smart sanitization based on input parameters — which successfully attracted business angel interest.',
-      ru: 'Координировала редизайн и премиальное репозиционирование с разработкой мобильного приложения для удалённого управления, интеллектуальными функциями и санификации по входным параметрам — что привлекло интерес бизнес-ангелов.'
+      en: 'Coordinated redesign and premium repositioning alongside the development of a remote-control mobile application featuring smart sanitization based on input parameters. Post-project support in investor search and participation in product sales.',
+      ru: 'Координировала редизайн и премиальное репозиционирование с разработкой мобильного приложения для удалённого управления, интеллектуальными функциями и санификации по входным параметрам. Пост-проектное сопровождение в поиске инвестора, участие в продаже продукта.'
     },
     details: {
       en: {
