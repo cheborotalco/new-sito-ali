@@ -441,6 +441,11 @@ module.exports = async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
+    const accept = String(req.headers?.accept || '').toLowerCase();
+    if (accept.includes('text/event-stream')) {
+      res.setHeader('Allow', 'POST, OPTIONS');
+      return res.status(405).json({ error: 'SSE stream not offered; use HTTP POST for stateless JSON-RPC 2.0.' });
+    }
     return res.status(200).json({
       name: 'alisac-it-mcp',
       version: '1.0.0',
