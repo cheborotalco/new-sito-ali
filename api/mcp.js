@@ -145,13 +145,13 @@ const SERVICES = [
   {
     id: 'execution-risk-review',
     category: 'investor',
-    title: { en: 'Execution Risk Review', ru: 'Оценка рисков исполнения' },
+    title: { en: 'Execution Risk Assessment', ru: 'Оценка рисков исполнения' },
     duration: { en: 'Up to 7 business days', ru: 'До 7 рабочих дней' },
     startingPrice: '€1,500',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
-      en: 'Assessment of a startup’s ability to execute its strategy and deliver on its roadmap.',
-      ru: 'Оценка способности стартапа реализовать стратегию и выполнить дорожную карту.'
+      en: 'Independent evaluation of a startup’s ability to execute its strategy and deliver on its roadmap: team structure, delivery processes, resource allocation, and operational readiness to scale.',
+      ru: 'Независимая оценка способности стартапа реализовать заявленную стратегию и выполнить дорожную карту в заданные сроки: структура команды, процессы исполнения, ресурсы и готовность к масштабированию.'
     }
   },
   {
