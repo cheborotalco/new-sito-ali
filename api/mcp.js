@@ -114,8 +114,8 @@ const SERVICES = [
     startingPrice: '€950',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
-      en: 'Structured assessment of a project, business idea or new initiative before significant resources are committed.',
-      ru: 'Структурированная оценка проекта, бизнес-идеи или инициативы до вложения значительных ресурсов.'
+      en: 'Structured assessment of a business project, business idea or new initiative before significant resources are committed.',
+      ru: 'Структурированная оценка проекта в бизнесе, бизнес-идеи или инициативы до вложения значительных ресурсов.'
     }
   },
   {
