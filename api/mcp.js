@@ -271,13 +271,13 @@ const CASE_STUDIES = [
     },
     details: {
       en: {
-        objective: 'Create and bring to the French hospitality market an innovative B2B solution, namely next-generation smart beds with integrated AI algorithms and active noise cancellation (ANC) acoustic systems to enhance guest privacy and sleep quality.',
+        objective: 'Create and bring to the French hospitality market an innovative B2B solution, namely next-generation smart beds with integrated AI algorithms and active noise cancellation (ANC) acoustic systems to enhance guest privacy and rest quality.',
         role: 'End-to-end coordination of product development and launch: synchronizing acoustic engineers, furniture technologists, and AI developers, overseeing hardware/software integration, and adapting the solution to hospitality standards.',
         decisions: 'Implemented adaptive AI algorithms analyzing external room noise in real time and generating anti-phase acoustic waves (creating an individual quiet zone around the bed without structural wall soundproofing).',
         result: 'Successful launch for the hospitality segment in France, creating a new competitive advantage for hotels (higher guest satisfaction and average check) and validating a complex hardware+AI solution in a commercial environment.'
       },
       ru: {
-        objective: 'Создать и вывести на гостиничный рынок Франции инновационное B2B-решение, а именно умные кровати нового поколения с интегрированными ИИ-алгоритмами и акустическими системами активного шумоподавления (ANC) для повышения приватности и качества сна гостей.',
+        objective: 'Создать и вывести на гостиничный рынок Франции инновационное B2B-решение, а именно умные кровати нового поколения с интегрированными ИИ-алгоритмами и акустическими системами активного шумоподавления (ANC) для повышения приватности и качества отдыха гостей.',
         role: 'Сквозная координация разработки и запуска продукта: синхронизация инженеров по акустике, мебельных технологов и AI-разработчиков, контроль интеграции «железа» и софта, адаптация под стандарты гостиничного бизнеса.',
         decisions: 'Внедрение адаптивных ИИ-алгоритмов, анализирующих внешний шумовой фон в реальном времени и генерирующих противофазные акустические волны (индивидуальная «тихая зона» без капитальной шумоизоляции стен).',
         result: 'Успешный запуск продукта для гостиничного сегмента во Франции, новое конкурентное преимущество для отелей (рост удовлетворённости гостей и среднего чека) и валидация hardware+AI решения в коммерческой среде.'
