@@ -157,13 +157,13 @@ const SERVICES = [
   {
     id: 'post-investment-100-day-plan',
     category: 'investor',
-    title: { en: 'Post-Investment 100-Day Plan', ru: 'План первых 100 дней после инвестиции' },
+    title: { en: 'First 100-Day Post-Investment Plan', ru: 'План первых 100 дней после инвестиции' },
     duration: { en: 'Up to 10 business days', ru: 'До 10 рабочих дней' },
     startingPrice: '€2,500',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
-      en: 'Practical 30/60/100-day action plan, KPI and governance recommendations for investors post-investment.',
-      ru: 'Практичный план действий на 30/60/100 дней, рекомендации по KPI и управлению после инвестиции.'
+      en: 'Structured post-close diagnostic and execution plan following an investment: operational priorities, organizational alignment, delivery readiness, and a 30/60/100-day roadmap.',
+      ru: 'Структурированный пост-инвестиционный аудит и план запуска после сделки: операционные приоритеты, согласованность команды и дорожная карта на 30/60/100 дней.'
     }
   },
   {
