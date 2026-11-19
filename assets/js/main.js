@@ -124,6 +124,21 @@
     } else counters.forEach(runCounter);
   }
 
+  /* ---------- expandable work stats (countries / markets) ---------- */
+  document.querySelectorAll('.work-stat--toggle .work-stat__btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.work-stat');
+      const main = btn.querySelector('.work-stat__main');
+      const detail = btn.querySelector('.work-stat__detail');
+      if (!card || !main || !detail) return;
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      card.classList.toggle('is-open', open);
+      main.hidden = open;
+      detail.hidden = !open;
+    });
+  });
+
   /* ---------- active nav link ---------- */
   const links = [...document.querySelectorAll('.nav__link')];
   const sections = links

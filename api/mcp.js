@@ -46,7 +46,7 @@ const PROFILE = {
       'Cloud Infrastructure & Architecture: Core AWS Services, Security & Shared Responsibility, High Availability & Multi-Region, FinOps & Cloud Economics, Enterprise Cloud Migration',
       'AI Regulation & Risk Management: EU AI Act Classification & Audit, AI Governance & Human-in-the-Loop Architecture, External Audit Readiness, Risk & Budget Management, Independent Contractor Oversight'
     ],
-    stats: { projectsDelivered: '10+', countries: 5, budgetManaged: '€550K+', markets: 6 },
+    stats: { projectsDelivered: '10+', countries: 8, countriesList: ['Italy', 'France', 'Switzerland', 'Spain', 'UAE', 'Turkey', 'China', 'Russia'], budgetManaged: '€550K+', markets: 6, marketsList: ['MedTech', 'CleanTech', 'IoT', 'Retail', 'B2B', 'B2C', 'Smart Home', 'Manufacturing', 'HoReCa'] },
     contact: {
       email: 'alisa.1chebotarenko@gmail.com',
       telegram: 'https://t.me/alichebo',
@@ -82,7 +82,7 @@ const PROFILE = {
       'Облачная инфраструктура и архитектура: Core-сервисы AWS, ИБ и модель разделённой ответственности, отказоустойчивость и мультирегиональность, FinOps и экономика облака, миграция для классического бизнеса',
       'Регулирование ИИ и управление рисками: классификация и аудит по EU AI Act, архитектура AI Governance и Human-in-the-Loop, готовность к внешнему аудиту, управление рисками и бюджетом, независимый надзор за подрядчиками'
     ],
-    stats: { projectsDelivered: '10+', countries: 5, budgetManaged: '€550K+', markets: 6 },
+    stats: { projectsDelivered: '10+', countries: 8, countriesList: ['Italy', 'France', 'Switzerland', 'Spain', 'UAE', 'Turkey', 'China', 'Russia'], budgetManaged: '€550K+', markets: 6, marketsList: ['MedTech', 'CleanTech', 'IoT', 'Retail', 'B2B', 'B2C', 'Smart Home', 'Manufacturing', 'HoReCa'] },
     contact: {
       email: 'alisa.1chebotarenko@gmail.com',
       telegram: 'https://t.me/alichebo',
