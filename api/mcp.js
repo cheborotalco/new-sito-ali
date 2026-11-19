@@ -97,7 +97,7 @@ const SERVICES = [
   {
     id: 'critical-decision-review',
     category: 'private',
-    title: { en: 'Critical Decision Review', ru: 'Экспертиза критического решения' },
+    title: { en: 'Critical Decision Review', ru: 'Аудит критического решения' },
     duration: { en: 'Up to 5 business days', ru: 'До 5 рабочих дней' },
     startingPrice: '€750',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
