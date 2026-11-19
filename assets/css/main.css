@@ -434,7 +434,7 @@ body.is-locked{overflow:hidden}
 .btn--quote:hover{background:#de5318;box-shadow:0 14px 28px -14px rgba(241,98,35,.7)}
 .btn--quote .btn__arrow{transition:transform .35s var(--ease-out)}
 
-.svc__excluded{font-size:.78125rem;line-height:1.55;color:#6f6989;margin:0;max-width:72ch}
+.svc__excluded{font-size:.78125rem;line-height:1.55;color:#6f6989;margin-bottom:0;max-width:72ch}
 .svc__excluded b{font-weight:600;color:#5f597a}
 
 .svc__foot-note{font-size:.8125rem;color:var(--muted)}
