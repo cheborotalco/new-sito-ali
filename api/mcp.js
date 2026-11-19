@@ -215,7 +215,7 @@ const CASE_STUDIES = [
     },
     summary: {
       en: 'Researched opportunities to turn production waste into a new product line while coordinating the development of an internal RAG system for intelligent search across corporate technical documentation.',
-      ru: 'Исследование возможностей превращения производственных отходов в новую продуктовую линейку и координация разработки внутренней RAG-системы для интеллектуального поиска по технической документации компании.'
+      ru: 'Исследовала возможности превращения производственных отходов в новую продуктовую линейку и координировала разработку внутренней RAG-системы для интеллектуального поиска по технической документации компании.'
     },
     details: {
       en: {
