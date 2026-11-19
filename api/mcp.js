@@ -22,7 +22,18 @@ const PROFILE = {
   en: {
     name: 'Alisa Chebotarenko',
     role: 'Independent AI & IT Specialist · Strategic Partner · Fractional Delivery Lead',
-    location: 'Bordighera, Italy (working across Europe)',
+    equivalentRoles: [
+      'Fractional Delivery Lead',
+      'Technical Project Manager (PMP)',
+      'Agile Product Owner (PSPO I)',
+      'Applied AI & RAG Consultant',
+      'EU AI Act & AI Governance Specialist',
+      'Cloud & AWS FinOps Auditor',
+      'Pre-Investment Execution Risk Advisor'
+    ],
+    location: 'Bordighera, Italy',
+    serviceRegions: ['Europe', 'Asia'],
+    availability: 'Available for select engagements across Europe and Asia (remote & cross-border)',
     languages: ['English', 'Russian', 'Italian'],
     certifications: [
       { name: 'PMP® — Project Management Professional', issuer: 'PMI', verify: 'https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url' },
@@ -30,23 +41,35 @@ const PROFILE = {
       { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services', verify: 'https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url' }
     ],
     focusAreas: [
-      'Agile delivery & product ownership (Scrum, Kanban, hybrid)',
-      'AI fundamentals (ML paradigms, LLMs, RAG vs fine-tuning, evaluation)',
-      'Cloud foundations (AWS core services, IAM, architecture & cost trade-offs)',
-      'AI ACT & Governance (EU AI Act risk tiers, human oversight, PMP-grade delivery control)'
+      'Agile Delivery & Product Ownership: Delivery Audit, Value-Driven Backlog Management, Flow Metrics (Velocity, Lead Time), Business-Engineering Alignment, Pragmatic Hybrid Models',
+      'Applied AI & Model Evaluation: Learning Paradigms, Applied ML Families, Foundation Models & LLMs, Business Data Adaptation (prompt engineering, RAG, fine-tuning), Production Metrics & Hallucination Control',
+      'Cloud Infrastructure & Architecture: Core AWS Services, Security & Shared Responsibility, High Availability & Multi-Region, FinOps & Cloud Economics, Enterprise Cloud Migration',
+      'AI Regulation & Risk Management: EU AI Act Classification & Audit, AI Governance & Human-in-the-Loop Architecture, External Audit Readiness, Risk & Budget Management, Independent Contractor Oversight'
     ],
     stats: { projectsDelivered: '10+', countries: 5, budgetManaged: '€550K+', markets: 6 },
     contact: {
       email: 'alisa.1chebotarenko@gmail.com',
       telegram: 'https://t.me/alichebo',
       linkedin: 'https://linkedin.com/in/alisachebotarenko',
-      website: 'https://alisac.it/'
+      website: 'https://alisac.it/',
+      mcpEndpoint: 'https://alisac.it/api/mcp'
     }
   },
   ru: {
     name: 'Алиса Чеботаренко',
     role: 'Независимый AI и IT-специалист · Strategic Partner · Fractional Delivery Lead',
-    location: 'Бордигера, Италия (работает по всей Европе)',
+    equivalentRoles: [
+      'Независимый IT/AI-менеджер проектов (PMP)',
+      'Fractional Delivery Lead',
+      'Product Owner (PSPO I)',
+      'Консультант по прикладному ИИ, RAG и оценке моделей',
+      'Специалист по EU AI Act и AI Governance',
+      'Аудитор облачной архитектуры и FinOps (AWS)',
+      'Независимый аудитор подрядчиков и рисков перед инвестицией'
+    ],
+    location: 'Бордигера, Италия',
+    serviceRegions: ['Европа', 'Азия'],
+    availability: 'Доступна для консалтинга и проектов по всей Европе и Азии (удалённо и международный формат)',
     languages: ['Русский', 'Английский', 'Итальянский'],
     certifications: [
       { name: 'PMP® — Project Management Professional', issuer: 'PMI', verify: 'https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url' },
@@ -54,17 +77,18 @@ const PROFILE = {
       { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services', verify: 'https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url' }
     ],
     focusAreas: [
-      'Agile-поставка и продуктовая роль (Scrum, Kanban, гибридные модели)',
-      'Основы ИИ (ML-парадигмы, LLM, RAG vs fine-tuning, оценка качества)',
-      'Облачная база AWS (вычисления, хранение, IAM, оптимизация затрат)',
-      'AI ACT & Governance (уровни риска EU AI Act, контроль человека, управление поставкой уровня PMP)'
+      'Построение предсказуемых процессов и Agile-поставка: аудит процессов доставки (Delivery Audit), управление бэклогом по ценности, метрики потока (Velocity, Lead Time), синхронизация бизнеса и инженерии, прагматичные гибридные модели',
+      'Практический ИИ и оценка моделей: парадигмы и классы моделей, прикладные семейства ML, фундаментальные модели и LLM, адаптация под бизнес-данные (промпт-инжиниринг, RAG, fine-tuning), production-метрики и контроль галлюцинаций',
+      'Облачная инфраструктура и архитектура: Core-сервисы AWS, ИБ и модель разделённой ответственности, отказоустойчивость и мультирегиональность, FinOps и экономика облака, миграция для классического бизнеса',
+      'Регулирование ИИ и управление рисками: классификация и аудит по EU AI Act, архитектура AI Governance и Human-in-the-Loop, готовность к внешнему аудиту, управление рисками и бюджетом, независимый надзор за подрядчиками'
     ],
     stats: { projectsDelivered: '10+', countries: 5, budgetManaged: '€550K+', markets: 6 },
     contact: {
       email: 'alisa.1chebotarenko@gmail.com',
       telegram: 'https://t.me/alichebo',
       linkedin: 'https://linkedin.com/in/alisachebotarenko',
-      website: 'https://alisac.it/ru/'
+      website: 'https://alisac.it/ru/',
+      mcpEndpoint: 'https://alisac.it/api/mcp'
     }
   }
 };
@@ -184,28 +208,80 @@ const CASE_STUDIES = [
   {
     id: 'circular-rag',
     region: { en: 'China / Russia', ru: 'Китай / Россия' },
-    title: { en: 'From production waste to a market-ready product line', ru: 'От отходов производства к готовой продуктовой линейке' },
+    tags: { en: ['RAG & knowledge AI', 'R&D & concept', 'China / Russia'], ru: ['RAG и управление знаниями', 'R&D и концепция', 'Китай / Россия'] },
+    title: {
+      en: 'Circular Economy: Product Concept & AI Knowledge System',
+      ru: 'Циклическая экономика: продуктовая концепция и AI-система знаний'
+    },
     summary: {
-      en: 'Circular-economy product launch including an internal RAG model for employees to query production data and know-how when designing new products.',
-      ru: 'Запуск продуктовой линейки из производственных отходов, включая внутреннюю RAG-модель для сотрудников для поиска данных при разработке новых продуктов.'
+      en: 'Researched opportunities to turn production waste into a new product line while coordinating the development of an internal RAG system for intelligent search across corporate technical documentation.',
+      ru: 'Исследование возможностей превращения производственных отходов в новую продуктовую линейку и координация разработки внутренней RAG-системы для интеллектуального поиска по технической документации компании.'
+    },
+    details: {
+      en: {
+        objective: 'Explore opportunities to transform production waste into a new commercial product line and build technological solutions to improve how the company works with internal documentation.',
+        role: 'End-to-end project management during the R&D phase: structuring tasks, coordinating cross-functional contributors, assessing technical feasibility, planning resources, controlling milestones, and coordinating internal RAG system development.',
+        result: 'Developed the concept for a new product line built on secondary material reuse; defined technological requirements and commercialization roadmap; delivered a RAG-based solution for corporate technical documentation; provided a structured foundation for next-phase investment decisions.'
+      },
+      ru: {
+        objective: 'Исследовать возможности превращения производственных отходов в новую продуктовую линейку и разработать технологические решения для повышения эффективности работы с внутренней документацией компании.',
+        role: 'Управление проектом на этапе R&D: структурирование задач, координация участников, оценка технической реализуемости, планирование ресурсов, контроль ключевых этапов и координация разработки внутренней RAG-системы.',
+        result: 'Проработана концепция новой линейки из вторичных материалов, определены технологические требования и дорожная карта коммерциализации, разработано RAG-решение для технической документации и сформирована основа для управленческих решений.'
+      }
     }
   },
   {
     id: 'luxury-air-quality-iot',
     region: { en: 'Italy / Switzerland', ru: 'Италия / Швейцария' },
-    title: { en: 'Luxury air-quality product, premium repositioning', ru: 'Премиальный продукт для очистки воздуха: перезапуск' },
+    tags: { en: ['Smart App', 'Smart Sanitization', 'Italy / Switzerland'], ru: ['Умное приложение', 'Умная санификация', 'Италия / Швейцария'] },
+    title: {
+      en: 'Premium Air Purification Product: Relaunch',
+      ru: 'Премиальный продукт для очистки воздуха: перезапуск'
+    },
     summary: {
-      en: 'Redesign and premium repositioning pairing the device with a companion mobile app for remote control and smart adaptive sanitization.',
-      ru: 'Редизайн и премиальное репозиционирование с мобильным приложением для удалённого управления и умной санификации по входным параметрам.'
+      en: 'Coordinated redesign and premium repositioning alongside the development of a remote-control mobile application featuring smart sanitization based on input parameters — which successfully attracted business angel interest.',
+      ru: 'Координировала редизайн и премиальное репозиционирование с разработкой мобильного приложения для удалённого управления и интеллектуальными функциями санификации по входным параметрам — что привлекло интерес бизнес-ангелов.'
+    },
+    details: {
+      en: {
+        before: 'A traditional hardware product in the premium air purification segment hit the ceiling of the traditional equipment market without digital value for the user and investors.',
+        role: 'End-to-end guidance of product transformation, from audit and concept change to coordination of cross-functional development and market launch in Europe (Italy / Switzerland).',
+        decisions: 'Transitioned the product into Smart IoT via a remote-control mobile app and intelligent sanitization algorithms based on incoming parameters.',
+        result: 'The product gained digital added value, secured its position in the premium segment on European markets, and successfully attracted business angel interest.'
+      },
+      ru: {
+        before: 'Традиционный «железный» продукт в сегменте премиальных систем очистки воздуха упирался в потолок классического рынка оборудования без цифровой ценности для пользователя и инвесторов.',
+        role: 'Сквозное руководство трансформацией продукта — от аудита и изменения концепции до координации кросс-функциональной разработки и вывода на европейские рынки (Италия / Швейцария).',
+        decisions: 'Перевод продукта в категорию Smart IoT за счёт мобильного приложения для удалённого управления и алгоритмов интеллектуальной санификации по входящим параметрам.',
+        result: 'Продукт получил цифровую добавленную стоимость, закрепился в премиальном сегменте на европейском рынке и успешно привлёк интерес бизнес-ангелов.'
+      }
     }
   },
   {
     id: 'ai-hospitality',
     region: { en: 'France', ru: 'Франция' },
-    title: { en: 'AI-powered hospitality & smart noise-cancelling beds', ru: 'ИИ-гостеприимство: умные кровати с шумоподавлением' },
+    tags: { en: ['Active Noise Cancellation', 'AI Integration', 'France'], ru: ['Активное шумоподавление', 'Интеграция ИИ', 'Франция'] },
+    title: {
+      en: 'AI Hospitality: Smart Noise-Canceling Beds',
+      ru: 'ИИ-гостеприимство: умные кровати с шумоподавлением'
+    },
     summary: {
-      en: 'End-to-end delivery of an AI-enhanced hospitality solution featuring smart beds engineered to actively cancel external noise.',
-      ru: 'Запуск гостиничного решения с ИИ на базе умных кроватей с активным подавлением внешнего шума.'
+      en: 'Coordinated the development and launch of an AI-driven hospitality solution based on next-generation smart beds engineered for active external noise cancellation via advanced acoustic hardware — enhancing guest comfort, privacy, and sleep quality.',
+      ru: 'Координировала разработку и запуск гостиничного решения с ИИ на базе умных кроватей нового поколения, спроектированных для активного подавления внешнего шума с помощью передовых акустических устройств — повышая комфорт, приватность и качество сна гостей.'
+    },
+    details: {
+      en: {
+        objective: 'Create and bring to the French hospitality market an innovative B2B solution — next-generation smart beds with integrated AI algorithms and active noise cancellation (ANC) acoustic systems to enhance guest privacy and sleep quality.',
+        role: 'End-to-end coordination of product development and launch: synchronizing acoustic engineers, furniture technologists, and AI developers, overseeing hardware/software integration, and adapting the solution to hospitality standards.',
+        decisions: 'Implemented adaptive AI algorithms analyzing external room noise in real time and generating anti-phase acoustic waves (creating an individual quiet zone around the bed without structural wall soundproofing).',
+        result: 'Successful launch for the hospitality segment in France, creating a new competitive advantage for hotels (higher guest satisfaction and average check) and validating a complex hardware+AI solution in a commercial environment.'
+      },
+      ru: {
+        objective: 'Создать и вывести на гостиничный рынок Франции инновационное B2B-решение — умные кровати нового поколения с интегрированными ИИ-алгоритмами и акустическими системами активного шумоподавления (ANC) для повышения приватности и качества сна гостей.',
+        role: 'Сквозная координация разработки и запуска продукта: синхронизация инженеров по акустике, мебельных технологов и AI-разработчиков, контроль интеграции «железа» и софта, адаптация под стандарты гостиничного бизнеса.',
+        decisions: 'Внедрение адаптивных ИИ-алгоритмов, анализирующих внешний шумовой фон в реальном времени и генерирующих противофазные акустические волны (индивидуальная «тихая зона» без капитальной шумоизоляции стен).',
+        result: 'Успешный запуск продукта для гостиничного сегмента во Франции, новое конкурентное преимущество для отелей (рост удовлетворённости гостей и среднего чека) и валидация hardware+AI решения в коммерческой среде.'
+      }
     }
   }
 ];
@@ -213,7 +289,7 @@ const CASE_STUDIES = [
 const TOOLS = [
   {
     name: 'get_profile',
-    description: 'Get Alisa Chebotarenko profile, certifications (PMP, PSPO I, AWS AI Practitioner), spoken languages (EN/RU/IT), focus areas including EU AI Act & Governance, and contact details.',
+    description: 'Get Alisa Chebotarenko profile, certifications (PMP, PSPO I, AWS AI Practitioner), Europe & Asia availability, spoken languages (EN/RU/IT), equivalent roles, the 4 core domains, and direct contact details.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -448,8 +524,10 @@ module.exports = async function handler(req, res) {
       const items = CASE_STUDIES.map(c => ({
         id: c.id,
         region: c.region[lang],
+        tags: c.tags[lang],
         title: c.title[lang],
-        summary: c.summary[lang]
+        summary: c.summary[lang],
+        details: c.details[lang]
       }));
       return res.status(200).json({
         jsonrpc: '2.0',
