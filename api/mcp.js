@@ -266,8 +266,8 @@ const CASE_STUDIES = [
       ru: 'ИИ-гостеприимство: умные кровати с шумоподавлением'
     },
     summary: {
-      en: 'Coordinated the development and launch of an AI-driven hospitality solution based on next-generation smart beds engineered for active external noise cancellation via advanced acoustic hardware — enhancing guest comfort, privacy, and sleep quality.',
-      ru: 'Координировала разработку и запуск гостиничного решения с ИИ на базе умных кроватей нового поколения, спроектированных для активного подавления внешнего шума с помощью передовых акустических устройств — повышая комфорт, приватность и качество сна гостей.'
+      en: 'Coordinated the development and launch of an AI-driven hospitality solution based on next-generation smart beds engineered for active external noise cancellation via advanced acoustic hardware. Aimed at enhancing comfort, privacy, and sleep quality.',
+      ru: 'Координировала разработку и запуск гостиничного решения с ИИ на базе умных кроватей нового поколения, спроектированных для активного подавления внешнего шума с помощью передовых акустических устройств. С целью повышения комфорта, приватности и улучшения качества сна.'
     },
     details: {
       en: {
