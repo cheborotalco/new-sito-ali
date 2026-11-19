@@ -102,8 +102,8 @@ const SERVICES = [
     startingPrice: '€750',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
-      en: 'An independent perspective with no conflict of interest—the unvarnished truth about risks. I am not here to sell development.',
-      ru: 'Независимый взгляд «без конфликта интересов», вся правда о рисках. Здесь я не продаю разработку.'
+      en: 'An independent perspective with no conflict of interest—the unvarnished truth about risks. I am not here to sell development. I structure information, test hypotheses, uncover risks, and analyze scenarios.',
+      ru: 'Независимый взгляд «без конфликта интересов», вся правда о рисках. Здесь я не продаю разработку. Структурирую информацию, проверяю гипотезы, нахожу риски и анализирую сценарии.'
     }
   },
   {
