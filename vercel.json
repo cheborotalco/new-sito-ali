@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/api/mcp/.well-known/glama.json",
+      "destination": "/.well-known/glama-connector.json"
+    }
+  ],
   "redirects": [
     {
       "source": "/:path*",
