@@ -286,7 +286,18 @@
     </div>
 
     <div class="work-stats" data-reveal>
-      <div class="work-stat"><span class="work-stat__v" data-count="10" data-suffix="+">10+</span><span class="work-stat__l">Проектов</span></div>
+      <div class="work-stat work-stat--toggle">
+        <button type="button" class="work-stat__btn" aria-expanded="false">
+          <span class="work-stat__main">
+            <span class="work-stat__v" data-count="10" data-suffix="+">10+</span>
+            <span class="work-stat__l work-stat__l--btn">Проектов <span class="work-stat__arrow" aria-hidden="true">▾</span></span>
+          </span>
+          <span class="work-stat__detail" hidden>
+            <span class="work-stat__l work-stat__l--btn">Проектов <span class="work-stat__arrow" aria-hidden="true">▾</span></span>
+            <span class="work-stat__list">Большинство проектов под NDA из-за закрытых R&amp;D и патентования</span>
+          </span>
+        </button>
+      </div>
       <div class="work-stat work-stat--toggle">
         <button type="button" class="work-stat__btn" aria-expanded="false">
           <span class="work-stat__main">
