@@ -245,13 +245,13 @@ const CASE_STUDIES = [
     details: {
       en: {
         before: 'A traditional hardware product in the premium air purification segment hit the ceiling of the traditional equipment market without digital value for the user and investors.',
-        role: 'End-to-end guidance of product transformation, from audit and concept change to coordination of cross-functional development and market launch in Europe (Italy / Switzerland).',
+        role: 'End-to-end guidance of product transformation, from audit and concept change to coordination of cross-functional development and market launch in Italy and Switzerland.',
         decisions: 'Transitioned the product into Smart IoT via a remote-control mobile app and intelligent sanitization algorithms based on incoming parameters.',
         result: 'The product gained digital added value, secured its position in the premium segment on European markets, and successfully attracted business angel interest.'
       },
       ru: {
         before: 'Традиционный «железный» продукт в сегменте премиальных систем очистки воздуха упирался в потолок классического рынка оборудования без цифровой ценности для пользователя и инвесторов.',
-        role: 'Сквозное руководство трансформацией продукта — от аудита и изменения концепции до координации кросс-функциональной разработки и вывода на европейские рынки (Италия / Швейцария).',
+        role: 'Сквозное руководство трансформацией продукта от аудита и изменения концепции до координации кросс-функциональной разработки и вывода на рынки Италии и Швейцарии.',
         decisions: 'Перевод продукта в категорию Smart IoT за счёт мобильного приложения для удалённого управления и алгоритмов интеллектуальной санификации по входящим параметрам.',
         result: 'Продукт получил цифровую добавленную стоимость, закрепился в премиальном сегменте на европейском рынке и успешно привлёк интерес бизнес-ангелов.'
       }
