@@ -124,18 +124,32 @@
     } else counters.forEach(runCounter);
   }
 
-  /* ---------- expandable work stats (countries / markets) ---------- */
-  document.querySelectorAll('.work-stat--toggle .work-stat__btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.work-stat');
-      const main = btn.querySelector('.work-stat__main');
-      const detail = btn.querySelector('.work-stat__detail');
-      if (!card || !main || !detail) return;
-      const open = btn.getAttribute('aria-expanded') !== 'true';
-      btn.setAttribute('aria-expanded', String(open));
-      card.classList.toggle('is-open', open);
-      main.hidden = open;
-      detail.hidden = !open;
+  /* ---------- expandable work stats drawer ---------- */
+  document.querySelectorAll('.work-stats').forEach(box => {
+    const drawer = box.querySelector('.work-stats__drawer');
+    const drawerLabel = box.querySelector('.work-stats__drawer-label');
+    const drawerText = box.querySelector('.work-stats__drawer-text');
+    const btns = [...box.querySelectorAll('.work-stat--toggle .work-stat__btn')];
+    if (!drawer || !drawerLabel || !drawerText || !btns.length) return;
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.work-stat');
+        const wasOpen = card && card.classList.contains('is-open');
+        btns.forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          const c = b.closest('.work-stat');
+          if (c) c.classList.remove('is-open');
+        });
+        if (wasOpen) {
+          drawer.hidden = true;
+          return;
+        }
+        if (card) card.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        drawerLabel.textContent = btn.dataset.statLabel || '';
+        drawerText.textContent = btn.dataset.statDetail || '';
+        drawer.hidden = false;
+      });
     });
   });
 
