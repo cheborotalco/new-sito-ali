@@ -181,13 +181,13 @@ const SERVICES = [
   {
     id: 'delivery-execution-leadership',
     category: 'startup',
-    title: { en: 'Delivery & Execution Leadership', ru: 'Лидерство в поставке и исполнении' },
-    duration: { en: 'Monthly engagement, min 1 month', ru: 'Ежемесячно, минимум 1 месяц' },
+    title: { en: 'Delivery & Execution Leadership', ru: 'Управление темпом и доставкой' },
+    duration: { en: 'Monthly, from 1 month', ru: 'Ежемесячно, от 1 месяца' },
     startingPrice: '€2,000/month',
-    pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
+    pricingNote: { en: 'Base fee; final pricing is scoped individually in each case.', ru: 'Базовая стоимость; в каждом случае цена рассчитывается индивидуально.' },
     summary: {
-      en: 'Hands-on fractional delivery leadership: weekly coordination, execution tracking, blocker removal and team alignment.',
-      ru: 'Практическое сопровождение поставки: еженедельная координация, контроль исполнения и снятие блокеров.'
+      en: 'Hands-on advisory to turn roadmaps into reliable outcomes: aligning priorities, reinforcing ownership, coordinating execution and maintaining momentum on high-stakes initiatives.',
+      ru: 'Практическая помощь в превращении планов в измеримый результат: согласование приоритетов, усиление ответственности, координация исполнения и удержание темпа по критичным инициативам.'
     }
   },
   {
