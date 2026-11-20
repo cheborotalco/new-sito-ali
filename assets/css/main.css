@@ -472,8 +472,9 @@ body.is-locked{overflow:hidden}
 .svc__foot-note{font-size:.8125rem;color:var(--muted)}
 
 /* ---------- tier switch ---------- */
-.tier-switch{display:inline-flex;gap:4px;padding:4px;width:fit-content;border:1px solid var(--line);border-radius:999px;background:rgba(247,245,251,.7)}
-.tier-tab{min-height:34px;padding:0 16px;border-radius:999px;border:0;background:transparent;font-size:.75rem;font-weight:600;letter-spacing:.01em;color:var(--ink-soft);cursor:pointer;transition:background .25s ease,color .25s ease}
+.svc__col--tiers{display:flex;flex-direction:column}
+.tier-switch{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;width:100%;margin-bottom:14px;border:1px solid var(--line);border-radius:999px;background:rgba(247,245,251,.7)}
+.tier-tab{min-height:34px;padding:0 16px;border-radius:999px;border:0;background:transparent;font-size:.75rem;font-weight:600;letter-spacing:.01em;color:var(--ink-soft);cursor:pointer;text-align:center;transition:background .25s ease,color .25s ease}
 .tier-tab:hover{background:rgba(24,16,66,.06);color:var(--ink)}
 .tier-tab.is-active{background:var(--ink);color:#fff}
 .tier-tab:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
@@ -481,7 +482,6 @@ body.is-locked{overflow:hidden}
 .tier-body{display:grid}
 .tier-panel{grid-area:1/1;display:flex;flex-direction:column;gap:10px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease-out),visibility .35s}
 .tier-panel.is-active{opacity:1;visibility:visible}
-.tier-panel .svc__list li{font-size:.8125rem;line-height:1.45}
 .tier-panel .pill{width:fit-content}
 
 /* ---------- work carousel ---------- */
@@ -886,7 +886,6 @@ body.is-locked{overflow:hidden}
   .services{grid-template-columns:repeat(3,1fr);align-items:stretch}
   .svc{display:grid;grid-row:span 5;grid-template-rows:subgrid;gap:14px}
   .svc__head,.svc__desc,.svc__col{align-self:start}
-  .svc__col--tiers{display:flex;flex-direction:column;gap:12px}
   .svc__excluded{order:4;margin-top:0;align-self:stretch}
   .svc__foot{order:5;margin-top:0;align-self:end}
   .work-carousel{overflow:visible}
