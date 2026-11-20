@@ -422,6 +422,12 @@ body.is-locked{overflow:hidden}
 .pill--violet{background:var(--violet-soft);border-color:rgba(182,101,255,.28);color:#5d279e}
 .pill--cyan{background:var(--cyan-soft);border-color:rgba(0,191,224,.28);color:#0a6f81}
 .svc__foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.svc__format-link{
+  width:100%;display:inline-flex;align-items:center;gap:6px;
+  padding:0;border:0;background:transparent;cursor:pointer;text-align:left;
+  font-size:.8125rem;font-weight:600;color:var(--violet);transition:color .2s ease;
+}
+.svc__format-link:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .svc__foot .btn--quote{width:100%}
 .svc__price-note{width:100%;margin:0;font-size:.75rem;line-height:1.5;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 .svc__price-note strong{font-weight:700;color:var(--ink)}
