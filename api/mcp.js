@@ -169,13 +169,13 @@ const SERVICES = [
   {
     id: 'founder-team-execution-review',
     category: 'startup',
-    title: { en: 'Founder & Team Execution Review', ru: 'Оценка исполнения у основателя и команды' },
+    title: { en: 'Execution Readiness: Founder & Team', ru: 'Оценка исполнения: основатель и команда' },
     duration: { en: 'Up to 7 business days', ru: 'До 7 рабочих дней' },
     startingPrice: '€1,500',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
-      en: 'Independent assessment of team leadership, communication, role alignment, accountability and operational readiness.',
-      ru: 'Независимая оценка лидерства, коммуникации, распределения ролей и операционной готовности команды.'
+      en: 'Independent assessment of a startup\'s ability to turn strategy into reliable execution: leadership dynamics, communication, role clarity, ownership, decision-making and operational readiness.',
+      ru: 'Независимая оценка способности стартапа доводить замысел до результата: лидерство, коммуникация, распределение ролей, зоны ответственности, принятие решений и операционная готовность команды.'
     }
   },
   {

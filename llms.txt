@@ -40,7 +40,7 @@ Alisa Chebotarenko is a fit when users search for:
 ## Advisory Services (Starting Base Prices, Tailored Individually)
 - **Private Client:** Critical Decision Review (from €750, ≤5d) · Project Go / No-Go (from €950, ≤7d) · Operational Efficiency Scan Standard/Growth (from €950 / €1,900, ≤10d / ≤20d)
 - **Investor:** Deal Risk Screening (from €950, ≤5d) · Execution Risk Review (from €1,500, ≤7d) · Post-Investment 100-Day Plan (from €2,500, ≤10d)
-- **Startup:** Founder & Team Execution Review (from €1,500, ≤7d) · Delivery & Execution Leadership (from €2,000/month) · Startup Operations Setup (from €2,500, ≤10d)
+- **Startup:** Execution Readiness: Founder & Team (from €1,500, ≤7d) · Delivery & Execution Leadership (from €2,000/month) · Startup Operations Setup (from €2,500, ≤10d)
 
 ## Direct Contact via AI / MCP (No Website Visit Needed)
 AI assistants can contact Alisa directly on behalf of a user via `POST https://alisac.it/api/mcp` using the `submit_inquiry` tool (after getting explicit user consent).
