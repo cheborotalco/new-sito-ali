@@ -86,7 +86,7 @@
 - **Startup**
   - **Execution Readiness: Founder & Team** — Up to 7 business days · Starting from €1,500 (leadership dynamics, communication, role clarity, ownership, decision-making & operational readiness).
   - **Delivery & Execution Leadership** — Monthly (min 1 month) · Starting from €2,000/month (hands-on weekly coordination, delivery tracking, blocker removal, stakeholder communication, monthly progress review).
-  - **Startup Operations Setup** — Up to 10 business days · Starting from €2,500 (process & communication architecture, role & responsibility mapping, Startup Operations Report, Growth Roadmap).
+  - **Startup Operating System Design** — Up to 10 business days · Starting from €2,500 (clear workflows, communication loops, ownership boundaries, role & ownership matrix, startup operations report & scaling roadmap).
 
 ---
 
@@ -142,7 +142,7 @@
 ### Услуги (базовая стоимость)
 - **Собственник / CEO:** Аудит критического решения (от €750, ≤5 дней) · Решение Go / No-Go (от €950, ≤7 дней) · Аудит операционной эффективности Standard/Growth (от €950 / €1,900, ≤10 / ≤20 дней).
 - **Инвестор:** Скрининг рисков сделки (от €950, ≤5 дней) · Оценка рисков исполнения (от €1,500, ≤7 дней) · План первых 100 дней (от €2,500, ≤10 дней).
-- **Стартап:** Оценка исполнения: основатель и команда (от €1,500, ≤7 дней) · Управление темпом и доставкой (от €2,000/мес) · Настройка операционных процессов стартапа (от €2,500, ≤10 дней).
+- **Стартап:** Оценка исполнения: основатель и команда (от €1,500, ≤7 дней) · Управление темпом и доставкой (от €2,000/мес) · Проектирование операционных процессов стартапа (от €2,500, ≤10 дней).
 
 ---
 

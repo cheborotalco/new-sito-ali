@@ -193,13 +193,13 @@ const SERVICES = [
   {
     id: 'startup-operations-setup',
     category: 'startup',
-    title: { en: 'Startup Operations Setup', ru: 'Настройка операционных процессов стартапа' },
+    title: { en: 'Startup Operating System Design', ru: 'Проектирование операционных процессов стартапа' },
     duration: { en: 'Up to 10 business days', ru: 'До 10 рабочих дней' },
     startingPrice: '€2,500',
-    pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
+    pricingNote: { en: 'Base fee; final pricing is scoped individually in each case.', ru: 'Базовая стоимость; в каждом случае цена рассчитывается индивидуально.' },
     summary: {
-      en: 'Building operational foundations for sustainable growth: clear processes, communication flows and role mapping.',
-      ru: 'Создание операционной основы для роста: понятные процессы, коммуникация и карта ответственности.'
+      en: 'Building the operational foundation for sustainable scale: clear workflows, communication loops, ownership boundaries and decision-making structures.',
+      ru: 'Создание операционной основы для устойчивого роста: понятные процессы, потоки коммуникаций, зоны ответственности и контур принятия решений.'
     }
   }
 ];
