@@ -422,6 +422,8 @@ html[lang="ru"] .about__item p{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit
 }
 .pill--violet{background:var(--violet-soft);border-color:rgba(182,101,255,.28);color:#5d279e}
 .pill--cyan{background:var(--cyan-soft);border-color:rgba(0,191,224,.28);color:#0a6f81}
+.pill--note{display:block;width:100%;padding:8px 12px;border-radius:12px;line-height:1.42;font-weight:500}
+.pill--note strong{color:var(--ink);font-weight:700}
 .svc__foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
 .svc__format-link{
   width:100%;display:inline-flex;align-items:center;gap:6px;
