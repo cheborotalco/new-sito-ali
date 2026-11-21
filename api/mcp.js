@@ -99,7 +99,7 @@ const SERVICES = [
     category: 'private',
     title: { en: 'Critical Decision Review', ru: 'Аудит критического решения' },
     duration: { en: 'Up to 5 business days', ru: 'До 5 рабочих дней' },
-    startingPrice: '€750',
+    startingPrice: '€850',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
       en: 'An independent perspective with no conflict of interest—the unvarnished truth about risks. I am not here to sell development. I structure information, test hypotheses, uncover risks, and analyze scenarios.',

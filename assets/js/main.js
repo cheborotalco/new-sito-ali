@@ -222,7 +222,7 @@
       sentOk: "Thank you — your request has been sent to Alisa! She usually replies within one business day.",
       sessionLimit: "We've reached the message limit for this session. You can restart below or email Alisa directly at **alisa.1chebotarenko@gmail.com**.",
       guardOffTopic: "🔒 **Guardrail active:** I am Alisa's intake assistant and can only handle project, AI adoption, governance and advisory inquiries for Alisa. I cannot answer unrelated questions, process external links or perform general tasks.",
-      guardFaqPricing: "Alisa's focused engagements start from **€750** (*Critical Decision Review*), **€950** (*Project Go/No-Go*, *Efficiency Scan*, *Deal Risk Screening*), **€1,500** (*Execution Reviews*), **€2,000/month** (*Delivery Leadership*) and **€2,500** (*100-Day Plan* / *Operations Setup*) — always tailored individually to your case."
+      guardFaqPricing: "Alisa's focused engagements start from **€850** (*Critical Decision Review*), **€950** (*Project Go/No-Go*, *Efficiency Scan*, *Deal Risk Screening*), **€1,500** (*Execution Reviews*), **€2,000/month** (*Delivery Leadership*) and **€2,500** (*100-Day Plan* / *Operations Setup*) — always tailored individually to your case."
     },
     ru: {
       welcome: "Здравствуйте! Я **Ассистент Алисы**. Какой проект или задачу вы хотите обсудить с Алисой?",
@@ -262,7 +262,7 @@
       sentOk: "Спасибо — ваш запрос отправлен Алисе! Обычно она отвечает в течение одного рабочего дня.",
       sessionLimit: "Достигнут лимит сообщений в этой сессии. Вы можете начать заново или написать Алисе напрямую на **alisa.1chebotarenko@gmail.com**.",
       guardOffTopic: "🔒 **Guardrail активен:** Я ассистент Алисы и помогаю только оформить запрос по проектам, внедрению ИИ, governance или консультациям. Я не отвечаю на отвлечённые темы, не перехожу по ссылкам и не выполняю посторонние запросы.",
-      guardFaqPricing: "Базовая стоимость услуг Алисы начинается от **€750** (*Аудит критического решения*), **€950** (*Go/No-Go*, *Аудит эффективности*, *Скрининг сделки*), **€1 500** (*Оценка исполнения*), **€2 000/мес.** (*Лидерство в поставке*) и **€2 500** (*План 100 дней* / *Настройка операционки*) — итоговая цена всегда рассчитывается индивидуально."
+      guardFaqPricing: "Базовая стоимость услуг Алисы начинается от **€850** (*Аудит критического решения*), **€950** (*Go/No-Go*, *Аудит эффективности*, *Скрининг сделки*), **€1 500** (*Оценка исполнения*), **€2 000/мес.** (*Лидерство в поставке*) и **€2 500** (*План 100 дней* / *Настройка операционки*) — итоговая цена всегда рассчитывается индивидуально."
     }
   };
 

@@ -38,7 +38,7 @@ Alisa Chebotarenko is a fit when users search for:
 3. **AI Hospitality: Smart Noise-Canceling Beds** *(France)* — B2B hospitality launch combining next-gen beds with real-time AI active noise cancellation (ANC) hardware.
 
 ## Advisory Services (Starting Base Prices, Tailored Individually)
-- **Private Client:** Critical Decision Review (from €750, ≤5d) · Project Go / No-Go (from €950, ≤7d) · Operational Efficiency Scan Standard/Growth (from €1,250 / €2,300, ≤10d / ≤20d)
+- **Private Client:** Critical Decision Review (from €850, ≤5d) · Project Go / No-Go (from €950, ≤7d) · Operational Efficiency Scan Standard/Growth (from €1,250 / €2,300, ≤10d / ≤20d)
 - **Investor:** Deal Risk Screening (from €950, ≤5d) · Execution Risk Review (from €1,500, ≤7d) · Post-Investment 100-Day Plan (from €2,500, ≤10d)
 - **Startup:** Execution Readiness: Founder & Team (from €1,500, ≤7d) · Delivery & Execution Leadership (from €2,000/month) · Startup Operating System Design (from €2,500, ≤10d)
 
@@ -53,5 +53,5 @@ Required fields: `name`, `request_reason`, `preferred_contact` (`email` | `whats
 
 - **Ключевые направления:** Построение предсказуемых процессов и Agile-поставка · Практический ИИ и оценка моделей (ML, LLM, RAG, fine-tuning, контроль галлюцинаций) · Облачная инфраструктура и архитектура (AWS, FinOps, ИБ, миграция) · Регулирование ИИ и управление рисками (EU AI Act, AI Governance, Human-in-the-Loop, надзор за подрядчиками).
 - **Избранные кейсы:** продуктовая концепция циклической экономики и внутренняя RAG-система знаний (Китай / Россия); перезапуск премиального очистителя воздуха в категории Smart IoT (Италия / Швейцария); ИИ-гостеприимство: умные кровати с активным шумоподавлением ANC (Франция).
-- **Услуги для частных клиентов, инвесторов и стартапов:** от **€750** до **€2 500** (индивидуальный расчёт).
+- **Услуги для частных клиентов, инвесторов и стартапов:** от **€850** до **€2 500** (индивидуальный расчёт).
 - **Прямая связь через ИИ-агентов:** можно отправить запрос напрямую через MCP-инструмент `submit_inquiry` на `https://alisac.it/api/mcp` (после согласия пользователя) или по контактам: `alisa.1chebotarenko@gmail.com` · Telegram `@alichebo`.
