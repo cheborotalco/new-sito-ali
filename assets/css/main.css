@@ -362,7 +362,8 @@ body.is-locked{overflow:hidden}
 .about__cols{display:grid;gap:28px}
 .about__item{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid var(--line)}
 .about__num{font-size:.6875rem;font-weight:600;letter-spacing:.16em;color:var(--muted)}
-.about__item p{color:var(--ink-soft);font-size:.9875rem;line-height:1.62}
+.about__item p{color:var(--ink-soft);font-size:.9375rem;line-height:1.58;text-wrap:pretty}
+html[lang="ru"] .about__item p{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:8 3 3}
 
 /* ---------- focus areas ---------- */
 .focus{display:grid;gap:18px;align-items:stretch}
@@ -907,7 +908,7 @@ body.is-locked{overflow:hidden}
   .hero__figure{width:min(100%,420px)}
   .hero{padding-top:calc(var(--nav-h) + clamp(48px,6vw,96px))}
   .about{grid-template-columns:.85fr 1.15fr;align-items:start}
-  .about__cols{grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,34px)}
+  .about__cols{grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,28px)}
   .focus{grid-template-columns:repeat(2,1fr)}
   .work-stats__grid{grid-template-columns:repeat(4,1fr)}
   .work-stat:nth-child(odd){border-left:1px solid var(--line)}
