@@ -640,6 +640,16 @@ body.is-locked{overflow:hidden}
 /* ---------- contact ---------- */
 .contact{display:grid;gap:clamp(28px,5vw,56px)}
 .contact__intro{display:flex;flex-direction:column;gap:18px}
+.contact__steps{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.contact__step{
+  display:grid;gap:4px;padding:12px 14px;border-radius:14px;
+  background:rgba(247,245,251,.75);border:1px solid var(--line);
+  font-size:.875rem;line-height:1.52;color:var(--ink-soft);
+}
+.contact__step-num{
+  font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--violet);
+}
 .contact__links{display:grid;gap:10px}
 .contact__link{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
