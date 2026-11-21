@@ -78,7 +78,7 @@
 - **Private Client**
   - **Critical Decision Review** — Up to 5 business days · Starting from €850 (90-min discovery, materials review, risk/constraint assessment, alternative scenarios, executive summary, online discussion).
   - **Project Go / No-Go** — Up to 7 business days · Starting from €1,100 (90-min discovery, project/concept review, resource/timeline/constraint assessment, key risks & assumptions, executive summary, online discussion).
-  - **Operational Efficiency Scan** — Standard: up to 10 business days · Starting from €1,250 (≤3 stakeholder interviews, process review, executive summary) | Growth: up to 20 business days · Starting from €2,300 (≤10 interviews, 3 core processes, bottleneck/risk analysis, AI & automation assessment, implementation roadmap).
+  - **Operational Efficiency Scan** — Standard: up to 10 business days · Starting from €1,550 (≤3 stakeholder interviews, process review, executive summary) | Growth: up to 20 business days · Starting from €2,450 (≤10 interviews, 3 core processes, bottleneck/risk analysis, AI & automation assessment, implementation roadmap).
 - **Investor**
   - **Deal Risk Screening** — Up to 5 business days · Starting from €950 (business model, team & roles, operational risk evaluation, risk summary & recommendations).
   - **Execution Risk Review** — Up to 7 business days · Starting from €1,500 (founder interviews, roadmap review, execution process, team & resource allocation, execution risk report).
@@ -140,7 +140,7 @@
 3. **ИИ-гостеприимство: умные кровати с шумоподавлением** *(Франция)* — B2B-запуск умных кроватей с ИИ-алгоритмами активного шумоподавления (ANC) в реальном времени для гостиничного сектора.
 
 ### Услуги (базовая стоимость)
-- **Собственник / CEO:** Аудит критического решения (от €850, ≤5 дней) · Решение Go / No-Go (от €1,100, ≤7 дней) · Аудит операционной эффективности Standard/Growth (от €1,250 / €2,300, ≤10 / ≤20 дней).
+- **Собственник / CEO:** Аудит критического решения (от €850, ≤5 дней) · Решение Go / No-Go (от €1,100, ≤7 дней) · Аудит операционной эффективности Standard/Growth (от €1,550 / €2,450, ≤10 / ≤20 дней).
 - **Инвестор:** Скрининг рисков сделки (от €950, ≤5 дней) · Оценка рисков исполнения (от €1,500, ≤7 дней) · План первых 100 дней (от €2,500, ≤10 дней).
 - **Стартап:** Оценка исполнения: основатель и команда (от €1,500, ≤7 дней) · Управление темпом и доставкой (от €2,000/мес) · Проектирование операционных процессов стартапа (от €2,500, ≤10 дней).
 

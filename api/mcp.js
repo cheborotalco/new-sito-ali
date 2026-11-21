@@ -123,7 +123,7 @@ const SERVICES = [
     category: 'private',
     title: { en: 'Operational Efficiency Scan (Standard / Growth)', ru: 'Аудит операционной эффективности (Standard / Growth)' },
     duration: { en: 'Up to 10 / 20 business days', ru: 'До 10 / 20 рабочих дней' },
-    startingPrice: '€1,250 (Standard) / €2,300 (Growth)',
+    startingPrice: '€1,550 (Standard) / €2,450 (Growth)',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
       en: 'Focused process assessment to find bottlenecks, automation opportunities and where AI creates measurable value.',

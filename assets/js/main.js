@@ -1041,8 +1041,8 @@
       }
       if (price) {
         price.textContent = isRu
-          ? (tier === 'growth' ? '€2 300' : '€1 250')
-          : (tier === 'growth' ? '€2,300' : '€1,250');
+          ? (tier === 'growth' ? '€2 450' : '€1 550')
+          : (tier === 'growth' ? '€2,450' : '€1,550');
       }
     };
     tabs.forEach(tab => tab.addEventListener('click', () => activate(tab)));
