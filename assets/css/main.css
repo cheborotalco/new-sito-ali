@@ -448,10 +448,10 @@ body.is-locked{overflow:hidden}
 }
 .svc-credit-note{
   margin:0;padding:10px 14px;border-radius:14px;
-  border:1px solid var(--line);background:rgba(255,255,255,.76);
+  border:1px solid rgba(182,101,255,.28);background:var(--violet-soft);
   font-size:.78125rem;line-height:1.45;color:var(--ink-soft);
 }
-.svc-credit-note strong{color:var(--ink);font-weight:700}
+.svc-credit-note strong{color:#5d279e;font-weight:700}
 .svc-tab{
   display:inline-flex;align-items:center;gap:8px;
   min-height:42px;padding:0 18px;border-radius:999px;border:0;background:transparent;
