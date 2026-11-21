@@ -452,6 +452,7 @@ body.is-locked{overflow:hidden}
   font-size:.78125rem;line-height:1.45;color:var(--ink-soft);
 }
 .svc-credit-note strong{color:#5d279e;font-weight:700}
+.svc-credit-note u{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px;text-decoration-color:rgba(93,39,158,.6)}
 .svc-tab{
   display:inline-flex;align-items:center;gap:8px;
   min-height:42px;padding:0 18px;border-radius:999px;border:0;background:transparent;
