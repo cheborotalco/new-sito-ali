@@ -111,7 +111,7 @@ const SERVICES = [
     category: 'private',
     title: { en: 'Project Go / No-Go', ru: 'Решение Go / No-Go по проекту' },
     duration: { en: 'Up to 7 business days', ru: 'До 7 рабочих дней' },
-    startingPrice: '€950',
+    startingPrice: '€1,100',
     pricingNote: { en: 'Base price; tailored individually to each case.', ru: 'Базовая стоимость; рассчитывается индивидуально.' },
     summary: {
       en: 'Structured assessment of a business project, business idea or new initiative before significant resources are committed.',
