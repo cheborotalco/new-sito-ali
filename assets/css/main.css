@@ -638,7 +638,8 @@ body.is-locked{overflow:hidden}
 .mindset .eyebrow{color:rgba(255,255,255,.65)}
 
 /* ---------- contact ---------- */
-.contact{display:grid;gap:clamp(28px,5vw,56px)}
+.contact{display:grid;gap:18px}
+.contact__head{display:flex;flex-direction:column;gap:14px}
 .contact__intro{display:flex;flex-direction:column;gap:18px}
 .contact__steps{display:grid;gap:10px;margin:0;padding:0;list-style:none}
 .contact__step{
@@ -936,7 +937,8 @@ body.is-locked{overflow:hidden}
     transform:translateY(-4px);box-shadow:var(--shadow-m);border-color:rgba(24,16,66,.14);
   }
   .work-controls{display:none}
-  .contact{grid-template-columns:.85fr 1.15fr;align-items:start}
+  .contact{grid-template-columns:.85fr 1.15fr;align-items:start;row-gap:18px;column-gap:clamp(28px,5vw,56px)}
+  .contact__head{grid-column:1 / -1}
   .contact .form{grid-template-columns:1fr 1fr}
   .mindset__inner{align-items:stretch}
 }
