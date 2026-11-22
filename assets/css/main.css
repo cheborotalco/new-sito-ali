@@ -363,7 +363,8 @@ body.is-locked{overflow:hidden}
 .about__item{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid var(--line)}
 .about__num{font-size:.6875rem;font-weight:600;letter-spacing:.16em;color:var(--muted)}
 .about__item p{color:var(--ink-soft);font-size:.9375rem;line-height:1.58;text-wrap:pretty}
-html[lang="ru"] .about__item p{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:8 3 3}
+html[lang="ru"] .about__item p,
+html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:8 3 3}
 
 /* ---------- focus areas ---------- */
 .focus{display:grid;gap:18px;align-items:stretch}
