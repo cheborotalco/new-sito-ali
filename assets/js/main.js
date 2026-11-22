@@ -1054,7 +1054,7 @@
     const cards = [...carousel.querySelectorAll('.work-card')];
     const current = carousel.querySelector('[data-current]');
     const n = cards.length;
-    let active = 1;
+    let active = 0;
 
     const render = () => {
       const isDesktop = window.innerWidth >= 900;
