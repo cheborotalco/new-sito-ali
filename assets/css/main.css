@@ -546,24 +546,14 @@ html[lang="ru"] .about__item p{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit
   transition:transform .45s var(--ease-out),border-color .3s ease,box-shadow .45s var(--ease-out);
 }
 .case__media{
-  position:relative;aspect-ratio:16 / 10;width:100%;overflow:hidden;
+  aspect-ratio:16 / 10;width:100%;overflow:hidden;
   border-radius:14px;border:1px solid var(--line);
   background:var(--paper-soft);margin-bottom:4px;
 }
-.case__media--contain{
-  background-size:cover;background-position:center;
-}
-.case__media--contain::before{
-  content:"";position:absolute;inset:-16px;
-  background-image:inherit;background-size:cover;background-position:center;
-  filter:blur(22px) saturate(1.05);transform:scale(1.08);opacity:.78;
-}
 .case__media img{
-  position:relative;z-index:1;
   width:100%;height:100%;object-fit:cover;display:block;
   transition:transform .6s var(--ease-out);
 }
-.case__media--contain img{object-fit:contain}
 .case:hover .case__media img{transform:scale(1.03)}
 .case__kicker{display:flex;align-items:center;gap:10px;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
 .case__kicker i{width:22px;height:1.5px;background:var(--orange);display:block;flex:0 0 auto}
