@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Blog | Alisa Chebotarenko</title>
+<meta name="description" content="Practical notes on EU AI Act governance, AI agent control, project diagnostics, and operational execution." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="alternate" hreflang="en" href="https://alisac.it/blog/" />
+<link rel="alternate" hreflang="ru" href="https://alisac.it/ru/blog/" />
+<link rel="alternate" hreflang="x-default" href="https://alisac.it/blog/" />
+<link rel="canonical" href="https://alisac.it/blog/" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="/" aria-label="Alisa Chebotarenko, home">ALISA<span>.</span>C<i>_</i></a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="/#approach">Approach</a>
+      <a class="nav__link" href="/#focus">Focus areas</a>
+      <a class="nav__link" href="/#work">Projects</a>
+      <a class="nav__link" href="/#services">Services</a>
+      <a class="nav__link" href="/blog/" aria-current="page">Blog</a>
+      <a class="nav__link" href="/#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <div class="lang" role="group" aria-label="Language"><a href="/blog/" hreflang="en" lang="en" class="is-active" aria-current="true">EN</a><a href="/ru/blog/" hreflang="ru" lang="ru">RU</a></div>
+      <a class="btn btn--nav" href="/#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="sheet">
+        <span class="nav__toggle-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        Menu
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <nav class="sheet__nav" aria-label="Mobile">
+    <a class="sheet__link" href="/#approach">Approach <span>01</span></a>
+    <a class="sheet__link" href="/#focus">Focus areas <span>02</span></a>
+    <a class="sheet__link" href="/#work">Projects <span>03</span></a>
+    <a class="sheet__link" href="/#services">Services <span>04</span></a>
+    <a class="sheet__link" href="/blog/">Blog <span>05</span></a>
+    <a class="sheet__link" href="/#contact">Contact <span>06</span></a>
+  </nav>
+  <div class="sheet__footer">
+    <a class="btn btn--primary btn--block" href="/#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <div class="sheet__meta">
+      <a href="mailto:alisa.1chebotarenko@gmail.com">alisa.1chebotarenko@gmail.com</a>
+      <a href="https://t.me/alichebo" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/alisachebotarenko" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="blog-hero">
+    <div class="wrap blog-hero__inner">
+      <span class="eyebrow">Blog · Notes &amp; Breakdowns</span>
+      <h1 class="blog-hero__title">Deep dives into AI governance, agent control, and execution.</h1>
+      <p class="blog-hero__sub">Practical breakdowns of topics that come up in audits and advisory work: regulatory readiness under the EU AI Act, operational guardrails for autonomous AI agents, and making complex tech decisions without vendor bias.</p>
+      <div class="blog-filters" role="group" aria-label="Filter articles by topic">
+        <button type="button" class="blog-filter is-active" data-filter="all">All topics</button>
+        <button type="button" class="blog-filter" data-filter="governance">EU AI Act &amp; Governance</button>
+        <button type="button" class="blog-filter" data-filter="agents">AI Agents &amp; Control</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="blog-grid" id="blogGrid">
+        <article class="blog-card" data-topic="governance">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag">EU AI Act · Governance</span>
+            <span>6 min read · Sample draft</span>
+          </div>
+          <h2 class="blog-card__title">EU AI Act in practice: what businesses actually need to check before scaling AI</h2>
+          <p class="blog-card__excerpt">How to separate real regulatory obligations from compliance noise: risk classification, vendor accountability, human oversight, and documentation that holds up under review.</p>
+          <a class="blog-card__foot" href="/blog/eu-ai-act.html">
+            <span>Read article</span>
+            <span class="blog-card__arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="blog-card" data-topic="agents">
+          <div class="blog-card__meta">
+            <span class="blog-card__tag blog-card__tag--cyan">AI Agents · Control</span>
+            <span>7 min read · Sample draft</span>
+          </div>
+          <h2 class="blog-card__title">Controlling AI agents in production: permissions, boundaries, and human-in-the-loop</h2>
+          <p class="blog-card__excerpt">Why autonomous workflows fail silently without clear execution boundaries, and how to design approval gates, audit trails, and fallback rules before giving agents access to live systems.</p>
+          <a class="blog-card__foot" href="/blog/ai-agent-control.html">
+            <span>Read article</span>
+            <span class="blog-card__arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="logo" href="/" aria-label="Alisa Chebotarenko, home">ALISA<span>.</span>C<i>_</i></a>
+        <p class="footer__tagline">Independent AI &amp; IT Specialist · Strategic Partner · Fractional Delivery Lead</p>
+        <a class="footer__cta" href="/#contact">Start a conversation <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Sections">
+          <h3>Navigate</h3>
+          <a href="/#approach">Approach</a>
+          <a href="/#focus">Focus areas</a>
+          <a href="/#work">Projects</a>
+          <a href="/#services">Services</a>
+          <a href="/blog/">Blog</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="footer__col">
+          <h3>Contact</h3>
+          <a href="mailto:alisa.1chebotarenko@gmail.com">Email</a>
+          <a href="https://t.me/alichebo" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://linkedin.com/in/alisachebotarenko" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer__col">
+          <h3>Credentials</h3>
+          <a href="https://www.credly.com/badges/7eca0a20-0cdd-4bc0-acaa-88f90435f921/public_url" target="_blank" rel="noopener noreferrer">PMP<sup>®</sup>, PMI<span class="ext" aria-hidden="true">↗</span></a>
+          <a href="https://www.credly.com/badges/5ab0bd35-0288-4f58-88f1-1152033aafde/public_url" target="_blank" rel="noopener noreferrer">PSPO I, Scrum.org<span class="ext" aria-hidden="true">↗</span></a>
+          <a href="https://www.credly.com/badges/95926ab1-686f-4fd0-8215-da076b8ab4ec/public_url" target="_blank" rel="noopener noreferrer">AWS Certified AI Practitioner<span class="ext" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Alisa Chebotarenko · P.IVA 01820290086 · Sede: Bordighera</span>
+      <div class="footer__legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/cookies.html">Cookie Policy</a>
+        <a class="footer__top-link" href="#main">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+<script>
+document.querySelectorAll('.blog-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.blog-filter').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const topic = btn.dataset.filter;
+    document.querySelectorAll('#blogGrid .blog-card').forEach(card => {
+      card.hidden = topic !== 'all' && card.dataset.topic !== topic;
+    });
+  });
+});
+</script>
+</body>
+</html>

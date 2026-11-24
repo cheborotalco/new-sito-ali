@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Controlling AI agents in production | Blog | Alisa Chebotarenko</title>
+<meta name="description" content="How to design permissions, approval gates, audit trails, and human-in-the-loop guardrails for AI agents in business operations." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="alternate" hreflang="en" href="https://alisac.it/blog/ai-agent-control.html" />
+<link rel="alternate" hreflang="ru" href="https://alisac.it/ru/blog/ai-agent-control.html" />
+<link rel="canonical" href="https://alisac.it/blog/ai-agent-control.html" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="/" aria-label="Alisa Chebotarenko, home">ALISA<span>.</span>C<i>_</i></a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="/#approach">Approach</a>
+      <a class="nav__link" href="/#focus">Focus areas</a>
+      <a class="nav__link" href="/#work">Projects</a>
+      <a class="nav__link" href="/#services">Services</a>
+      <a class="nav__link" href="/blog/" aria-current="page">Blog</a>
+      <a class="nav__link" href="/#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <div class="lang" role="group" aria-label="Language"><a href="/blog/ai-agent-control.html" hreflang="en" lang="en" class="is-active" aria-current="true">EN</a><a href="/ru/blog/ai-agent-control.html" hreflang="ru" lang="ru">RU</a></div>
+      <a class="btn btn--nav" href="/#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="sheet">
+        <span class="nav__toggle-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        Menu
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <nav class="sheet__nav" aria-label="Mobile">
+    <a class="sheet__link" href="/#approach">Approach <span>01</span></a>
+    <a class="sheet__link" href="/#focus">Focus areas <span>02</span></a>
+    <a class="sheet__link" href="/#work">Projects <span>03</span></a>
+    <a class="sheet__link" href="/#services">Services <span>04</span></a>
+    <a class="sheet__link" href="/blog/">Blog <span>05</span></a>
+    <a class="sheet__link" href="/#contact">Contact <span>06</span></a>
+  </nav>
+  <div class="sheet__footer">
+    <a class="btn btn--primary btn--block" href="/#contact">Let's talk <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <div class="sheet__meta">
+      <a href="mailto:alisa.1chebotarenko@gmail.com">alisa.1chebotarenko@gmail.com</a>
+      <a href="https://t.me/alichebo" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/alisachebotarenko" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="article-hero">
+    <div class="wrap article-hero__inner">
+      <a class="article-back" href="/blog/">← Back to Blog</a>
+      <div class="article-meta">
+        <span class="blog-card__tag blog-card__tag--cyan">AI Agents · Control</span>
+        <span>7 min read</span>
+        <span>Sample article</span>
+      </div>
+      <h1 class="article-title">Controlling AI agents in production: permissions, boundaries, and human-in-the-loop</h1>
+      <p class="article-lead">Moving from a chat assistant to an AI agent that can call tools, update CRM records, or send emails changes the risk model completely. Control is not an afterthought; it is the architecture.</p>
+    </div>
+  </section>
+
+  <section class="article-wrap">
+    <div class="wrap">
+      <article class="article-body">
+        <h2>1. Why prompt instructions are not a control system</h2>
+        <p>Many teams try to govern AI agents purely through system prompts ("never delete records", "always double-check prices"). Prompts help guide behavior, but they are probabilistic, not deterministic. Under edge cases, ambiguous inputs, or prompt injection, an agent can still take an unintended action if the underlying tool permissions allow it.</p>
+
+        <div class="article-callout">
+          <strong>Core principle</strong>
+          <span>Never rely on a prompt to block an action that should be enforced by permissions, API scopes, or an explicit approval step.</span>
+        </div>
+
+        <h2>2. Four layers of practical agent control</h2>
+        <ul>
+          <li><strong>Least-privilege tool access:</strong> separate read-only tools from write or external-send actions. An agent drafting a client reply does not need permission to send it automatically.</li>
+          <li><strong>Human-in-the-loop checkpoints:</strong> require explicit confirmation before irreversible actions such as payments, contract edits, external emails, or database deletions.</li>
+          <li><strong>Execution budgets and circuit breakers:</strong> cap retries, tool-call loops, token spend, and runtime so a confused agent cannot loop indefinitely.</li>
+          <li><strong>Full action auditability:</strong> log what inputs the agent saw, which tools it called, what parameters it passed, and who approved the final step.</li>
+        </ul>
+
+        <h2>3. Where teams usually lose control</h2>
+        <p>In operational audits, failure rarely comes from the AI model alone. It happens at the seams: unclear ownership when an agent makes a mistake, missing fallback workflows when an API times out, or connecting agents to messy data where outdated documents trigger confident wrong decisions.</p>
+
+        <h2>4. Designing for reliable delegation</h2>
+        <p>Start with narrow, reversible scopes. Measure error rates and exception handling on real workflows before expanding autonomy. When boundaries, escalation rules, and accountability are clear, AI agents accelerate execution without creating hidden operational debt.</p>
+      </article>
+
+      <div class="article-cta">
+        <span class="eyebrow">Next step</span>
+        <h2 class="h3">Planning to deploy AI agents or audit an existing automation workflow?</h2>
+        <p class="blog-head__sub">We can review permissions, failure modes, and human-in-the-loop controls before connecting agents to sensitive business systems.</p>
+        <div class="article-cta__actions">
+          <a class="btn btn--primary" href="/#contact">Discuss your project <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="/blog/">All articles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__legal" style="border-top:0;padding-top:0">
+      <span>© <span id="year">2026</span> Alisa Chebotarenko</span>
+      <span>P.IVA 01820290086 · Sede: Bordighera</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/cookies.html">Cookie Policy</a>
+      <a href="/blog/">Blog</a>
+      <a href="/">Back to site</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

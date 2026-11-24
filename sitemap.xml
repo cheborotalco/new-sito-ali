@@ -17,6 +17,22 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://alisac.it/ru/"/>
   </url>
   <url>
+    <loc>https://alisac.it/blog/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisac.it/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://alisac.it/ru/blog/"/>
+  </url>
+  <url>
+    <loc>https://alisac.it/ru/blog/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alisac.it/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://alisac.it/ru/blog/"/>
+  </url>
+  <url>
     <loc>https://alisac.it/privacy.html</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>yearly</changefreq>
