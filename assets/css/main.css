@@ -971,13 +971,17 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
 }
 @media (min-width:900px){
   :root{--nav-h:72px}
-  .nav__links{display:flex}
+  .nav__inner{display:grid;grid-template-columns:1fr auto 1fr;gap:16px}
+  .logo{justify-self:start}
+  .nav__links{display:flex;justify-self:center;gap:2px}
+  .nav__link{padding:9px 11px;font-size:.875rem}
+  .nav__actions{justify-self:end}
   .nav__actions .btn--nav{display:inline-flex}
   .nav__toggle{display:none}
   .hero__grid{grid-template-columns:1.15fr .85fr;gap:clamp(40px,5vw,72px);align-items:start}
   .hero__copy > .eyebrow{margin-bottom:-10px}
   .hero__creds{padding-top:20px;margin-top:4px;border-top:1px solid var(--line)}
-  .hero__figure{width:min(100%,420px);margin-top:calc(18px + clamp(18px,2.4vw,26px) - 10px)}
+  .hero__figure{width:min(100%,420px);justify-self:end;margin-top:calc(18px + clamp(18px,2.4vw,26px) - 10px)}
   .hero__figure .hero__meta{margin-top:8px;text-align:center;align-items:center}
   .hero{padding-top:calc(var(--nav-h) + clamp(48px,6vw,96px))}
   .about{grid-template-columns:.85fr 1.15fr;align-items:start}
