@@ -156,7 +156,10 @@
   /* ---------- active nav link ---------- */
   const links = [...document.querySelectorAll('.nav__link')];
   const sections = links
-    .map(l => document.querySelector(l.getAttribute('href')))
+    .map(l => {
+      const href = l.getAttribute('href') || '';
+      return href.startsWith('#') && href.length > 1 ? document.querySelector(href) : null;
+    })
     .filter(Boolean);
   if ('IntersectionObserver' in window && sections.length) {
     const sio = new IntersectionObserver(entries => {

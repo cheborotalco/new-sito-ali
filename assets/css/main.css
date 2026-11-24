@@ -138,9 +138,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 .logo i{font-style:normal;color:var(--ink);animation:caret 1.2s steps(1) infinite}
 @keyframes caret{50%{opacity:0}}
 
-.nav__links{display:none;gap:6px;align-items:center;position:absolute;left:50%;transform:translateX(-50%)}
+.nav__links{display:none;gap:4px;align-items:center}
 .nav__link{
-  position:relative;padding:10px 14px;border-radius:999px;
+  position:relative;padding:10px 12px;border-radius:999px;white-space:nowrap;
   font-size:.9375rem;font-weight:500;color:var(--ink-soft);
   transition:color .25s ease,background .25s ease;
 }
