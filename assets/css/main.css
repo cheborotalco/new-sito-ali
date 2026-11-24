@@ -225,8 +225,11 @@ body.is-locked{overflow:hidden}
 .hero__grid{position:relative;display:grid;gap:clamp(32px,5vw,56px);align-items:center}
 .hero__copy{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px)}
 .hero h1{font-size:clamp(2.9rem,10.5vw,5.9rem);line-height:.93;letter-spacing:-.05em;font-weight:600}
+.hero h1.hero__headline{font-size:clamp(1.55rem,2.6vw,2.35rem);line-height:1.18;letter-spacing:-.03em;font-weight:700;color:var(--ink);max-width:26ch;text-wrap:balance}
 .hero h1 em{font-style:normal;display:block;color:var(--ink)}
 .hero h1 .surname{display:block;background:linear-gradient(96deg,var(--ink) 0%,#3a2a72 52%,#7c3fd4 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero__name{margin-top:14px;text-align:center}
+.hero__name strong{display:block;font-size:clamp(1.15rem,1.5vw,1.35rem);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
 .hero__claim{
   display:flex;flex-direction:column;gap:10px;
   font-size:clamp(1rem,1.3vw,1.16rem);line-height:1.5;color:var(--ink-soft);font-weight:400;
@@ -1045,8 +1048,10 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
   .hero__photo img{border-radius:50%;object-position:50% 24%}
   .hero__figure::after{content:none}
   .hero__status{position:static;left:auto;right:auto;top:auto;bottom:auto}
+  .hero__name{margin-top:0}
 
   .hero h1{font-size:clamp(2.5rem,9.2vw,4rem)}
+  .hero h1.hero__headline{font-size:clamp(1.4rem,5.4vw,1.95rem);line-height:1.2}
   .hero__meta{display:grid;gap:4px;font-size:.8125rem}
   .hero__meta .dot{display:none}
   .hero__cta{display:grid;grid-template-columns:1fr;gap:8px}
