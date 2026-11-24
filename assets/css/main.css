@@ -926,7 +926,7 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
   .nav__actions .btn--nav{display:inline-flex}
   .nav__toggle{display:none}
   .hero__grid{grid-template-columns:1.15fr .85fr;gap:clamp(40px,5vw,72px);align-items:start}
-  .hero__figure{width:min(100%,420px)}
+  .hero__figure{width:min(100%,420px);margin-top:calc(18px + clamp(18px,2.4vw,26px))}
   .hero{padding-top:calc(var(--nav-h) + clamp(48px,6vw,96px))}
   .about{grid-template-columns:.85fr 1.15fr;align-items:start}
   .about__cols{grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,28px)}
