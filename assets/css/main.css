@@ -665,6 +665,10 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
   line-height:1.15;letter-spacing:-.03em;font-weight:600;color:#fff;
   max-width:none;margin:0;
 }
+.mindset__title .grad{
+  background:linear-gradient(96deg,#c98bff 0%,#8fe0ff 55%,#33d3f0 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
 .collab-grid{
   display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px;
 }
