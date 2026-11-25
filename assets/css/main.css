@@ -439,7 +439,7 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
 .svc__foot .btn--quote{width:100%}
 .svc__price-note{width:100%;margin:0;font-size:.75rem;line-height:1.5;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 .svc__price-note strong{font-weight:700;color:var(--ink)}
-.svc__price-note--inline{width:auto;flex:1;min-width:0;text-align:center;white-space:nowrap}
+.svc__price-note--inline{width:auto;flex:1;min-width:0;text-align:center;line-height:1.35}
 .svc__tiers{display:grid;gap:6px;font-size:.8125rem;color:var(--muted)}
 .svc__tiers b{color:var(--ink);font-weight:600}
 
