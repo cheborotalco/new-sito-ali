@@ -53,17 +53,18 @@
 
   /* ---------- reveal on scroll ---------- */
   const revealEls = [...document.querySelectorAll('[data-reveal]')];
+  const isMobile = window.innerWidth < 900;
   if (!reduce) {
     revealEls.forEach(el => {
       const i = Number(el.style.getPropertyValue('--i') || 0);
-      el.style.transitionDelay = `${Math.min(i, 6) * 60}ms`;
+      el.style.transitionDelay = isMobile ? '0ms' : `${Math.min(i, 4) * 50}ms`;
     });
     const checkReveals = () => {
-      const vh = window.innerHeight || 800;
+      const vh = window.innerHeight || document.documentElement.clientHeight || 800;
       for (const el of revealEls) {
         if (el.classList.contains('is-in')) continue;
         const r = el.getBoundingClientRect();
-        if (r.top < vh * 0.94 && r.bottom > 0) el.classList.add('is-in');
+        if (r.top < vh * 1.08 && r.bottom > -40) el.classList.add('is-in');
       }
     };
     if ('IntersectionObserver' in window) {
@@ -74,18 +75,17 @@
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px -3% 0px' });
+      }, { threshold: 0, rootMargin: '0px 0px 10% 0px' });
       revealEls.forEach(el => io.observe(el));
-    } else {
-      let ticking = false;
-      const onRevealScroll = () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => { ticking = false; checkReveals(); });
-      };
-      window.addEventListener('scroll', onRevealScroll, { passive: true });
-      window.addEventListener('resize', onRevealScroll, { passive: true });
     }
+    let ticking = false;
+    const onRevealScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { ticking = false; checkReveals(); });
+    };
+    window.addEventListener('scroll', onRevealScroll, { passive: true });
+    window.addEventListener('resize', onRevealScroll, { passive: true });
     requestAnimationFrame(checkReveals);
     window.addEventListener('load', checkReveals, { once: true });
   } else {

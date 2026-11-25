@@ -954,10 +954,10 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
 /* ---------- reveal / motion ---------- */
 .js [data-reveal]{
   opacity:0;
-  transform:translate3d(0,24px,0) scale(.98);
-  transition:opacity .75s var(--ease-out),transform .75s var(--ease-out);
+  transform:translate3d(0,14px,0);
+  transition:opacity .55s var(--ease-out),transform .55s var(--ease-out);
 }
-.js [data-reveal].is-in{opacity:1;transform:translate3d(0,0,0) scale(1)}
+.js [data-reveal].is-in{opacity:1;transform:translate3d(0,0,0)}
 .focus__card,.case,.svc{
   position:relative;
   background-image:radial-gradient(480px circle at var(--mx,50%) var(--my,0%),rgba(182,101,255,.065),transparent 65%);
@@ -1084,7 +1084,7 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
   .hero__copy{position:relative;z-index:1}
   .hero__facts{
     display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;
-    padding:18px 18px 56px;border:1px solid var(--line);border-radius:26px;
+    padding:18px 18px 84px;border:1px solid var(--line);border-radius:26px;
     background:linear-gradient(180deg,#ffffff,#f8f6fc);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
     position:relative;z-index:1;
@@ -1121,6 +1121,7 @@ html[lang="ru"] .case__text{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-ch
 }
 @media (max-width:420px){
   .hero h1{font-size:clamp(2.3rem,10.4vw,3.1rem)}
+  .svc__price-note--inline{flex:1 1 120px}
   .radio-group{grid-template-columns:1fr}
   .radio span{min-height:48px}
 }
