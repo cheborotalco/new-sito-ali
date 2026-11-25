@@ -1044,7 +1044,7 @@
       }
       if (price) {
         price.textContent = isRu
-          ? (tier === 'growth' ? '€4.000 + НДС' : '€2.500 + НДС')
+          ? (tier === 'growth' ? '€4000 + НДС' : '€2500 + НДС')
           : (tier === 'growth' ? '€4,000 + VAT' : '€2,500 + VAT');
       }
     };
